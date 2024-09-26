@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bmgnl53cff3v7"]
 
-[ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_0dv74"]
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_jpx0b"]
+[ext_resource type="Script" path="res://ui scenes/scripts/main_menu.gd" id="1_8nunr"]
+[ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_760aw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o65ol"]
 bg_color = Color(0.079686, 0.00351193, 0.144187, 1)
@@ -17,11 +17,11 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_l35jo"]
-font = ExtResource("1_0dv74")
+font = ExtResource("2_760aw")
 font_size = 21
 font_color = Color(0.709804, 0.0705882, 0, 1)
 outline_size = 4
-outline_color = Color(0, 0, 0, 1)
+outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mabn7"]
 bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
@@ -99,7 +99,7 @@ offset_right = -2.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jpx0b")
+script = ExtResource("1_8nunr")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -156,7 +156,7 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_0dv74")
+theme_override_fonts/font = ExtResource("2_760aw")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_2gddr")
 text = "PLAY"
@@ -164,7 +164,7 @@ text = "PLAY"
 [node name="settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_0dv74")
+theme_override_fonts/font = ExtResource("2_760aw")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_p5q0v")
 text = "SETTINGS"
@@ -172,7 +172,7 @@ text = "SETTINGS"
 [node name="credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_0dv74")
+theme_override_fonts/font = ExtResource("2_760aw")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_np436")
 text = "CREDITS"
@@ -180,9 +180,11 @@ text = "CREDITS"
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_0dv74")
+theme_override_fonts/font = ExtResource("2_760aw")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_ds2ta")
 text = "QUIT"
 
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

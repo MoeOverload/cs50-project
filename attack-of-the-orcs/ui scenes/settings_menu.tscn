@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmfjas34uxwgm"]
+[gd_scene load_steps=9 format=3 uid="uid://bmfjas34uxwgm"]
 
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_3l3ai"]
+[ext_resource type="Script" path="res://ui scenes/scripts/settings_menu.gd" id="1_mw8mn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwkf7"]
 bg_color = Color(0.0784314, 0.00392157, 0.145098, 1)
@@ -20,7 +21,7 @@ font = ExtResource("1_3l3ai")
 font_size = 21
 font_color = Color(0.709804, 0.0705882, 0, 1)
 outline_size = 4
-outline_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbwbc"]
 bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
@@ -95,6 +96,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mw8mn")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -138,7 +140,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_kbwbc")
 
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer4"]
+[node name="backbutton" type="Button" parent="HBoxContainer/PanelContainer4"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
@@ -159,7 +161,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 21
 
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
+[node name="sound" type="Button" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 10
@@ -168,7 +170,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_vt8hh")
 text = "SOUND / FX"
 
-[node name="Button2" type="Button" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
+[node name="difficulty" type="Button" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 10
@@ -176,3 +178,7 @@ theme_override_fonts/font = ExtResource("1_3l3ai")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_vt8hh")
 text = "DIFFICULTY"
+
+[connection signal="pressed" from="HBoxContainer/PanelContainer4/backbutton" to="." method="_on_backbutton_pressed"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer3/VBoxContainer/sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer3/VBoxContainer/difficulty" to="." method="_on_difficulty_pressed"]

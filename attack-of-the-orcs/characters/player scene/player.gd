@@ -1,14 +1,19 @@
 extends CharacterBody2D
-var move_speed = 200
+#move speed variable
+var move_speed = 600
+#reference to the arrow scene
 @export var arrow_tcsn: PackedScene
+#rewfernce to the game scene
+@onready var gameOne = $"res://games/Scripts/game_1.gd"
 
-@onready var mainscene = $".."
+#boolean is walking
 var walking = false 
 
 func _physics_process(delta):
+	
 	velocity = Vector2()
 	
-
+#handle input events & animations
 	if Input.is_action_pressed("up"):
 		position.y -= 1
 		walking=true
@@ -20,9 +25,9 @@ func _physics_process(delta):
 	else:
 		$AnimatedSprite2D.play("idle")
 		walking = false 	
-		
+	#player can shoot moving or stationary
 	while walking or not walking:
-
+		#handle shoot input
 		if Input.is_action_just_pressed("fire"):
 			$AnimatedSprite2D.play("shoot")
 			var new_arrow = arrow_tcsn.instantiate()
@@ -30,24 +35,23 @@ func _physics_process(delta):
 			new_arrow.position = self.position
 		break	
 	
-	
-	
-	
-	
-	
-
+	#move the player
 	velocity = velocity.normalized() * move_speed * delta
 	move_and_slide()
 
-
+#if enemy touches player player dies
+########TODO##########
+#change so when the barriers break open and zombies cross a certain threshhold 
+#the zombies move twards the player touching player forcefully
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("enemy"):
 		$AnimatedSprite2D.play("hurt")
 		
-		mainscene.is_game_over = true
+		#gameOne.is_game_over = true
 		$AnimatedSprite2D.play("death")
 
 		self.queue_free()
+		
 
 
 	

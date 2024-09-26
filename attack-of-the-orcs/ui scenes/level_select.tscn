@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dulp5xbh0lrwf"]
+[gd_scene load_steps=9 format=3 uid="uid://dulp5xbh0lrwf"]
 
-[ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_p7pfo"]
+[ext_resource type="Script" path="res://ui scenes/scripts/level_select.gd" id="1_dqyo5"]
+[ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_ce6mh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrb0o"]
 bg_color = Color(0.0784314, 0.00392157, 0.145098, 1)
@@ -16,11 +17,11 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_txtch"]
-font = ExtResource("1_p7pfo")
+font = ExtResource("2_ce6mh")
 font_size = 21
 font_color = Color(0.709804, 0.0705882, 0, 1)
 outline_size = 4
-outline_color = Color(0, 0, 0, 1)
+outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8kd8"]
 bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
@@ -99,6 +100,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dqyo5")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -141,11 +143,11 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_g8kd8")
 
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3"]
+[node name="backbutton" type="Button" parent="HBoxContainer/PanelContainer3"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_p7pfo")
+theme_override_fonts/font = ExtResource("2_ce6mh")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_goi0j")
 text = "MAIN 
@@ -167,28 +169,31 @@ theme_override_constants/separation = 3
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_p7pfo")
+theme_override_fonts/font = ExtResource("2_ce6mh")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqaxl")
-text = "LEVEL 1
+text = "GAME  1
 "
 
 [node name="LEVEL 2" type="Button" parent="HBoxContainer/PanelContainer4/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_p7pfo")
+theme_override_fonts/font = ExtResource("2_ce6mh")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqaxl")
-text = "LEVEL 2
+text = "GAME  2
 "
 
 [node name="LEVEL3" type="Button" parent="HBoxContainer/PanelContainer4/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_p7pfo")
+theme_override_fonts/font = ExtResource("2_ce6mh")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqaxl")
-text = "LEVEL 3
+text = "GAME  3
 "
+
+[connection signal="pressed" from="HBoxContainer/PanelContainer3/backbutton" to="." method="_on_backbutton_pressed"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer4/VBoxContainer/LEVEL 1" to="." method="_on_level_1_pressed"]

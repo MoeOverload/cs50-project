@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfx1t41km0fj5"]
 
-[ext_resource type="Script" path="res://player scene/arrow.gd" id="1_egs84"]
-[ext_resource type="Texture2D" uid="uid://bns4ppqba578w" path="res://TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Arrow(Projectile)/Arrow01(100x100).png" id="1_q6gkx"]
+[ext_resource type="Script" path="res://characters/player scene/arrow.gd" id="1_egs84"]
+[ext_resource type="Texture2D" uid="uid://bns4ppqba578w" path="res://Assets/TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Arrow(Projectile)/Arrow01(100x100).png" id="1_q6gkx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y7iaj"]
 radius = 1.99854
 height = 17.9971
 
 [node name="arrow" type="Area2D" groups=["arrow"]]
+z_index = 4
 script = ExtResource("1_egs84")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
