@@ -1,0 +1,178 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmfjas34uxwgm"]
+
+[ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_3l3ai"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwkf7"]
+bg_color = Color(0.0784314, 0.00392157, 0.145098, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.172549, 0.027451, 0.380392, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_0a0mj"]
+font = ExtResource("1_3l3ai")
+font_size = 21
+font_color = Color(0.709804, 0.0705882, 0, 1)
+outline_size = 4
+outline_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbwbc"]
+bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.509804, 0.0156863, 0.435294, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ugak"]
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 6.0
+expand_margin_top = 4.0
+expand_margin_right = 6.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1wyb"]
+content_margin_left = 35.0
+content_margin_top = 35.0
+content_margin_right = 35.0
+content_margin_bottom = 35.0
+bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.509804, 0.0156863, 0.435294, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt8hh"]
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 6.0
+expand_margin_right = 10.0
+expand_margin_bottom = 3.0
+
+[node name="Settings menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+layout_mode = 2
+color = Color(0.207843, 0.00392157, 0.203922, 1)
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 17.0
+offset_right = 362.0
+offset_bottom = 65.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mwkf7")
+
+[node name="Label" type="Label" parent="PanelContainer2"]
+layout_mode = 2
+text = "SETTINGS MENU"
+label_settings = SubResource("LabelSettings_0a0mj")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 80.0
+offset_right = 352.0
+offset_bottom = 213.0
+theme_override_constants/separation = 36
+
+[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_kbwbc")
+
+[node name="Button" type="Button" parent="HBoxContainer/PanelContainer4"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_3l3ai")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ugak")
+text = "BACK"
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_r1wyb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 21
+
+[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_3l3ai")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_vt8hh")
+text = "SOUND / FX"
+
+[node name="Button2" type="Button" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_3l3ai")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_vt8hh")
+text = "DIFFICULTY"
