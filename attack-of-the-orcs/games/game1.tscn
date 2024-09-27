@@ -341,7 +341,9 @@ theme_override_constants/separation = 31
 
 [node name="deathMsg" type="Label" parent="Control/PanelContainer2/VBoxContainer"]
 layout_mode = 2
-text = "YOU DIED"
+text = "YOU DIED
+your castle has 
+fallen"
 label_settings = SubResource("LabelSettings_uufn7")
 horizontal_alignment = 1
 
