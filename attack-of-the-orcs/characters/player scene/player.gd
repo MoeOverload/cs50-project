@@ -4,7 +4,7 @@ var move_speed = 600
 #reference to the arrow scene
 @export var arrow_tcsn: PackedScene
 #rewfernce to the game scene
-@onready var gameOne = $"res://games/Scripts/game_1.gd"
+@onready var gameOne = $"."
 
 #boolean is walking
 var walking = false 
@@ -47,7 +47,7 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("enemy"):
 		$AnimatedSprite2D.play("hurt")
 		
-		#gameOne.is_game_over = true
+		Globalscript.is_game_over = true
 		$AnimatedSprite2D.play("death")
 
 		self.queue_free()

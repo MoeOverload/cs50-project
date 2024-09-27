@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" path="res://games/Scripts/game_1.gd" id="1_5wiol"]
 [ext_resource type="Texture2D" uid="uid://b1gc8aolmmaif" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_2x1s8"]
+[ext_resource type="PackedScene" uid="uid://cex4hloftd0o0" path="res://Assets/animated walls/barrier.tscn" id="2_vl5yg"]
 [ext_resource type="PackedScene" uid="uid://hm4cs4xqhyko" path="res://characters/player scene/character_body_2d.tscn" id="3_m1dq5"]
 [ext_resource type="PackedScene" uid="uid://cdg8ns4kfulqu" path="res://characters/enemy/enemy.tscn" id="4_5plsm"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="4_7pasw"]
+[ext_resource type="Script" path="res://games/scorelabel.gd" id="6_5lbu4"]
 [ext_resource type="Script" path="res://games/enemy_spawner.gd" id="6_n0tkm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4w2w"]
@@ -219,112 +221,6 @@ texture = ExtResource("2_2x1s8")
 [sub_resource type="TileSet" id="TileSet_414j7"]
 sources/0 = SubResource("TileSetAtlasSource_lpxsd")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bk0g"]
-texture = ExtResource("2_2x1s8")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_o1cte"]
-sources/0 = SubResource("TileSetAtlasSource_6bk0g")
-
 [sub_resource type="LabelSettings" id="LabelSettings_ln5cy"]
 font = ExtResource("4_7pasw")
 outline_size = 3
@@ -349,6 +245,48 @@ outline_color = Color(0, 0, 0, 1)
 [node name="game 1" type="Node2D"]
 script = ExtResource("1_5wiol")
 
+[node name="barriers" type="Node" parent="."]
+
+[node name="barrier" parent="barriers" instance=ExtResource("2_vl5yg")]
+z_index = 1
+position = Vector2(103, 200)
+
+[node name="barrier10" parent="barriers" instance=ExtResource("2_vl5yg")]
+z_index = 1
+position = Vector2(103, 20)
+
+[node name="barrier2" parent="barriers" instance=ExtResource("2_vl5yg")]
+z_index = 1
+position = Vector2(103, 40)
+
+[node name="barrier3" parent="barriers" instance=ExtResource("2_vl5yg")]
+z_index = 1
+position = Vector2(103, 60)
+
+[node name="barrier4" parent="barriers" instance=ExtResource("2_vl5yg")]
+z_index = 1
+position = Vector2(103, 80)
+
+[node name="barrier5" parent="barriers" instance=ExtResource("2_vl5yg")]
+z_index = 1
+position = Vector2(103, 100)
+
+[node name="barrier6" parent="barriers" instance=ExtResource("2_vl5yg")]
+z_index = 1
+position = Vector2(103, 120)
+
+[node name="barrier7" parent="barriers" instance=ExtResource("2_vl5yg")]
+z_index = 1
+position = Vector2(103, 140)
+
+[node name="barrier8" parent="barriers" instance=ExtResource("2_vl5yg")]
+z_index = 1
+position = Vector2(103, 160)
+
+[node name="barrier9" parent="barriers" instance=ExtResource("2_vl5yg")]
+z_index = 1
+position = Vector2(103, 180)
+
 [node name="mapLayers" type="Node" parent="."]
 
 [node name="floor" type="TileMapLayer" parent="mapLayers"]
@@ -358,10 +296,6 @@ tile_set = SubResource("TileSet_w13tx")
 [node name="walls" type="TileMapLayer" parent="mapLayers"]
 tile_map_data = PackedByteArray("AAAAAA0AAAAAAAQAAAABAA0AAAACAAQAAAACAA0AAAACAAQAAAADAA0AAAACAAQAAAAEAA0AAAACAAQAAAAFAA0AAAACAAQAAAAGAA0AAAACAAQAAAAHAA0AAAACAAQAAAAIAA0AAAACAAQAAAAJAA0AAAACAAQAAAAKAA0AAAACAAQAAAALAA0AAAACAAQAAAAMAA0AAAACAAQAAAANAA0AAAACAAQAAAAOAA0AAAACAAQAAAAPAA0AAAACAAQAAAAQAA0AAAACAAQAAAARAA0AAAACAAQAAAASAA0AAAACAAQAAAATAA0AAAACAAQAAAAUAA0AAAACAAQAAAAVAA0AAAACAAQAAAAWAA0AAAACAAQAAAAXAA0AAAACAAQAAAAYAA0AAAACAAQAAAAZAA0AAAACAAQAAAAaAA0AAAACAAQAAAAAAAAAAAAAAAMAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAKAAAAAAACAAAAAAALAAAAAAACAAAAAAAMAAAAAAACAAAAAAANAAAAAAACAAAAAAAOAAAAAAACAAAAAAAPAAAAAAACAAAAAAAQAAAAAAACAAAAAAARAAAAAAACAAAAAAASAAAAAAACAAAAAAATAAAAAAACAAAAAAAUAAAAAAACAAAAAAAVAAAAAAACAAAAAAAWAAAAAAACAAAAAAAXAAAAAAACAAAAAAAYAAAAAAACAAAAAAAZAAAAAAACAAAAAAAaAAAAAAACAAAAAAAAAAwAAAAAAAMAAAAAAAsAAAAAAAMAAAAAAAoAAAAAAAMAAAAAAAkAAAAAAAMAAAAAAAgAAAAAAAMAAAAAAAcAAAAAAAMAAAAAAAYAAAAAAAMAAAAAAAUAAAAAAAMAAAAAAAQAAAAAAAMAAAAAAAMAAAAAAAMAAAAAAAIAAAAAAAMAAAAAAAEAAAAAAAMAAAA=")
 tile_set = SubResource("TileSet_414j7")
-
-[node name="baricade" type="TileMapLayer" parent="mapLayers"]
-tile_map_data = PackedByteArray("AAAHAAwAAAADAAgAAAAHAAsAAAADAAgAAAAHAAoAAAADAAgAAAAHAAkAAAADAAgAAAAHAAgAAAADAAgAAAAHAAcAAAADAAgAAAAHAAYAAAADAAgAAAAHAAUAAAADAAgAAAAHAAQAAAADAAgAAAAHAAMAAAADAAgAAAAHAAIAAAADAAgAAAAHAAEAAAADAAgAAAA=")
-tile_set = SubResource("TileSet_o1cte")
 
 [node name="player" parent="." instance=ExtResource("3_m1dq5")]
 position = Vector2(64, 112)
@@ -389,6 +323,7 @@ layout_mode = 2
 text = "SCORE  0"
 label_settings = SubResource("LabelSettings_ln5cy")
 uppercase = true
+script = ExtResource("6_5lbu4")
 
 [node name="PanelContainer2" type="PanelContainer" parent="Control"]
 visible = false

@@ -1,20 +1,32 @@
 extends Area2D
-
+#stop walking
+var stop_walk = false
 #i forgot why this is here?
-var death_time=5
+var enemy_health = 50
 #speed of enemies
 @export var speed = 200
 #refernce to the game scene
-@onready var gameOne = $"res://games/Scripts/game_1.gd"
+@onready var gameOne = $"."
 
 func _process(delta):
-    #move the enemy to the left and play walk anim
-    $AnimatedSprite2D.play("walk")
-    position.x -= speed * delta
+    if stop_walk == true:
+        speed = 0
+        $AnimatedSprite2D.play("attack")
+        position.x -= speed * delta
+    else:
+        #move the enemy to the left and play walk anim
+        $AnimatedSprite2D.play("walk")
+        position.x -= speed * delta
 
 func _on_area_entered(area):
-    #if enemytouch player handle hurt and death
-    if area.is_in_group("Player"):
+    if area.is_in_group("barrierDetect"):
+        $AnimatedSprite2D.play("attack")
+        stop_walk = true
+
+
+
+        #if enemytouch player handle hurt and death
+    elif area.is_in_group("Player"):
         $AnimatedSprite2D.play("hurt")
         
         $AnimatedSprite2D.play("death")
@@ -22,10 +34,15 @@ func _on_area_entered(area):
         self.queue_free()
     #if enemy is shot handle death and hurt
     elif area.is_in_group("arrow"):
-        #add 10 points to the score
-        #gameOne.score += 10
-        $AnimatedSprite2D.play("hurt")
+        if enemy_health > 0 :
+            #damage enemy health
+            enemy_health = enemy_health - 25
+            #add 10 points to the score
+            Globalscript.score += 10
+            $AnimatedSprite2D.play("hurt")
+            
+        if enemy_health == 0:
+            $AnimatedSprite2D.play("death")
+            self.queue_free()
+    
         
-        $AnimatedSprite2D.play("death")
-         
-        self.queue_free()
