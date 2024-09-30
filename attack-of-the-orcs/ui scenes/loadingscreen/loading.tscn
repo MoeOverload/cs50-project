@@ -1,0 +1,137 @@
+[gd_scene load_steps=9 format=3 uid="uid://bi5qosowuwlwm"]
+
+[ext_resource type="Script" path="res://ui scenes/loadingscreen/loading.gd" id="1_jf4tn"]
+[ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="4_wa7u0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2f3q4"]
+bg_color = Color(0.207843, 0.00392157, 0.203922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihmgc"]
+bg_color = Color(0.0784314, 0.00392157, 0.145098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.172549, 0.027451, 0.380392, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1dsn"]
+font = ExtResource("4_wa7u0")
+font_size = 13
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qcxp"]
+bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.509804, 0.0156863, 0.435294, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uyf2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="ImageTexture" id="ImageTexture_37k2h"]
+
+[node name="loadingScreen1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jf4tn")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0213333
+anchor_right = 1.02133
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2f3q4")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer3" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.5
+offset_top = -49.0
+offset_right = 57.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ihmgc")
+
+[node name="Label" type="Label" parent="PanelContainer3"]
+layout_mode = 2
+text = "Loading . . .  "
+label_settings = SubResource("LabelSettings_x1dsn")
+horizontal_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -64.0
+offset_right = 140.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1qcxp")
+
+[node name="Container" type="PanelContainer" parent="PanelContainer4"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2uyf2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer4/Container"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer4/Container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 98
+
+[node name="Label" type="Label" parent="PanelContainer4/Container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "shoot"
+
+[node name="Label2" type="Label" parent="PanelContainer4/Container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "move"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer4/Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer4/Container/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("ImageTexture_37k2h")
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer4/Container/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.457
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

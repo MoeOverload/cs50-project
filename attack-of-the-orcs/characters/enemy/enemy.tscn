@@ -186,9 +186,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktmba"]
 
 [node name="enemy" type="Area2D" groups=["enemy"]]
-z_index = 2
+z_index = 5
 script = ExtResource("1_fkf48")
-speed = 150
+speed = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g6bsx")

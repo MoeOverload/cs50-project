@@ -43,15 +43,12 @@ func _physics_process(delta):
 ########TODO##########
 #change so when the barriers break open and zombies cross a certain threshhold 
 #the zombies move twards the player touching player forcefully
-func _on_area_2d_area_entered(area):
-	if area.is_in_group("enemy"):
+
+func _on_area_2d_body_entered(body:Node2D):
+	if body.is_in_group("enemy"):
 		$AnimatedSprite2D.play("hurt")
 		
 		Globalscript.is_game_over = true
 		$AnimatedSprite2D.play("death")
 
 		self.queue_free()
-		
-
-
-	

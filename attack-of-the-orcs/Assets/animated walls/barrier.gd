@@ -7,11 +7,8 @@ var is_attacking = false
 var damage_time = 2.0
 var time_to_damage = 0.0
 
-func _on_enemy_detection_area_entered(area:Area2D):
-	#detect enemy 
-	if area.is_in_group("enemy"):
-		enemy = area
-		is_attacking = true
+
+	
 		
 
 func _process(delta):
@@ -31,10 +28,9 @@ func _process(delta):
 		$AnimatedSprite2D.play("halfHealth")
 		self.queue_free()
 
-
-
-
-
-
-	
 		
+
+func _on_enemy_detection_area_entered(area:Area2D):
+	if area.is_in_group("enemy"):
+		enemy = area
+		is_attacking = true

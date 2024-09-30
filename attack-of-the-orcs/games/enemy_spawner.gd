@@ -10,9 +10,9 @@ func _on_timer_timeout():
 	self.add_child(new_enemy)
 	#declare where the enemies will spawn
 	#find height of viewport
-	var viewport_width = get_viewport_rect().size.y
+	
 	#spawn at random points in set viewport params
-	var rand_y = randf_range(0, viewport_width)
+	var rand_y = randf_range(15, 205)
 
 	new_enemy.position.y = rand_y
 	new_enemy.position.x= 400
