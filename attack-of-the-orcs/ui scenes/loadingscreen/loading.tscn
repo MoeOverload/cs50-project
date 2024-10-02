@@ -55,8 +55,7 @@ script = ExtResource("1_jf4tn")
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0213333
-anchor_right = 1.02133
+anchor_right = 0.999997
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -130,8 +129,8 @@ texture = SubResource("ImageTexture_37k2h")
 [node name="TextureRect2" type="TextureRect" parent="PanelContainer4/Container/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.457
+[node name="loadTimer" type="Timer" parent="."]
+wait_time = 4.523
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="loadTimer" to="." method="_on_load_timer_timeout"]

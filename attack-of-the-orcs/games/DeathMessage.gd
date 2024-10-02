@@ -18,7 +18,7 @@ func _process(_delta):
 			get_tree().reload_current_scene()
 			Globalscript.is_game_over = false
 			self.visible = false
-			print("restart")
+			
 
 
 
