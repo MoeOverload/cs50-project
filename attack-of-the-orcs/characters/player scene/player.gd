@@ -1,6 +1,6 @@
 extends CharacterBody2D
 #move speed variable
-var move_speed = 600
+
 #reference to the arrow scene
 @export var arrow_tcsn: PackedScene
 #rewfernce to the game scene
@@ -37,13 +37,8 @@ func _physics_process(delta):
 		break
 	
 	#move the player
-	velocity = velocity.normalized() * move_speed * delta
+	velocity = velocity.normalized() * Globalscript.move_speed * delta
 	move_and_slide()
-
-#if enemy touches player player dies
-########TODO##########
-#change so when the barriers break open and zombies cross a certain threshhold 
-#the zombies move twards the player touching player forcefully
 
 func _on_area_2d_body_entered(body:Node2D):
 	if body.is_in_group("enemy"):

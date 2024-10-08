@@ -1,0 +1,200 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhryaeuedxb3a"]
+
+[ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_bb3ok"]
+[ext_resource type="Script" path="res://ui scenes/scripts/high_score_page.gd" id="1_ljgxi"]
+[ext_resource type="Script" path="res://ui scenes/scripts/highScoreLabel.gd" id="3_23200"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cmio"]
+bg_color = Color(0.207843, 0.00392157, 0.203922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xs5st"]
+bg_color = Color(0.0784314, 0.00392157, 0.145098, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.172549, 0.027451, 0.380392, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_031fb"]
+font = ExtResource("1_bb3ok")
+font_size = 21
+font_color = Color(0.709804, 0.0705882, 0, 1)
+outline_size = 4
+outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8xb0"]
+bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.509804, 0.0156863, 0.435294, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frvu7"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 14.0
+expand_margin_top = 4.0
+expand_margin_right = 14.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1hh0"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.000693897, 0.000693898, 0.000693897, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 14.0
+expand_margin_top = 4.0
+expand_margin_right = 14.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_niok2"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 14.0
+expand_margin_top = 4.0
+expand_margin_right = 14.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a20x3"]
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="highScorePage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ljgxi")
+
+[node name="backGround" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmio")
+
+[node name="titleBlock" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 16.0
+offset_right = 336.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xs5st")
+
+[node name="Title" type="Label" parent="titleBlock"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "HIGH SCORES"
+label_settings = SubResource("LabelSettings_031fb")
+uppercase = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 64.0
+offset_right = 288.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o8xb0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_frvu7")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+text = "highscore "
+script = ExtResource("3_23200")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1hh0")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+text = "rounds counter
+"
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_niok2")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+text = "kill counter
+"
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 168.0
+offset_right = 72.0
+offset_bottom = 200.0
+
+[node name="Button" type="Button" parent="PanelContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_bb3ok")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_a20x3")
+text = "Back"
+
+[connection signal="button_down" from="PanelContainer2/Button" to="." method="_on_button_button_down"]

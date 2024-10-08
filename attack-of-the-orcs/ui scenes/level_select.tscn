@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dulp5xbh0lrwf"]
+[gd_scene load_steps=8 format=3 uid="uid://dulp5xbh0lrwf"]
 
 [ext_resource type="Script" path="res://ui scenes/scripts/level_select.gd" id="1_dqyo5"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_ce6mh"]
@@ -23,43 +23,6 @@ font_color = Color(0.709804, 0.0705882, 0, 1)
 outline_size = 4
 outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8kd8"]
-bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.509804, 0.0156863, 0.435294, 1)
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 6.0
-expand_margin_top = 6.0
-expand_margin_right = 6.0
-expand_margin_bottom = 6.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goi0j"]
-content_margin_left = 6.0
-content_margin_top = 4.0
-content_margin_right = 6.0
-content_margin_bottom = 2.0
-bg_color = Color(0.415686, 0.32549, 0.282353, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 4.0
-expand_margin_top = 3.0
-expand_margin_right = 3.0
-expand_margin_bottom = 2.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e0qh"]
 bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
 border_width_left = 4
@@ -78,10 +41,10 @@ expand_margin_right = 15.0
 expand_margin_bottom = 15.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqaxl"]
-content_margin_left = 13.0
-content_margin_top = 8.0
+content_margin_left = 12.0
+content_margin_top = 3.0
 content_margin_right = 12.0
-content_margin_bottom = 5.0
+content_margin_bottom = 3.0
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
 border_width_top = 2
@@ -92,6 +55,22 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+expand_margin_top = 4.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goi0j"]
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
 
 [node name="Level Select" type="Control"]
 layout_mode = 3
@@ -129,72 +108,58 @@ label_settings = SubResource("LabelSettings_txtch")
 horizontal_alignment = 1
 uppercase = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 80.0
-offset_right = 360.0
-offset_bottom = 213.0
-theme_override_constants/separation = 63
+[node name="PanelContainer4" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -29.5
+offset_right = 84.5
+offset_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_6e0qh")
 
-[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer4"]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-theme_override_styles/panel = SubResource("StyleBoxFlat_g8kd8")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 13
 
-[node name="backbutton" type="Button" parent="HBoxContainer/PanelContainer3"]
+[node name="LEVEL 1" type="Button" parent="PanelContainer4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_ce6mh")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqaxl")
+text = "ENTER
+"
+
+[node name="HighScores" type="Button" parent="PanelContainer4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_ce6mh")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqaxl")
+text = "HIGH SCORES
+"
+
+[node name="backbutton" type="Button" parent="PanelContainer4/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_ce6mh")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_goi0j")
-text = "MAIN 
-MENU"
+text = "MAIN MENU"
 
-[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_6e0qh")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer4"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 3
-
-[node name="LEVEL 1" type="Button" parent="HBoxContainer/PanelContainer4/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_ce6mh")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqaxl")
-text = "GAME  1
-"
-
-[node name="LEVEL 2" type="Button" parent="HBoxContainer/PanelContainer4/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_ce6mh")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqaxl")
-text = "GAME  2
-"
-
-[node name="LEVEL3" type="Button" parent="HBoxContainer/PanelContainer4/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_ce6mh")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqaxl")
-text = "GAME  3
-"
-
-[connection signal="pressed" from="HBoxContainer/PanelContainer3/backbutton" to="." method="_on_backbutton_pressed"]
-[connection signal="pressed" from="HBoxContainer/PanelContainer4/VBoxContainer/LEVEL 1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="HBoxContainer/PanelContainer4/VBoxContainer/LEVEL 2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="PanelContainer4/VBoxContainer/LEVEL 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="PanelContainer4/VBoxContainer/HighScores" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="PanelContainer4/VBoxContainer/backbutton" to="." method="_on_backbutton_pressed"]
