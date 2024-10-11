@@ -12,6 +12,9 @@ var enemy_health = 50
 var enemy_speed = 100
 var arrow_damage = 25
 var current_enemy_number = 0
+var kill_counter = 0
+var kill_store = 0
+var most_kills = 0
 var round_enemy_cap = 25
 #barrier varaibles
 var barrier_health = 100

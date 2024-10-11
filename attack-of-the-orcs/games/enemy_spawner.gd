@@ -6,7 +6,8 @@ extends Node2D
 func _process(_delta):
 	if Globalscript.round_change == true:
 		$Timer.paused = true
-	$Timer.paused = false 
+	else:
+		$Timer.paused = false 
 	
 #time between spawns
 func _on_timer_timeout():

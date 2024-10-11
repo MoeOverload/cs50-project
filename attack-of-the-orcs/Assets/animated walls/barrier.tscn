@@ -60,7 +60,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vysb8"]
 size = Vector2(33, 20)
 
-[node name="barrier" type="Node2D"]
+[node name="barrier" type="Node2D" groups=["barrierDetect"]]
 z_index = 2
 script = ExtResource("1_qlq7h")
 

@@ -9,19 +9,22 @@ extends Node2D
 func _process(_delta):
 	
 	if Globalscript.current_enemy_number == Globalscript.round_enemy_cap:
+		
 		print ("round switch!")
 		Globalscript.round_change = true
-		round_reset()
-		Globalscript.round_change = false
+		if Globalscript.kill_counter == Globalscript.round_enemy_cap:
+			round_reset()
+			Globalscript.round_change = false
 	print(Globalscript.current_enemy_number)
 
 func round_reset():
+	Globalscript.kill_store += Globalscript.kill_counter
 	Globalscript.round_enemy_cap += 10
 	Globalscript.enemy_health +=10
 	Globalscript.enemy_speed += 10 
 	Globalscript.barrier_health += 10
 	Globalscript.rounds_counter += 1
-	Globalscript.highest_round += 1
 	Globalscript.current_enemy_number = 0
+	Globalscript.kill_counter = 0
 
 

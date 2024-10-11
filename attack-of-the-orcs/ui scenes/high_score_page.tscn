@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhryaeuedxb3a"]
+[gd_scene load_steps=15 format=3 uid="uid://bhryaeuedxb3a"]
 
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_bb3ok"]
 [ext_resource type="Script" path="res://ui scenes/scripts/high_score_page.gd" id="1_ljgxi"]
 [ext_resource type="Script" path="res://ui scenes/scripts/highScoreLabel.gd" id="3_23200"]
+[ext_resource type="Script" path="res://ui scenes/scripts/label.gd" id="4_0erii"]
+[ext_resource type="Script" path="res://ui scenes/scripts/kill_counter_screen.gd" id="5_dutu4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cmio"]
 bg_color = Color(0.207843, 0.00392157, 0.203922, 1)
@@ -94,6 +96,19 @@ expand_margin_top = 4.0
 expand_margin_right = 14.0
 expand_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ieu8s"]
+bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.509804, 0.0156863, 0.435294, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a20x3"]
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
@@ -101,10 +116,10 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="highScorePage" type="Control"]
 layout_mode = 3
@@ -158,28 +173,31 @@ alignment = 1
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_frvu7")
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
+[node name="HighScoreScreen" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
-text = "highscore "
+text = "HIGH SCORE"
 script = ExtResource("3_23200")
 
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_b1hh0")
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2"]
+[node name="roundsCounterScreen" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2"]
 layout_mode = 2
-text = "rounds counter
+text = "HIGHEST ROUND
 "
+script = ExtResource("4_0erii")
 
 [node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_niok2")
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3"]
+[node name="killCounterScreen" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3"]
 layout_mode = 2
 text = "kill counter
 "
+script = ExtResource("5_dutu4")
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -187,6 +205,7 @@ offset_left = 16.0
 offset_top = 168.0
 offset_right = 72.0
 offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ieu8s")
 
 [node name="Button" type="Button" parent="PanelContainer2"]
 layout_mode = 2

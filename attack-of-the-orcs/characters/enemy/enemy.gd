@@ -38,7 +38,7 @@ func _on_area_entered(area):
 		if health <= 0:
 			$AnimatedSprite2D.play("death")
 			self.queue_free()
-	
+			Globalscript.kill_counter += 1 
 		
 
 

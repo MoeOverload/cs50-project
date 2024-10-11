@@ -1,16 +1,26 @@
-[gd_scene load_steps=22 format=4 uid="uid://bjkvfxk306qn8"]
+[gd_scene load_steps=38 format=4 uid="uid://bjkvfxk306qn8"]
 
 [ext_resource type="Script" path="res://games/Scripts/game_1.gd" id="1_5wiol"]
 [ext_resource type="Texture2D" uid="uid://b1gc8aolmmaif" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_2x1s8"]
 [ext_resource type="PackedScene" uid="uid://cex4hloftd0o0" path="res://Assets/animated walls/barrier.tscn" id="2_vl5yg"]
 [ext_resource type="PackedScene" uid="uid://hm4cs4xqhyko" path="res://characters/player scene/character_body_2d.tscn" id="3_m1dq5"]
+[ext_resource type="Script" path="res://Assets/animated walls/barrier10.gd" id="3_t65cc"]
 [ext_resource type="PackedScene" uid="uid://cdg8ns4kfulqu" path="res://characters/enemy/enemy.tscn" id="4_5plsm"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="4_7pasw"]
+[ext_resource type="Script" path="res://Assets/animated walls/barrier2.gd" id="4_aps68"]
+[ext_resource type="Script" path="res://Assets/animated walls/barrier3.gd" id="5_k3p62"]
 [ext_resource type="Script" path="res://games/scorelabel.gd" id="6_5lbu4"]
+[ext_resource type="Script" path="res://Assets/animated walls/barrier4.gd" id="6_6dqu3"]
 [ext_resource type="Script" path="res://games/enemy_spawner.gd" id="6_n0tkm"]
 [ext_resource type="Script" path="res://games/DeathMessage.gd" id="7_3tlaw"]
+[ext_resource type="Script" path="res://Assets/animated walls/barrier5.gd" id="7_ne61b"]
+[ext_resource type="Script" path="res://Assets/animated walls/barrier6.gd" id="8_i2o7w"]
 [ext_resource type="Script" path="res://games/round_counter.gd" id="8_sijl6"]
+[ext_resource type="Script" path="res://Assets/animated walls/barrier7.gd" id="9_kwvua"]
 [ext_resource type="Script" path="res://games/game_ender.gd" id="9_nxyk7"]
+[ext_resource type="Script" path="res://Assets/animated walls/barrier8.gd" id="10_cknv5"]
+[ext_resource type="Script" path="res://Assets/animated walls/barrier9.gd" id="11_wngb4"]
+[ext_resource type="Script" path="res://games/pause_menu.gd" id="18_jfktt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4w2w"]
 texture = ExtResource("2_2x1s8")
@@ -278,6 +288,68 @@ font = ExtResource("4_7pasw")
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uuxj"]
+bg_color = Color(0.278431, 0.278431, 0.278431, 0.74902)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.525101, 0.525101, 0.525101, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce6pu"]
+content_margin_left = 56.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7aos"]
+font = ExtResource("4_7pasw")
+font_size = 39
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1waaq"]
+content_margin_bottom = 3.0
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huivu"]
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nacm2"]
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uymr7"]
 distance = 16.3196
 
@@ -293,42 +365,52 @@ position = Vector2(103, 200)
 [node name="barrier10" parent="barriers" instance=ExtResource("2_vl5yg")]
 z_index = 1
 position = Vector2(103, 20)
+script = ExtResource("3_t65cc")
 
 [node name="barrier2" parent="barriers" instance=ExtResource("2_vl5yg")]
 z_index = 1
 position = Vector2(103, 40)
+script = ExtResource("4_aps68")
 
 [node name="barrier3" parent="barriers" instance=ExtResource("2_vl5yg")]
 z_index = 1
 position = Vector2(103, 60)
+script = ExtResource("5_k3p62")
 
 [node name="barrier4" parent="barriers" instance=ExtResource("2_vl5yg")]
 z_index = 1
 position = Vector2(103, 80)
+script = ExtResource("6_6dqu3")
 
 [node name="barrier5" parent="barriers" instance=ExtResource("2_vl5yg")]
 z_index = 1
 position = Vector2(103, 100)
+script = ExtResource("7_ne61b")
 
 [node name="barrier6" parent="barriers" instance=ExtResource("2_vl5yg")]
 z_index = 1
 position = Vector2(103, 120)
+script = ExtResource("8_i2o7w")
 
 [node name="barrier7" parent="barriers" instance=ExtResource("2_vl5yg")]
 z_index = 1
 position = Vector2(103, 140)
+script = ExtResource("9_kwvua")
 
 [node name="barrier8" parent="barriers" instance=ExtResource("2_vl5yg")]
 z_index = 1
 position = Vector2(103, 160)
+script = ExtResource("10_cknv5")
 
 [node name="barrier9" parent="barriers" instance=ExtResource("2_vl5yg")]
 z_index = 1
 position = Vector2(103, 180)
+script = ExtResource("11_wngb4")
 
 [node name="mapLayers" type="Node" parent="."]
 
 [node name="floor" type="TileMapLayer" parent="mapLayers"]
+position = Vector2(7, -1)
 tile_map_data = PackedByteArray("AAD/////AAAGAAAAAAD//wAAAAAGAAEAAAD//wEAAAAGAAIAAAAAAP//AAAHAAAAAAAAAAAAAAAHAAEAAAAAAAEAAAAHAAIAAAABAP//AAAIAAAAAAABAAAAAAAIAAEAAAABAAEAAAAIAAIAAAACAP//AAAJAAAAAAACAAAAAAAJAAEAAAACAAEAAAAJAAIAAAD//wIAAAAGAAAAAAD//wMAAAAGAAEAAAD//wQAAAAGAAIAAAAAAAIAAAAHAAAAAAAAAAMAAAAHAAEAAAAAAAQAAAAHAAIAAAABAAIAAAAIAAAAAAABAAMAAAAIAAEAAAABAAQAAAAIAAIAAAACAAIAAAAJAAAAAAACAAMAAAAJAAEAAAACAAQAAAAJAAIAAAD//wUAAAAGAAAAAAD//wYAAAAGAAEAAAD//wcAAAAGAAIAAAAAAAUAAAAHAAAAAAAAAAYAAAAHAAEAAAAAAAcAAAAHAAIAAAABAAUAAAAIAAAAAAABAAYAAAAIAAEAAAABAAcAAAAIAAIAAAACAAUAAAAJAAAAAAACAAYAAAAJAAEAAAACAAcAAAAJAAIAAAD//wgAAAAGAAAAAAD//wkAAAAGAAEAAAD//woAAAAGAAIAAAAAAAgAAAAHAAAAAAAAAAkAAAAHAAEAAAAAAAoAAAAHAAIAAAABAAgAAAAIAAAAAAABAAkAAAAIAAEAAAABAAoAAAAIAAIAAAACAAgAAAAJAAAAAAACAAkAAAAJAAEAAAACAAoAAAAJAAIAAAD//wsAAAAGAAAAAAD//wwAAAAGAAEAAAD//w0AAAAGAAIAAAAAAAsAAAAHAAAAAAAAAAwAAAAHAAEAAAAAAA0AAAAHAAIAAAABAAsAAAAIAAAAAAABAAwAAAAIAAEAAAABAA0AAAAIAAIAAAACAAsAAAAJAAAAAAACAAwAAAAJAAEAAAACAA0AAAAJAAIAAAD//w4AAAAGAAAAAAAAAA4AAAAHAAAAAAABAA4AAAAIAAAAAAACAA4AAAAJAAAAAAADAP//AAAGAAAAAAADAAAAAAAGAAEAAAADAAEAAAAGAAIAAAAEAP//AAAHAAAAAAAEAAAAAAAHAAEAAAAEAAEAAAAHAAIAAAAFAP//AAAIAAAAAAAFAAAAAAAIAAEAAAAFAAEAAAAIAAIAAAAGAP//AAAJAAAAAAAGAAAAAAAJAAEAAAAGAAEAAAAJAAIAAAADAAIAAAAGAAAAAAADAAMAAAAGAAEAAAADAAQAAAAGAAIAAAAEAAIAAAAHAAAAAAAEAAMAAAAHAAEAAAAEAAQAAAAHAAIAAAAFAAIAAAAIAAAAAAAFAAMAAAAIAAEAAAAFAAQAAAAIAAIAAAAGAAIAAAAJAAAAAAAGAAMAAAAJAAEAAAAGAAQAAAAJAAIAAAADAAUAAAAGAAAAAAADAAYAAAAGAAEAAAADAAcAAAAGAAIAAAAEAAUAAAAHAAAAAAAEAAYAAAAHAAEAAAAEAAcAAAAHAAIAAAAFAAUAAAAIAAAAAAAFAAYAAAAIAAEAAAAFAAcAAAAIAAIAAAAGAAUAAAAJAAAAAAAGAAYAAAAJAAEAAAAGAAcAAAAJAAIAAAADAAgAAAAGAAAAAAADAAkAAAAGAAEAAAADAAoAAAAGAAIAAAAEAAgAAAAHAAAAAAAEAAkAAAAHAAEAAAAEAAoAAAAHAAIAAAAFAAgAAAAIAAAAAAAFAAkAAAAIAAEAAAAFAAoAAAAIAAIAAAAGAAgAAAAJAAAAAAAGAAkAAAAJAAEAAAAGAAoAAAAJAAIAAAADAAsAAAAGAAAAAAADAAwAAAAGAAEAAAADAA0AAAAGAAIAAAAEAAsAAAAHAAAAAAAEAAwAAAAHAAEAAAAEAA0AAAAHAAIAAAAFAAsAAAAIAAAAAAAFAAwAAAAIAAEAAAAFAA0AAAAIAAIAAAAGAAsAAAAJAAAAAAAGAAwAAAAJAAEAAAAGAA0AAAAJAAIAAAADAA4AAAAGAAAAAAAEAA4AAAAHAAAAAAAFAA4AAAAIAAAAAAAGAA4AAAAJAAAAAAAHAP//AAAGAAAAAAAHAAAAAAAGAAEAAAAHAAEAAAAGAAIAAAAIAP//AAAHAAAAAAAIAAAAAAAHAAEAAAAIAAEAAAAHAAIAAAAJAP//AAAIAAAAAAAJAAAAAAAIAAEAAAAJAAEAAAAIAAIAAAAKAP//AAAJAAAAAAAKAAAAAAAJAAEAAAAKAAEAAAAJAAIAAAAHAAIAAAAGAAAAAAAHAAMAAAAGAAEAAAAHAAQAAAAGAAIAAAAIAAIAAAAHAAAAAAAIAAMAAAAHAAEAAAAIAAQAAAAHAAIAAAAJAAIAAAAIAAAAAAAJAAMAAAAIAAEAAAAJAAQAAAAIAAIAAAAKAAIAAAAJAAAAAAAKAAMAAAAJAAEAAAAKAAQAAAAJAAIAAAAHAAUAAAAGAAAAAAAHAAYAAAAGAAEAAAAHAAcAAAAGAAIAAAAIAAUAAAAHAAAAAAAIAAYAAAAHAAEAAAAIAAcAAAAHAAIAAAAJAAUAAAAIAAAAAAAJAAYAAAAIAAEAAAAJAAcAAAAIAAIAAAAKAAUAAAAJAAAAAAAKAAYAAAAJAAEAAAAKAAcAAAAJAAIAAAAHAAgAAAAGAAAAAAAHAAkAAAAGAAEAAAAHAAoAAAAGAAIAAAAIAAgAAAAHAAAAAAAIAAkAAAAHAAEAAAAIAAoAAAAHAAIAAAAJAAgAAAAIAAAAAAAJAAkAAAAIAAEAAAAJAAoAAAAIAAIAAAAKAAgAAAAJAAAAAAAKAAkAAAAJAAEAAAAKAAoAAAAJAAIAAAAHAAsAAAAGAAAAAAAHAAwAAAAGAAEAAAAHAA0AAAAGAAIAAAAIAAsAAAAHAAAAAAAIAAwAAAAHAAEAAAAIAA0AAAAHAAIAAAAJAAsAAAAIAAAAAAAJAAwAAAAIAAEAAAAJAA0AAAAIAAIAAAAKAAsAAAAJAAAAAAAKAAwAAAAJAAEAAAAKAA0AAAAJAAIAAAAHAA4AAAAGAAAAAAAIAA4AAAAHAAAAAAAJAA4AAAAIAAAAAAAKAA4AAAAJAAAAAAALAP//AAAGAAAAAAALAAAAAAAGAAEAAAALAAEAAAAGAAIAAAAMAP//AAAHAAAAAAAMAAAAAAAHAAEAAAAMAAEAAAAHAAIAAAANAP//AAAIAAAAAAANAAAAAAAIAAEAAAANAAEAAAAIAAIAAAAOAP//AAAJAAAAAAAOAAAAAAAJAAEAAAAOAAEAAAAJAAIAAAALAAIAAAAGAAAAAAALAAMAAAAGAAEAAAALAAQAAAAGAAIAAAAMAAIAAAAHAAAAAAAMAAMAAAAHAAEAAAAMAAQAAAAHAAIAAAANAAIAAAAIAAAAAAANAAMAAAAIAAEAAAANAAQAAAAIAAIAAAAOAAIAAAAJAAAAAAAOAAMAAAAJAAEAAAAOAAQAAAAJAAIAAAALAAUAAAAGAAAAAAALAAYAAAAGAAEAAAALAAcAAAAGAAIAAAAMAAUAAAAHAAAAAAAMAAYAAAAHAAEAAAAMAAcAAAAHAAIAAAANAAUAAAAIAAAAAAANAAYAAAAIAAEAAAANAAcAAAAIAAIAAAAOAAUAAAAJAAAAAAAOAAYAAAAJAAEAAAAOAAcAAAAJAAIAAAALAAgAAAAGAAAAAAALAAkAAAAGAAEAAAALAAoAAAAGAAIAAAAMAAgAAAAHAAAAAAAMAAkAAAAHAAEAAAAMAAoAAAAHAAIAAAANAAgAAAAIAAAAAAANAAkAAAAIAAEAAAANAAoAAAAIAAIAAAAOAAgAAAAJAAAAAAAOAAkAAAAJAAEAAAAOAAoAAAAJAAIAAAALAAsAAAAGAAAAAAALAAwAAAAGAAEAAAALAA0AAAAGAAIAAAAMAAsAAAAHAAAAAAAMAAwAAAAHAAEAAAAMAA0AAAAHAAIAAAANAAsAAAAIAAAAAAANAAwAAAAIAAEAAAANAA0AAAAIAAIAAAAOAAsAAAAJAAAAAAAOAAwAAAAJAAEAAAAOAA0AAAAJAAIAAAALAA4AAAAGAAAAAAAMAA4AAAAHAAAAAAANAA4AAAAIAAAAAAAOAA4AAAAJAAAAAAAPAP//AAAGAAAAAAAPAAAAAAAGAAEAAAAPAAEAAAAGAAIAAAAQAP//AAAHAAAAAAAQAAAAAAAHAAEAAAAQAAEAAAAHAAIAAAARAP//AAAIAAAAAAARAAAAAAAIAAEAAAARAAEAAAAIAAIAAAASAP//AAAJAAAAAAASAAAAAAAJAAEAAAASAAEAAAAJAAIAAAAPAAIAAAAGAAAAAAAPAAMAAAAGAAEAAAAPAAQAAAAGAAIAAAAQAAIAAAAHAAAAAAAQAAMAAAAHAAEAAAAQAAQAAAAHAAIAAAARAAIAAAAIAAAAAAARAAMAAAAIAAEAAAARAAQAAAAIAAIAAAASAAIAAAAJAAAAAAASAAMAAAAJAAEAAAASAAQAAAAJAAIAAAAPAAUAAAAGAAAAAAAPAAYAAAAGAAEAAAAPAAcAAAAGAAIAAAAQAAUAAAAHAAAAAAAQAAYAAAAHAAEAAAAQAAcAAAAHAAIAAAARAAUAAAAIAAAAAAARAAYAAAAIAAEAAAARAAcAAAAIAAIAAAASAAUAAAAJAAAAAAASAAYAAAAJAAEAAAASAAcAAAAJAAIAAAAPAAgAAAAGAAAAAAAPAAkAAAAGAAEAAAAPAAoAAAAGAAIAAAAQAAgAAAAHAAAAAAAQAAkAAAAHAAEAAAAQAAoAAAAHAAIAAAARAAgAAAAIAAAAAAARAAkAAAAIAAEAAAARAAoAAAAIAAIAAAASAAgAAAAJAAAAAAASAAkAAAAJAAEAAAASAAoAAAAJAAIAAAAPAAsAAAAGAAAAAAAPAAwAAAAGAAEAAAAPAA0AAAAGAAIAAAAQAAsAAAAHAAAAAAAQAAwAAAAHAAEAAAAQAA0AAAAHAAIAAAARAAsAAAAIAAAAAAARAAwAAAAIAAEAAAARAA0AAAAIAAIAAAASAAsAAAAJAAAAAAASAAwAAAAJAAEAAAASAA0AAAAJAAIAAAAPAA4AAAAGAAAAAAAQAA4AAAAHAAAAAAARAA4AAAAIAAAAAAASAA4AAAAJAAAAAAATAP//AAAGAAAAAAATAAAAAAAGAAEAAAATAAEAAAAGAAIAAAAUAP//AAAHAAAAAAAUAAAAAAAHAAEAAAAUAAEAAAAHAAIAAAAVAP//AAAIAAAAAAAVAAAAAAAIAAEAAAAVAAEAAAAIAAIAAAAWAP//AAAJAAAAAAAWAAAAAAAJAAEAAAAWAAEAAAAJAAIAAAATAAIAAAAGAAAAAAATAAMAAAAGAAEAAAATAAQAAAAGAAIAAAAUAAIAAAAHAAAAAAAUAAMAAAAHAAEAAAAUAAQAAAAHAAIAAAAVAAIAAAAIAAAAAAAVAAMAAAAIAAEAAAAVAAQAAAAIAAIAAAAWAAIAAAAJAAAAAAAWAAMAAAAJAAEAAAAWAAQAAAAJAAIAAAATAAUAAAAGAAAAAAATAAYAAAAGAAEAAAATAAcAAAAGAAIAAAAUAAUAAAAHAAAAAAAUAAYAAAAHAAEAAAAUAAcAAAAHAAIAAAAVAAUAAAAIAAAAAAAVAAYAAAAIAAEAAAAVAAcAAAAIAAIAAAAWAAUAAAAJAAAAAAAWAAYAAAAJAAEAAAAWAAcAAAAJAAIAAAATAAgAAAAGAAAAAAATAAkAAAAGAAEAAAATAAoAAAAGAAIAAAAUAAgAAAAHAAAAAAAUAAkAAAAHAAEAAAAUAAoAAAAHAAIAAAAVAAgAAAAIAAAAAAAVAAkAAAAIAAEAAAAVAAoAAAAIAAIAAAAWAAgAAAAJAAAAAAAWAAkAAAAJAAEAAAAWAAoAAAAJAAIAAAATAAsAAAAGAAAAAAATAAwAAAAGAAEAAAATAA0AAAAGAAIAAAAUAAsAAAAHAAAAAAAUAAwAAAAHAAEAAAAUAA0AAAAHAAIAAAAVAAsAAAAIAAAAAAAVAAwAAAAIAAEAAAAVAA0AAAAIAAIAAAAWAAsAAAAJAAAAAAAWAAwAAAAJAAEAAAAWAA0AAAAJAAIAAAATAA4AAAAGAAAAAAAUAA4AAAAHAAAAAAAVAA4AAAAIAAAAAAAWAA4AAAAJAAAAAAAXAP//AAAGAAAAAAAXAAAAAAAGAAEAAAAXAAEAAAAGAAIAAAAYAP//AAAHAAAAAAAYAAAAAAAHAAEAAAAYAAEAAAAHAAIAAAAZAP//AAAIAAAAAAAZAAAAAAAIAAEAAAAZAAEAAAAIAAIAAAAaAP//AAAJAAAAAAAaAAAAAAAJAAEAAAAaAAEAAAAJAAIAAAAXAAIAAAAGAAAAAAAXAAMAAAAGAAEAAAAXAAQAAAAGAAIAAAAYAAIAAAAHAAAAAAAYAAMAAAAHAAEAAAAYAAQAAAAHAAIAAAAZAAIAAAAIAAAAAAAZAAMAAAAIAAEAAAAZAAQAAAAIAAIAAAAaAAIAAAAJAAAAAAAaAAMAAAAJAAEAAAAaAAQAAAAJAAIAAAAXAAUAAAAGAAAAAAAXAAYAAAAGAAEAAAAXAAcAAAAGAAIAAAAYAAUAAAAHAAAAAAAYAAYAAAAHAAEAAAAYAAcAAAAHAAIAAAAZAAUAAAAIAAAAAAAZAAYAAAAIAAEAAAAZAAcAAAAIAAIAAAAaAAUAAAAJAAAAAAAaAAYAAAAJAAEAAAAaAAcAAAAJAAIAAAAXAAgAAAAGAAAAAAAXAAkAAAAGAAEAAAAXAAoAAAAGAAIAAAAYAAgAAAAHAAAAAAAYAAkAAAAHAAEAAAAYAAoAAAAHAAIAAAAZAAgAAAAIAAAAAAAZAAkAAAAIAAEAAAAZAAoAAAAIAAIAAAAaAAgAAAAJAAAAAAAaAAkAAAAJAAEAAAAaAAoAAAAJAAIAAAAXAAsAAAAGAAAAAAAXAAwAAAAGAAEAAAAXAA0AAAAGAAIAAAAYAAsAAAAHAAAAAAAYAAwAAAAHAAEAAAAYAA0AAAAHAAIAAAAZAAsAAAAIAAAAAAAZAAwAAAAIAAEAAAAZAA0AAAAIAAIAAAAaAAsAAAAJAAAAAAAaAAwAAAAJAAEAAAAaAA0AAAAJAAIAAAAXAA4AAAAGAAAAAAAYAA4AAAAHAAAAAAAZAA4AAAAIAAAAAAAaAA4AAAAJAAAAAAA=")
 tile_set = SubResource("TileSet_w13tx")
 
@@ -346,9 +428,10 @@ layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -1.0
-offset_right = 376.0
-offset_bottom = 224.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 374.0
+offset_bottom = 221.0
 grow_horizontal = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
@@ -424,6 +507,54 @@ horizontal_alignment = 1
 uppercase = true
 script = ExtResource("8_sijl6")
 
+[node name="pauseMenu" type="PanelContainer" parent="Control"]
+visible = false
+z_index = 12
+layout_mode = 0
+offset_left = 45.0
+offset_top = 37.0
+offset_right = 351.0
+offset_bottom = 193.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7uuxj")
+script = ExtResource("18_jfktt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/pauseMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/pauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ce6pu")
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_u7aos")
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="Control/pauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_7pasw")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_1waaq")
+text = "RESUME"
+
+[node name="settings" type="Button" parent="Control/pauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_7pasw")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_huivu")
+text = "SETTINGS"
+
+[node name="quit" type="Button" parent="Control/pauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_7pasw")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_nacm2")
+text = "QUIT"
+
 [node name="enemy spawner" type="Node2D" parent="."]
 z_index = 3
 position = Vector2(0, -1)
@@ -445,5 +576,7 @@ scale = Vector2(1.04066, 1.04066)
 shape = SubResource("WorldBoundaryShape2D_uymr7")
 
 [connection signal="gui_input" from="Control/PanelContainer2/VBoxContainer/menuOption" to="Control/PanelContainer2" method="_on_menu_option_gui_input"]
+[connection signal="pressed" from="Control/pauseMenu/VBoxContainer/Resume" to="Control/pauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/pauseMenu/VBoxContainer/quit" to="Control/pauseMenu" method="_on_quit_pressed"]
 [connection signal="timeout" from="enemy spawner/Timer" to="enemy spawner" method="_on_timer_timeout"]
 [connection signal="area_entered" from="gameEnder/Area2D" to="gameEnder" method="_on_area_2d_area_entered"]

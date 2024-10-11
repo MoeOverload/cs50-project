@@ -28,8 +28,10 @@ func _physics_process(delta):
 	#player can shoot moving or stationary
 	while walking or not walking:
 		#handle shoot input
-		if Input.is_action_just_pressed("fire"):
-			$Sprite2D/AnimationPlayer.play("shoot")
+		if Input.is_action_pressed("fire"):
+			$Sprite2D/AnimationPlayer.play("aiming")
+		if Input.is_action_just_released("fire"):
+			$Sprite2D/AnimationPlayer.play("fire")
 			var new_arrow = arrow_tcsn.instantiate()
 			add_sibling(new_arrow)
 			new_arrow.position = self.position
