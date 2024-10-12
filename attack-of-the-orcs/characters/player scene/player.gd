@@ -1,6 +1,6 @@
 extends CharacterBody2D
-#move speed variable
-
+#arrow fire timer variables
+var can_fire = false
 #reference to the arrow scene
 @export var arrow_tcsn: PackedScene
 #rewfernce to the game scene
@@ -28,13 +28,14 @@ func _physics_process(delta):
 	#player can shoot moving or stationary
 	while walking or not walking:
 		#handle shoot input
-		if Input.is_action_pressed("fire"):
+		if can_fire == true && Input.is_action_pressed("fire"):
 			$Sprite2D/AnimationPlayer.play("aiming")
-		if Input.is_action_just_released("fire"):
+		if can_fire == true && Input.is_action_just_released("fire"):
 			$Sprite2D/AnimationPlayer.play("fire")
 			var new_arrow = arrow_tcsn.instantiate()
 			add_sibling(new_arrow)
 			new_arrow.position = self.position
+			can_fire = false
 		
 		break
 	
@@ -50,3 +51,6 @@ func _on_area_2d_body_entered(body:Node2D):
 		$Sprite2D/AnimationPlayer.play("death")
 		self.queue_free()
 		Globalscript.is_game_over = true
+
+func _on_timer_timeout():
+	can_fire = true 

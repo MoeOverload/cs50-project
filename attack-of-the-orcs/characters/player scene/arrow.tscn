@@ -10,7 +10,6 @@ height = 17.9971
 [node name="arrow" type="Area2D" groups=["arrow"]]
 z_index = 4
 script = ExtResource("1_egs84")
-speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)

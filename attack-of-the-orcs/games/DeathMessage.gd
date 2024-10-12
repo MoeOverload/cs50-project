@@ -23,4 +23,3 @@ func _process(_delta):
 			Globalscript.is_game_over = false
 			self.visible = false
 			
-

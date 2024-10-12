@@ -4,7 +4,7 @@ extends Area2D
 
 
 #arrow move speed
-@export var speed: float = 600
+var speed: float = 300
 
 func _process(delta):
 	#moving  the arrow

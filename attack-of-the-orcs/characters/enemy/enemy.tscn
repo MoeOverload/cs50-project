@@ -148,8 +148,14 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kaqoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pyvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh2su")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 8.0
 }, {
@@ -191,8 +197,10 @@ script = ExtResource("1_fkf48")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g6bsx")
-animation = &"attack"
+animation = &"hurt"
 autoplay = "walk"
+frame = 5
+frame_progress = 1.0
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
