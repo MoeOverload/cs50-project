@@ -1,10 +1,12 @@
-[gd_scene load_steps=30 format=3 uid="uid://cdg8ns4kfulqu"]
+[gd_scene load_steps=31 format=3 uid="uid://cdg8ns4kfulqu"]
 
 [ext_resource type="Script" path="res://characters/enemy/enemy.gd" id="1_fkf48"]
 [ext_resource type="Texture2D" uid="uid://colsq5wqi20q1" path="res://Assets/TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc with shadows/Orc-Attack02.png" id="1_wg6xv"]
 [ext_resource type="Texture2D" uid="uid://b0oi3rkk2j087" path="res://Assets/TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc with shadows/Orc-Death.png" id="2_xfa4d"]
 [ext_resource type="Texture2D" uid="uid://bdeolyi875ulq" path="res://Assets/TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc with shadows/Orc-Hurt.png" id="3_04h0i"]
 [ext_resource type="Texture2D" uid="uid://bbvsc861ym3pk" path="res://Assets/TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc with shadows/Orc-Walk.png" id="4_4er3y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktmba"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6vw5j"]
 atlas = ExtResource("1_wg6xv")
@@ -131,10 +133,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vl0ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl0ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl0ls")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 8.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -189,21 +197,33 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ktmba"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_5nr7e"]
+radius = 4.0
 
-[node name="enemy" type="Area2D" groups=["enemy"]]
-z_index = 5
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+z_index = 6
 script = ExtResource("1_fkf48")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+shape = SubResource("CircleShape2D_ktmba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g6bsx")
-animation = &"hurt"
+animation = &"death"
 autoplay = "walk"
-frame = 5
-frame_progress = 1.0
+frame = 2
+frame_progress = 0.575058
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ktmba")
+[node name="knockback_timer" type="Timer" parent="."]
+one_shot = true
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="detectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_5nr7e")
+
+[connection signal="timeout" from="knockback_timer" to="." method="_on_knockback_timer_timeout"]
+[connection signal="area_entered" from="detectionArea" to="." method="_on_detection_area_area_entered"]

@@ -353,7 +353,7 @@ corner_radius_bottom_left = 10
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uymr7"]
 distance = 16.3196
 
-[node name="game 1" type="Node2D"]
+[node name="game 1" type="Node2D" groups=["Player", "barrierDetect"]]
 script = ExtResource("1_5wiol")
 
 [node name="barriers" type="Node" parent="."]
