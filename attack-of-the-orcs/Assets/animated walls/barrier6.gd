@@ -27,10 +27,11 @@ func _physics_process(delta):
 
 		
 
-func _on_enemy_detection_area_entered(area:Area2D):
-	if area.is_in_group("enemy"):
-		enemy = area
+func _on_enemy_detection_body_entered(body:Node2D):
+	
+	if body.is_in_group("enemy"):
+		enemy = body
 		is_attacking = true
 	else:
-		enemy = null 
+		enemy = null
 		is_attacking = false

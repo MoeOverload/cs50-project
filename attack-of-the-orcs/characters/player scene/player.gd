@@ -43,14 +43,6 @@ func _physics_process(delta):
 	velocity = velocity.normalized() * Globalscript.move_speed * delta
 	move_and_slide()
 
-func _on_area_2d_body_entered(body:Node2D):
-	if body.is_in_group("enemy"):
-		$Sprite2D/AnimationPlayer.play("hurt")
-
-		
-		$Sprite2D/AnimationPlayer.play("death")
-		self.queue_free()
-		Globalscript.is_game_over = true
 
 func _on_timer_timeout():
 	can_fire = true 

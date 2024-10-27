@@ -20,9 +20,13 @@ Globalscript="*res://globalscript.gd"
 
 [display]
 
-window/size/viewport_width=375
-window/size/viewport_height=225
+window/size/viewport_width=800
+window/size/viewport_height=600
 window/stretch/mode="viewport"
+
+[global_group]
+
+boosts=""
 
 [input]
 

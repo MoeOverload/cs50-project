@@ -19,12 +19,11 @@ func _process(_delta):
 
 func round_reset():
 	Globalscript.kill_store += Globalscript.kill_counter
-	Globalscript.round_enemy_cap += 10
-	Globalscript.enemy_health +=10
-	Globalscript.enemy_speed += 10 
+	Globalscript.round_enemy_cap += 5
+	Globalscript.enemy_health += 5
+	Globalscript.enemy_speed += 1 
 	Globalscript.barrier_health += 10
 	Globalscript.rounds_counter += 1
 	Globalscript.current_enemy_number = 0
 	Globalscript.kill_counter = 0
-
 

@@ -115,14 +115,17 @@ color = Color(0.209082, 0.00488653, 0.202792, 1)
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -177.5
-offset_top = 17.0
-offset_right = 174.5
-offset_bottom = 65.0
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -24.0
+offset_right = 176.0
+offset_bottom = 24.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o65ol")
 
 [node name="Label" type="Label" parent="PanelContainer2"]
@@ -134,25 +137,28 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_left = 98.0
-offset_top = 89.0
-offset_right = 290.0
-offset_bottom = 209.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = 53.0
+offset_right = 98.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mabn7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer3"]
 layout_mode = 2
-offset_left = 138.0
-offset_top = 97.0
-offset_right = 250.0
-offset_bottom = 201.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 2
 alignment = 1
 
-[node name="play" type="Button" parent="VBoxContainer"]
+[node name="play" type="Button" parent="PanelContainer3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
@@ -161,7 +167,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_2gddr")
 text = "PLAY"
 
-[node name="settings" type="Button" parent="VBoxContainer"]
+[node name="settings" type="Button" parent="PanelContainer3/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
@@ -169,7 +175,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_p5q0v")
 text = "SETTINGS"
 
-[node name="credits" type="Button" parent="VBoxContainer"]
+[node name="credits" type="Button" parent="PanelContainer3/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
@@ -177,7 +183,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_np436")
 text = "CREDITS"
 
-[node name="quit" type="Button" parent="VBoxContainer"]
+[node name="quit" type="Button" parent="PanelContainer3/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
@@ -185,6 +191,6 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_ds2ta")
 text = "QUIT"
 
-[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer3/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PanelContainer3/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PanelContainer3/VBoxContainer/quit" to="." method="_on_quit_pressed"]

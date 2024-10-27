@@ -24,7 +24,7 @@ func spawn_enemy():
 	#find height of viewport
 	
 	#spawn at random points in set viewport params
-	var rand_y = randf_range(15, 205)
+	var rand_y = randf_range(17.5, 200)
 
 	new_enemy.position.y = rand_y
 	new_enemy.position.x= 400

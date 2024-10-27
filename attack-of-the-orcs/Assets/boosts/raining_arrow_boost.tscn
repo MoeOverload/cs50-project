@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://drolr3fttpvbv"]
+
+[ext_resource type="Texture2D" uid="uid://ct5mnb7bxi5k" path="res://Assets/boosts/rainingarrow_boost.png" id="1_flap5"]
+[ext_resource type="Script" path="res://Assets/boosts/raining_arrow_boost.gd" id="1_xeqvr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tn0uf"]
+
+[node name="raining arrow boost" type="Area2D" groups=["boosts"]]
+script = ExtResource("1_xeqvr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.855556, 0.855556)
+texture = ExtResource("1_flap5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tn0uf")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwq5cxyytaciy"]
+
+[ext_resource type="Texture2D" uid="uid://cf1dq73sc8mtb" path="res://Assets/boosts/rapidfire_boost.png" id="1_f0ooy"]
+[ext_resource type="Script" path="res://Assets/boosts/rapid_fire_boost.gd" id="1_uqvua"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtkbr"]
+radius = 8.0
+
+[node name="rapid_fire_boost" type="Area2D" groups=["boosts"]]
+script = ExtResource("1_uqvua")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.855556, 0.855556)
+texture = ExtResource("1_f0ooy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mtkbr")

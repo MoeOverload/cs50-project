@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://uhl4ekoe0lba"]
+
+[ext_resource type="Script" path="res://Assets/boosts/barrier_health_boost.gd" id="1_5oafa"]
+[ext_resource type="Texture2D" uid="uid://cqhpv5d63pawm" path="res://Assets/boosts/barrierhealth_boost.png" id="1_y8f37"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pjlhp"]
+radius = 8.0
+
+[node name="barrierHealthBoost" type="Area2D" groups=["boosts"]]
+script = ExtResource("1_5oafa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.791667, 0.791667)
+texture = ExtResource("1_y8f37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pjlhp")
