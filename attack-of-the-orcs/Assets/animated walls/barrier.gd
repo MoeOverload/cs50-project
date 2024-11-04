@@ -15,7 +15,10 @@ func _physics_process(delta):
 	if time_to_damage >= damage_time:
 		health = health - 5
 		time_to_damage = 0.0
-	
+	#handle health boost
+	if Globalscript.health_boosted == true:
+		health += Globalscript.boost_health
+	Globalscript.health_boosted = false
 	#handle animations based on health
 	if health > 50:
 		$AnimatedSprite2D.play("fullHealth")
@@ -25,7 +28,8 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("halfHealth")
 		self.queue_free()
 
-		
+
+
 func _on_enemy_detection_body_entered(body:Node2D):
 	
 	if body.is_in_group("enemy"):

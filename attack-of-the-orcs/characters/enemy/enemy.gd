@@ -135,7 +135,7 @@ func spawn_barrier_health_boost():
 	new_barrier_health_boost.position = self.position
 
 func spawn_boosts():
-	var spawn_number = randi_range(1,20)
+	var spawn_number = 20#randi_range(1,20)
 	var speed_boost_number = 5
 	var rapid_fire_number = 10
 	var raining_arrows_number = 15

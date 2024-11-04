@@ -15,7 +15,10 @@ func _physics_process(delta):
 	if time_to_damage >= damage_time:
 		health = health - 5
 		time_to_damage = 0.0
-	
+		#handle health boost
+	if Globalscript.health_boosted == true:
+		health += 50
+		Globalscript.health_boosted = false
 	#handle animations based on health
 	if health > 50:
 		$AnimatedSprite2D.play("fullHealth")

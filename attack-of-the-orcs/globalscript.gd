@@ -20,5 +20,7 @@ var most_kills = 0
 
 #barrier varaibles
 var barrier_health = 100
+var health_boosted = false
+var boost_health = 50
 #player variables
 var move_speed = 800

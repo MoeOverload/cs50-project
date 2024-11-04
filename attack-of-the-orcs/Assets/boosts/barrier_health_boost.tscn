@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_pjlhp"]
 radius = 8.0
 
-[node name="barrierHealthBoost" type="Area2D" groups=["boosts"]]
+[node name="barrierHealthBoost" type="Area2D" groups=["barrier_health_boost"]]
 script = ExtResource("1_5oafa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
