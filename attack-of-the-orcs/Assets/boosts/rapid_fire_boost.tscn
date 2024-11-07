@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Assets/boosts/rapid_fire_boost.gd" id="1_uqvua"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtkbr"]
-radius = 8.0
+radius = 16.0
 
 [node name="rapid_fire_boost" type="Area2D" groups=["boosts"]]
 script = ExtResource("1_uqvua")
@@ -15,3 +15,5 @@ texture = ExtResource("1_f0ooy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mtkbr")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -7,7 +7,6 @@ var damage = Globalscript.arrow_damage
 
 #speed of enemies
 var speed = Globalscript.enemy_speed
-var stop_speed = 0
 
 #refernce to the game scene
 @onready var gameOne = $"."
@@ -17,8 +16,8 @@ var stop_speed = 0
 @export var barrier_health_boost_tscn : PackedScene
 #ref the barriers/arrows
 var barrier = null
-var arrow = null
-
+var normal_arrow = null
+var raining_arrow = null
 #knockback variables
 var is_hurt = false
 var knock_back_time = 0.0
@@ -28,20 +27,21 @@ var time_to_finsished = 1.0
 var death_time = 0.0
 var time_to_queuefree = 1.0
 var is_death = false
+#attack variables
+var attack_time = 2.0
+var time_to_attack = 0.0
+var can_attack = false
 
-
-
+####TODO####
+#fix the logic behind attacking and walk9ng
 func _process(delta):
-	if stop_walk == true:
+	if can_attack == true:
 		attack(delta)
-	
 	elif is_hurt == true:
 		knockback(delta)
-	
 	elif is_death == true:
 		death(delta)
-	
-	elif is_death == false and is_hurt == false and stop_walk == false:
+	else:
 		walk(delta)
 	
 	
@@ -49,54 +49,72 @@ func _process(delta):
 
 
 func _on_detection_area_area_entered(area:Area2D):
-	#if reaches the barrier
 	
 	#if enemy is shot handle death and hurt
 	if area.is_in_group("arrow"):
-		arrow = area	
+		normal_arrow = area	
+		can_attack = false
+		is_hurt = true
 		health -= damage
 		
-		#define hurt
-		if health > 0 :
-			is_hurt = true
-			
 		#define death
-		elif health <= 0:
+		if health <= 0:
 			is_death = true 
-			Globalscript.kill_counter += 1
-			Globalscript.score += 10 	
 	else:
-		arrow = null
-		is_hurt = false
-			
+		normal_arrow = null
+		
+		
+
+	if area.is_in_group("rainingarrow"):
+		raining_arrow = area
+		can_attack = false
+		is_hurt = true
+		health -= 40	
+		if health <= 0:
+			is_death = true 
+	else:	
+		raining_arrow = null
+		
+		
+	
+		
 func _on_detection_area_body_entered(body:Node2D):
-	if body.is_in_group("barrierDetect"):
+	if body.is_in_group("barrier"):
 		barrier = body
-		stop_walk = true
+		can_attack = true
 	else:
 		barrier = null
-		stop_walk = false
 		
+
+
+
+
+
 func knockback(delta):
+	
 	knock_back_time += delta
-	var friction = float(1.0)
+	var friction = float(1.5)
 	var knockback_speed = 50 
 	$AnimatedSprite2D.play("hurt")
 	position.x += knockback_speed * delta / friction
 	if knock_back_time >= time_to_finsished:
-		is_hurt = false
 		knock_back_time = 0.0
+		is_hurt = false
 
 
 
 func death(delta):
 	death_time += delta
 	$AnimatedSprite2D.play("death")
-	position.x = position.x 
+	position = position
+	
 	if death_time >= time_to_queuefree:
 		spawn_boosts()
-		self.queue_free()
+		
+		Globalscript.score += 10
+		Globalscript.kill_counter += 1
 		death_time = 0.0
+		self.queue_free()
 
 
 func walk(delta):
@@ -108,8 +126,17 @@ func walk(delta):
 
 
 func attack(delta):
-	$AnimatedSprite2D.play("attack")
-	position.x += stop_speed * delta
+	Globalscript.is_attacking = false
+	time_to_attack += delta	
+	position = position
+	if time_to_attack >= attack_time:
+		Globalscript.is_attacking = true  
+		$AnimatedSprite2D.play("attack")
+		time_to_attack = 0.0
+		
+		
+		
+
 
 
 ###SPAWN FUNCTIONS####
@@ -134,14 +161,21 @@ func spawn_barrier_health_boost():
 	add_sibling(new_barrier_health_boost)
 	new_barrier_health_boost.position = self.position
 
-func spawn_boosts():
-	var spawn_number = 20#randi_range(1,20)
-	var speed_boost_number = 5
-	var rapid_fire_number = 10
-	var raining_arrows_number = 15
-	var health_boost_number = 20
+####TODO###
+#set each boost spawn number as an array 
+# spawn number is a random number between 2 ints
+#if the spawn number belongs to an array of a boost then spawn 
 
-	if spawn_number == speed_boost_number:
+
+func spawn_boosts():
+	var spawn_number = randi_range(0,50)
+	#randi_range(0,20)
+	var speed_boost_number = [4,20,32,45,15,30,49,25,5,7]
+	var rapid_fire_number =  [8,12,33,42,22,35,28,24,29,11]
+	var raining_arrows_number = [9,50,45]
+	var health_boost_number = [21,36,47,2,10,13,16]
+
+	if spawn_number is in speed_boost_number:
 		spawn_speed_boost()
 	elif spawn_number == rapid_fire_number:
 		spawn_rapid_fire_boost()
@@ -149,5 +183,3 @@ func spawn_boosts():
 		spawn_raining_arrows()
 	elif spawn_number == health_boost_number:
 		spawn_barrier_health_boost()
-
-

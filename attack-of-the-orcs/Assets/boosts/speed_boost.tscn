@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Assets/boosts/speed_boost.gd" id="1_ccgp0"]
 [ext_resource type="Texture2D" uid="uid://ccb76xoq1mu86" path="res://Assets/boosts/speedboost.png" id="1_kk6fu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lsue8"]
-radius = 8.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ehhs"]
+radius = 16.0
 
 [node name="speed_boost" type="Area2D" groups=["speed_boost"]]
 z_index = 4
@@ -15,7 +15,8 @@ script = ExtResource("1_ccgp0")
 scale = Vector2(0.855556, 0.855556)
 texture = ExtResource("1_kk6fu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_lsue8")
+[node name="playerdetection" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1ehhs")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

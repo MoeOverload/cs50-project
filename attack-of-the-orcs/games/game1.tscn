@@ -1,26 +1,30 @@
-[gd_scene load_steps=38 format=4 uid="uid://bjkvfxk306qn8"]
+[gd_scene load_steps=44 format=4 uid="uid://bjkvfxk306qn8"]
 
 [ext_resource type="Script" path="res://games/Scripts/game_1.gd" id="1_5wiol"]
 [ext_resource type="Texture2D" uid="uid://b1gc8aolmmaif" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_2x1s8"]
 [ext_resource type="PackedScene" uid="uid://cex4hloftd0o0" path="res://Assets/animated walls/barrier.tscn" id="2_vl5yg"]
+[ext_resource type="PackedScene" uid="uid://cv0tcx621yex8" path="res://Assets/animated walls/barrier_2.tscn" id="3_ecsqm"]
 [ext_resource type="PackedScene" uid="uid://hm4cs4xqhyko" path="res://characters/player scene/character_body_2d.tscn" id="3_m1dq5"]
-[ext_resource type="Script" path="res://Assets/animated walls/barrier10.gd" id="3_t65cc"]
 [ext_resource type="PackedScene" uid="uid://cdg8ns4kfulqu" path="res://characters/enemy/enemy.tscn" id="4_5plsm"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="4_7pasw"]
-[ext_resource type="Script" path="res://Assets/animated walls/barrier2.gd" id="4_aps68"]
-[ext_resource type="Script" path="res://Assets/animated walls/barrier3.gd" id="5_k3p62"]
+[ext_resource type="PackedScene" uid="uid://brh583jhcdfps" path="res://Assets/animated walls/barrier_3.tscn" id="4_keh8d"]
+[ext_resource type="PackedScene" uid="uid://htmjy716nj17" path="res://Assets/animated walls/barrier_4.tscn" id="5_hs2px"]
 [ext_resource type="Script" path="res://games/scorelabel.gd" id="6_5lbu4"]
-[ext_resource type="Script" path="res://Assets/animated walls/barrier4.gd" id="6_6dqu3"]
 [ext_resource type="Script" path="res://games/enemy_spawner.gd" id="6_n0tkm"]
+[ext_resource type="PackedScene" uid="uid://dqqyvbjmxt72v" path="res://Assets/animated walls/barrier_5.tscn" id="6_nrkiw"]
 [ext_resource type="Script" path="res://games/DeathMessage.gd" id="7_3tlaw"]
-[ext_resource type="Script" path="res://Assets/animated walls/barrier5.gd" id="7_ne61b"]
-[ext_resource type="Script" path="res://Assets/animated walls/barrier6.gd" id="8_i2o7w"]
+[ext_resource type="PackedScene" uid="uid://b6errx5m648cc" path="res://Assets/animated walls/barrier_6.tscn" id="7_q65ve"]
+[ext_resource type="PackedScene" uid="uid://cxqfty8h4080i" path="res://Assets/animated walls/barrier_7.tscn" id="8_2qha8"]
 [ext_resource type="Script" path="res://games/round_counter.gd" id="8_sijl6"]
-[ext_resource type="Script" path="res://Assets/animated walls/barrier7.gd" id="9_kwvua"]
 [ext_resource type="Script" path="res://games/game_ender.gd" id="9_nxyk7"]
-[ext_resource type="Script" path="res://Assets/animated walls/barrier8.gd" id="10_cknv5"]
-[ext_resource type="Script" path="res://Assets/animated walls/barrier9.gd" id="11_wngb4"]
+[ext_resource type="PackedScene" uid="uid://bu01kscbhj723" path="res://Assets/animated walls/barrier_8.tscn" id="9_we8pw"]
+[ext_resource type="PackedScene" uid="uid://bghd1aqwmrkhh" path="res://Assets/animated walls/barrier_9.tscn" id="10_hecti"]
+[ext_resource type="PackedScene" uid="uid://dh63v0q2hlwar" path="res://Assets/animated walls/barrier_10.tscn" id="11_ttaqb"]
 [ext_resource type="Script" path="res://games/pause_menu.gd" id="18_jfktt"]
+[ext_resource type="Script" path="res://Assets/boosts/rainingarrow/rain_arrow_collision.gd" id="22_ivhlc"]
+[ext_resource type="Script" path="res://games/arrow_collision.gd" id="22_w1636"]
+[ext_resource type="Script" path="res://games/raining_arrow_spawner.gd" id="23_hhng7"]
+[ext_resource type="PackedScene" uid="uid://be0iym4a7nxq0" path="res://Assets/boosts/rainingarrow/rainingArrow.tscn" id="24_ohtup"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4w2w"]
 texture = ExtResource("2_2x1s8")
@@ -354,6 +358,11 @@ corner_radius_bottom_left = 10
 a = Vector2(0.96093, 0)
 b = Vector2(205.639, 1.92185)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4cbj1"]
+distance = -32.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i2qgh"]
+
 [node name="game 1" type="Node2D" groups=["Player", "barrierDetect"]]
 script = ExtResource("1_5wiol")
 
@@ -361,52 +370,36 @@ script = ExtResource("1_5wiol")
 
 [node name="barrier" parent="barriers" instance=ExtResource("2_vl5yg")]
 z_index = 1
-position = Vector2(103, 200)
+position = Vector2(121, 204)
 
-[node name="barrier10" parent="barriers" instance=ExtResource("2_vl5yg")]
+[node name="barrier2" parent="barriers" groups=["barrier"] instance=ExtResource("3_ecsqm")]
 z_index = 1
-position = Vector2(103, 20)
-script = ExtResource("3_t65cc")
+position = Vector2(121, 184)
 
-[node name="barrier2" parent="barriers" instance=ExtResource("2_vl5yg")]
-z_index = 1
-position = Vector2(103, 40)
-script = ExtResource("4_aps68")
+[node name="barrier3" parent="barriers" groups=["barrier"] instance=ExtResource("4_keh8d")]
+position = Vector2(121, 164)
 
-[node name="barrier3" parent="barriers" instance=ExtResource("2_vl5yg")]
-z_index = 1
-position = Vector2(103, 60)
-script = ExtResource("5_k3p62")
+[node name="barrier4" parent="barriers" groups=["barrier"] instance=ExtResource("5_hs2px")]
+position = Vector2(121, 144)
 
-[node name="barrier4" parent="barriers" instance=ExtResource("2_vl5yg")]
-z_index = 1
-position = Vector2(103, 80)
-script = ExtResource("6_6dqu3")
+[node name="barrier5" parent="barriers" groups=["barrier"] instance=ExtResource("6_nrkiw")]
+position = Vector2(121, 124)
 
-[node name="barrier5" parent="barriers" instance=ExtResource("2_vl5yg")]
-z_index = 1
-position = Vector2(103, 100)
-script = ExtResource("7_ne61b")
+[node name="barrier6" parent="barriers" groups=["barrier"] instance=ExtResource("7_q65ve")]
+position = Vector2(121, 104)
 
-[node name="barrier6" parent="barriers" instance=ExtResource("2_vl5yg")]
-z_index = 1
-position = Vector2(103, 120)
-script = ExtResource("8_i2o7w")
+[node name="barrier7" parent="barriers" groups=["barrier"] instance=ExtResource("8_2qha8")]
+position = Vector2(121, 84)
 
-[node name="barrier7" parent="barriers" instance=ExtResource("2_vl5yg")]
-z_index = 1
-position = Vector2(103, 140)
-script = ExtResource("9_kwvua")
+[node name="barrier8" parent="barriers" groups=["barrier"] instance=ExtResource("9_we8pw")]
+position = Vector2(121, 64)
 
-[node name="barrier8" parent="barriers" instance=ExtResource("2_vl5yg")]
-z_index = 1
-position = Vector2(103, 160)
-script = ExtResource("10_cknv5")
+[node name="barrier9" parent="barriers" groups=["barrier"] instance=ExtResource("10_hecti")]
+position = Vector2(121, 44)
 
-[node name="barrier9" parent="barriers" instance=ExtResource("2_vl5yg")]
-z_index = 1
-position = Vector2(103, 180)
-script = ExtResource("11_wngb4")
+[node name="barrier10" parent="barriers" groups=["barrier"] instance=ExtResource("11_ttaqb")]
+z_index = 2
+position = Vector2(121, 24)
 
 [node name="mapLayers" type="Node" parent="."]
 
@@ -416,7 +409,7 @@ tile_map_data = PackedByteArray("AAD/////AAAGAAAAAAD//wAAAAAGAAEAAAD//wEAAAAGAAI
 tile_set = SubResource("TileSet_w13tx")
 
 [node name="walls" type="TileMapLayer" parent="mapLayers"]
-z_index = 2
+z_index = 1
 tile_map_data = PackedByteArray("AAAAAA0AAAAAAAQAAAABAA0AAAACAAQAAAACAA0AAAACAAQAAAADAA0AAAACAAQAAAAEAA0AAAACAAQAAAAFAA0AAAACAAQAAAAGAA0AAAACAAQAAAAHAA0AAAACAAQAAAAIAA0AAAACAAQAAAAJAA0AAAACAAQAAAAKAA0AAAACAAQAAAALAA0AAAACAAQAAAAMAA0AAAACAAQAAAANAA0AAAACAAQAAAAOAA0AAAACAAQAAAAPAA0AAAACAAQAAAAQAA0AAAACAAQAAAARAA0AAAACAAQAAAASAA0AAAACAAQAAAATAA0AAAACAAQAAAAUAA0AAAACAAQAAAAVAA0AAAACAAQAAAAWAA0AAAACAAQAAAAXAA0AAAACAAQAAAAYAA0AAAACAAQAAAAZAA0AAAACAAQAAAAaAA0AAAACAAQAAAAAAAAAAAAAAAMAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAKAAAAAAACAAAAAAALAAAAAAACAAAAAAAMAAAAAAACAAAAAAANAAAAAAACAAAAAAAOAAAAAAACAAAAAAAPAAAAAAACAAAAAAAQAAAAAAACAAAAAAARAAAAAAACAAAAAAASAAAAAAACAAAAAAATAAAAAAACAAAAAAAUAAAAAAACAAAAAAAVAAAAAAACAAAAAAAWAAAAAAACAAAAAAAXAAAAAAACAAAAAAAYAAAAAAACAAAAAAAZAAAAAAACAAAAAAAaAAAAAAACAAAAAAAAAAwAAAAAAAMAAAAAAAsAAAAAAAMAAAAAAAoAAAAAAAMAAAAAAAkAAAAAAAMAAAAAAAgAAAAAAAMAAAAAAAcAAAAAAAMAAAAAAAYAAAAAAAMAAAAAAAUAAAAAAAMAAAAAAAQAAAAAAAMAAAAAAAMAAAAAAAMAAAAAAAIAAAAAAAMAAAAAAAEAAAAAAAMAAAA=")
 tile_set = SubResource("TileSet_414j7")
 
@@ -430,8 +423,8 @@ layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 7.0
-offset_right = 380.0
+offset_left = 1.0
+offset_right = 374.0
 offset_bottom = 220.0
 grow_horizontal = 2
 
@@ -596,6 +589,7 @@ script = ExtResource("6_n0tkm")
 enemy_tscn = ExtResource("4_5plsm")
 
 [node name="Timer" type="Timer" parent="enemy spawner"]
+wait_time = 1.2
 autostart = true
 
 [node name="gameEnder" type="Node" parent="."]
@@ -611,9 +605,42 @@ rotation = 1.5708
 scale = Vector2(1.04066, 1.04066)
 shape = SubResource("SegmentShape2D_4qo2x")
 
+[node name="rainArrowCollision" type="Node" parent="."]
+script = ExtResource("22_ivhlc")
+
+[node name="Area2D" type="Area2D" parent="rainArrowCollision"]
+position = Vector2(176, 177)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rainArrowCollision/Area2D"]
+position = Vector2(-1, -1)
+scale = Vector2(3.4, 1)
+shape = SubResource("WorldBoundaryShape2D_4cbj1")
+
+[node name="arrowCollision" type="Node" parent="."]
+script = ExtResource("22_w1636")
+
+[node name="Area2D" type="Area2D" parent="arrowCollision"]
+position = Vector2(439, 109)
+rotation = -1.56554
+scale = Vector2(1.59873, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowCollision/Area2D"]
+shape = SubResource("WorldBoundaryShape2D_i2qgh")
+
+[node name="rainingArrowSpawner" type="Node2D" parent="."]
+script = ExtResource("23_hhng7")
+rainingArrow_tscn = ExtResource("24_ohtup")
+
+[node name="arrowTimer" type="Timer" parent="rainingArrowSpawner"]
+wait_time = 0.5
+autostart = true
+
 [connection signal="gui_input" from="Control/PanelContainer2/VBoxContainer/menuOption" to="Control/PanelContainer2" method="_on_menu_option_gui_input"]
 [connection signal="pressed" from="Control/pauseMenu/VBoxContainer/Resume" to="Control/pauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="Control/pauseMenu/VBoxContainer/quit" to="Control/pauseMenu" method="_on_quit_pressed"]
 [connection signal="timeout" from="enemy spawner/Timer" to="enemy spawner" method="_on_timer_timeout"]
 [connection signal="area_entered" from="gameEnder/Area2D" to="gameEnder" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="gameEnder/Area2D" to="gameEnder" method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="rainArrowCollision/Area2D" to="rainArrowCollision" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="arrowCollision/Area2D" to="arrowCollision" method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="rainingArrowSpawner/arrowTimer" to="rainingArrowSpawner" method="_on_timer_timeout"]

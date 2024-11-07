@@ -1,20 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://cex4hloftd0o0"]
+[gd_scene load_steps=8 format=3 uid="uid://cxqfty8h4080i"]
 
-[ext_resource type="Script" path="res://Assets/animated walls/barrier.gd" id="1_qlq7h"]
-[ext_resource type="Texture2D" uid="uid://rlkdwpj2o7f1" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_1.png" id="1_wo4kh"]
-[ext_resource type="Texture2D" uid="uid://4aoh5yqssevj" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_4.png" id="3_kx2lq"]
+[ext_resource type="Script" path="res://Assets/animated walls/barrier_7.gd" id="1_72hcq"]
+[ext_resource type="Texture2D" uid="uid://rlkdwpj2o7f1" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_1.png" id="1_vf3cl"]
+[ext_resource type="Texture2D" uid="uid://4aoh5yqssevj" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_4.png" id="2_jqmlg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i60xx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcmo3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_632wd"]
-atlas = ExtResource("1_wo4kh")
+atlas = ExtResource("1_vf3cl")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igniw"]
-atlas = ExtResource("3_kx2lq")
+atlas = ExtResource("2_jqmlg")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yd68c"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_smfcd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -57,14 +57,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="barrier" type="StaticBody2D" groups=["barrier"]]
-z_index = 3
-script = ExtResource("1_qlq7h")
+[node name="barrier7" type="StaticBody2D"]
+z_index = 1
+script = ExtResource("1_72hcq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_i60xx")
+shape = SubResource("RectangleShape2D_bcmo3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_yd68c")
+sprite_frames = SubResource("SpriteFrames_smfcd")
 animation = &"fullHealth"
-autoplay = "fullHealth"
