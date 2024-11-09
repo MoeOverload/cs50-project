@@ -4,6 +4,8 @@ var can_fire = false
 var can_rapid_fire = false
 #reference to the arrow scene
 @export var arrow_tcsn: PackedScene
+#refernce to flamethrower
+@export var flame_thrower_tcsn: PackedScene
 #rewfernce to the game scene
 @onready var gameOne = $"."
 #reference to the speed_boost
@@ -26,9 +28,13 @@ func _process(delta):
 		rapid_fire(delta)
 	else:
 		single_shot()
+	if Globalscript.war_crimed == true:
+		war_crime()
+	else:
+		single_shot()
 
 	move_and_slide()
-	            
+				
 
  
 
@@ -57,6 +63,16 @@ func rapid_fire(delta):
 			break
 
 
+func war_crime():
+	while Input.is_action_pressed("fire"):
+		Globalscript.is_criming = true
+		$Sprite2D/AnimationPlayer.play("war_crime")
+		var new_flamethrower = flame_thrower_tcsn.instantiate()
+		add_sibling(new_flamethrower)
+		new_flamethrower.position = self.position
+		if Input.is_action_just_released("fire"):
+			Globalscript.is_criming = false
+		break
 
 
 func normal_move(delta):
@@ -81,10 +97,3 @@ func boost_move(delta):
 		$Sprite2D/AnimationPlayer.play("walk")
 	else:
 		$Sprite2D/AnimationPlayer.play("idle")
-
-
-
-
-
-
-

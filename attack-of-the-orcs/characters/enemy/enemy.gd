@@ -14,6 +14,7 @@ var speed = Globalscript.enemy_speed
 @export var rapid_fire_boost_tscn : PackedScene
 @export var raining_arrow_boost_tscn : PackedScene
 @export var barrier_health_boost_tscn : PackedScene
+@export var flamerthrower_boost_tscn : PackedScene
 #ref the barriers/arrows
 var barrier = null
 var normal_arrow = null
@@ -31,9 +32,9 @@ var is_death = false
 var attack_time = 2.0
 var time_to_attack = 0.0
 var can_attack = false
-
-####TODO####
-#fix the logic behind attacking and walk9ng
+var spawn_number = randi_range(0,50)
+func _ready():
+	print(spawn_number)
 func _process(delta):
 	if can_attack == true:
 		attack(delta)
@@ -108,13 +109,15 @@ func death(delta):
 	$AnimatedSprite2D.play("death")
 	position = position
 	
+	
 	if death_time >= time_to_queuefree:
-		spawn_boosts()
+		
 		
 		Globalscript.score += 10
 		Globalscript.kill_counter += 1
 		death_time = 0.0
 		self.queue_free()
+		spawn_boosts()
 
 
 func walk(delta):
@@ -161,25 +164,34 @@ func spawn_barrier_health_boost():
 	add_sibling(new_barrier_health_boost)
 	new_barrier_health_boost.position = self.position
 
-####TODO###
-#set each boost spawn number as an array 
-# spawn number is a random number between 2 ints
-#if the spawn number belongs to an array of a boost then spawn 
+func spawn_flamethrower_boost():
+	var new_flamthrower_boost = flamerthrower_boost_tscn.instantiate()
+	add_sibling(new_flamthrower_boost)
+	new_flamthrower_boost.position = self.position
 
+####TODO###
+
+#if the spawn number belongs to an array of a boost then
+# a new bool variable is set to true
+#on death if true spawn that boost
+# in ready function call find boost number
+# in a seperate function 
+#call on spawning boosts depending on the bool of the first function 
 
 func spawn_boosts():
-	var spawn_number = randi_range(0,50)
-	#randi_range(0,20)
 	var speed_boost_number = [4,20,32,45,15,30,49,25,5,7]
 	var rapid_fire_number =  [8,12,33,42,22,35,28,24,29,11]
 	var raining_arrows_number = [9,50,45]
 	var health_boost_number = [21,36,47,2,10,13,16]
+	var flamethrower_boost_number = [1,27,37]
 
-	if spawn_number is in speed_boost_number:
+	if speed_boost_number.bsearch(spawn_number, true):
 		spawn_speed_boost()
-	elif spawn_number == rapid_fire_number:
+	if rapid_fire_number.bsearch(spawn_number, true):
 		spawn_rapid_fire_boost()
-	elif spawn_number == raining_arrows_number:
+	if raining_arrows_number.bsearch(spawn_number, true):
 		spawn_raining_arrows()
-	elif spawn_number == health_boost_number:
+	if health_boost_number.bsearch(spawn_number, true):
 		spawn_barrier_health_boost()
+	if flamethrower_boost_number.bsearch(spawn_number, true):
+		spawn_flamethrower_boost()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://hm4cs4xqhyko"]
+[gd_scene load_steps=16 format=3 uid="uid://hm4cs4xqhyko"]
 
 [ext_resource type="Script" path="res://characters/player scene/player.gd" id="1_gvj3u"]
 [ext_resource type="PackedScene" uid="uid://dfx1t41km0fj5" path="res://characters/player scene/arrow.tscn" id="2_l0imc"]
+[ext_resource type="PackedScene" uid="uid://3lxt1eyew63w" path="res://Assets/boosts/flame_thrower.tscn" id="3_lxiay"]
 [ext_resource type="Texture2D" uid="uid://bft4mgpmwrhs1" path="res://Assets/TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier.png" id="3_ysukj"]
 
 [sub_resource type="Animation" id="Animation_ry0d3"]
@@ -121,6 +122,22 @@ tracks/0/keys = {
 "values": [9, 10, 11, 12, 13, 14, 15, 16]
 }
 
+[sub_resource type="Animation" id="Animation_e3gok"]
+resource_name = "war_crime"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xyewi"]
 _data = {
 "RESET": SubResource("Animation_ry0d3"),
@@ -129,7 +146,8 @@ _data = {
 "fire": SubResource("Animation_v7k8d"),
 "hurt": SubResource("Animation_p7qnx"),
 "idle": SubResource("Animation_hubf0"),
-"walk": SubResource("Animation_djpq6")
+"walk": SubResource("Animation_djpq6"),
+"war_crime": SubResource("Animation_e3gok")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ipgvo"]
@@ -144,6 +162,7 @@ z_index = 5
 collision_layer = 3
 script = ExtResource("1_gvj3u")
 arrow_tcsn = ExtResource("2_l0imc")
+flame_thrower_tcsn = ExtResource("3_lxiay")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_ysukj")

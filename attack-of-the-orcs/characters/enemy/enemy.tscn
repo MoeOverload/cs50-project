@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cdg8ns4kfulqu"]
+[gd_scene load_steps=36 format=3 uid="uid://cdg8ns4kfulqu"]
 
 [ext_resource type="Script" path="res://characters/enemy/enemy.gd" id="1_fkf48"]
 [ext_resource type="Texture2D" uid="uid://colsq5wqi20q1" path="res://Assets/TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc with shadows/Orc-Attack02.png" id="1_wg6xv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bbvsc861ym3pk" path="res://Assets/TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc with shadows/Orc-Walk.png" id="4_4er3y"]
 [ext_resource type="PackedScene" uid="uid://drolr3fttpvbv" path="res://Assets/boosts/raining_arrow_boost.tscn" id="4_dyukx"]
 [ext_resource type="PackedScene" uid="uid://uhl4ekoe0lba" path="res://Assets/boosts/barrier_health_boost.tscn" id="5_8ycuj"]
+[ext_resource type="PackedScene" uid="uid://dwduc3x0uh3b7" path="res://Assets/boosts/war_crime_boost.tscn" id="6_kj3mw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2mr2y"]
 radius = 6.0
@@ -214,6 +215,7 @@ speed_boost_tscn = ExtResource("2_h0d86")
 rapid_fire_boost_tscn = ExtResource("3_5654v")
 raining_arrow_boost_tscn = ExtResource("4_dyukx")
 barrier_health_boost_tscn = ExtResource("5_8ycuj")
+flamerthrower_boost_tscn = ExtResource("6_kj3mw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 2

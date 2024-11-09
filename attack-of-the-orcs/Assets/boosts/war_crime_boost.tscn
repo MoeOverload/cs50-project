@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwduc3x0uh3b7"]
+
+[ext_resource type="Script" path="res://Assets/boosts/war_crime_boost.gd" id="1_ug4ru"]
+[ext_resource type="Texture2D" uid="uid://doi8ukoaooq8q" path="res://Assets/boosts/flamethrower _boost.png" id="1_uu2l0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5b50w"]
+radius = 18.6916
+
+[node name="war_crime_boost" type="Area2D" groups=["war_crime_boost"]]
+z_index = 4
+scale = Vector2(0.856, 0.856)
+script = ExtResource("1_ug4ru")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uu2l0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5b50w")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -20,9 +20,11 @@ var kill_store = 0
 var most_kills = 0
 #player variables
 var move_speed = 80
-
+var is_criming = false
+var crime_cooldown = false
 #boost variables
 var speed_boosted = false 
 var rapid_fire_boosted = false
 var raining_arrows = false
 var health_boosted = false
+var war_crimed = false
