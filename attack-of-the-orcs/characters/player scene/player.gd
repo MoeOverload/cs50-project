@@ -8,6 +8,7 @@ var can_rapid_fire = false
 @export var flame_thrower_tcsn: PackedScene
 #rewfernce to the game scene
 @onready var gameOne = $"."
+
 #reference to the speed_boost
 var boost_speed = 160
 #rapid fire timer
@@ -15,31 +16,40 @@ var fire_time = 0.0
 var time_to_fire = 0.2
 
 func _process(delta):
-	
+	if Input.is_action_pressed("up"):
+		position.y -= Globalscript.move_speed * delta
+		
+		$Sprite2D/AnimationPlayer.play("walk")
+	elif Input.is_action_pressed("down"):
+		position.y += Globalscript.move_speed * delta
+		
+		$Sprite2D/AnimationPlayer.play("walk")
+	else:
+		$Sprite2D/AnimationPlayer.play("idle")
+
 	#move the player
 	if Globalscript.speed_boosted == true:
-		boost_move(delta)
+		boost_damager(delta)
 	else:
-		normal_move(delta)
-	#player can shoot moving or stationary
+		Globalscript.arrow_damage = 25
 	
 		#handle shoot input
 	if Globalscript.rapid_fire_boosted == true:
 		rapid_fire(delta)
 	else:
-		single_shot()
+		
+		single_shot(delta)
+	
 	if Globalscript.war_crimed == true:
-		war_crime()
+		war_crime(delta)
 	else:
-		single_shot()
+		%flameThrower.visible = false
+		single_shot(delta)
 
 	move_and_slide()
 				
 
- 
-
-
-func single_shot():
+func single_shot(_delta):
 	if Input.is_action_pressed("fire"):
 		$Sprite2D/AnimationPlayer.play("aiming")
 	if can_fire == true && Input.is_action_just_released("fire"):
@@ -52,48 +62,30 @@ func _on_timer_timeout():
 	can_fire = true
 
 func rapid_fire(delta):
-	fire_time += delta
-	if fire_time >= time_to_fire:
-		while Input.is_action_pressed("fire"):
+	
+	if Input.is_action_pressed("fire"):
+		fire_time += delta
+		if fire_time >= time_to_fire:
 			$Sprite2D/AnimationPlayer.play("fire")	
 			var new_arrow = arrow_tcsn.instantiate()
 			add_sibling(new_arrow)
 			new_arrow.position = self.position
 			fire_time = 0.0
-			break
+			
 
-
-func war_crime():
-	while Input.is_action_pressed("fire"):
+func war_crime(_delta):
+	
+	if Input.is_action_pressed("fire"):
 		Globalscript.is_criming = true
-		$Sprite2D/AnimationPlayer.play("war_crime")
-		var new_flamethrower = flame_thrower_tcsn.instantiate()
-		add_sibling(new_flamethrower)
-		new_flamethrower.position = self.position
-		if Input.is_action_just_released("fire"):
-			Globalscript.is_criming = false
-		break
+		if Globalscript.is_criming == true:
+			%flameThrower.visible = true
+			$Sprite2D/AnimationPlayer.play("war_crime")	
+	elif Input.is_action_just_released("fire"):	
+		Globalscript.is_criming = false
+		%flameThrower.visible = false
+	
 
-
-func normal_move(delta):
-	if Input.is_action_pressed("up"):
-		position.y -= Globalscript.move_speed * delta
-		
-		$Sprite2D/AnimationPlayer.play("walk")
-	elif Input.is_action_pressed("down"):
-		position.y += Globalscript.move_speed * delta
-		
-		$Sprite2D/AnimationPlayer.play("walk")
-	else:
-		$Sprite2D/AnimationPlayer.play("idle")
-
-func boost_move(delta):
-	if Input.is_action_pressed("up"):
-		position.y -= boost_speed * delta
-		$Sprite2D/AnimationPlayer.play("walk")
-	elif Input.is_action_pressed("down"):
-		position.y += boost_speed * delta
-
-		$Sprite2D/AnimationPlayer.play("walk")
-	else:
-		$Sprite2D/AnimationPlayer.play("idle")
+	
+func boost_damager(_delta):
+	var boost_damage = 80
+	Globalscript.arrow_damage = boost_damage

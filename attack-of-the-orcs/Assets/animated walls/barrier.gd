@@ -8,7 +8,6 @@ var enemy = null
 
 func _process(_delta):
 	if Globalscript.is_attacking == true:
-		print(health)
 		health = health - randi_range(0,5)
 	#handle animations based on health
 	if health > 50:

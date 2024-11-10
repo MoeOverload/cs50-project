@@ -18,6 +18,5 @@ func _on_area_entered(area:Area2D):
 	if area.is_in_group("Player"):
 		player = area
 		Globalscript.health_boosted = true
-		print("boost")
 		self.visible = false
 	player = null

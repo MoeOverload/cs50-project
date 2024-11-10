@@ -7,7 +7,12 @@ var damage = Globalscript.arrow_damage
 
 #speed of enemies
 var speed = Globalscript.enemy_speed
-
+#boost spawn variables
+var speed_boost = false
+var rapid_fire_boost = false
+var raining_arrow_boost = false
+var barrier_health_boost = false
+var flame_thrower_boost = false
 #refernce to the game scene
 @onready var gameOne = $"."
 @export var speed_boost_tscn : PackedScene
@@ -19,6 +24,7 @@ var speed = Globalscript.enemy_speed
 var barrier = null
 var normal_arrow = null
 var raining_arrow = null
+var flame_thrower = null
 #knockback variables
 var is_hurt = false
 var knock_back_time = 0.0
@@ -31,11 +37,11 @@ var is_death = false
 #attack variables
 var attack_time = 2.0
 var time_to_attack = 0.0
-var can_attack = false
+var can_attack = false	
 var spawn_number = randi_range(0,50)
-func _ready():
-	print(spawn_number)
+	
 func _process(delta):
+	set_boost()
 	if can_attack == true:
 		attack(delta)
 	elif is_hurt == true:
@@ -70,13 +76,21 @@ func _on_detection_area_area_entered(area:Area2D):
 		raining_arrow = area
 		can_attack = false
 		is_hurt = true
-		health -= 40	
+		health -= 80	
 		if health <= 0:
 			is_death = true 
 	else:	
 		raining_arrow = null
 		
-		
+	if area.is_in_group("warCrime") && Globalscript.war_crimed == true:
+		flame_thrower = area
+		can_attack = false
+		is_hurt = true
+		health -= 40
+		if health <= 0:
+			is_death = true
+	else:
+		flame_thrower = null 
 	
 		
 func _on_detection_area_body_entered(body:Node2D):
@@ -108,16 +122,14 @@ func death(delta):
 	death_time += delta
 	$AnimatedSprite2D.play("death")
 	position = position
-	
-	
 	if death_time >= time_to_queuefree:
 		
-		
+		spawn_boost()
 		Globalscript.score += 10
 		Globalscript.kill_counter += 1
 		death_time = 0.0
 		self.queue_free()
-		spawn_boosts()
+		
 
 
 func walk(delta):
@@ -138,7 +150,17 @@ func attack(delta):
 		time_to_attack = 0.0
 		
 		
-		
+func spawn_boost():
+	if speed_boost == true:
+		spawn_speed_boost()
+	if rapid_fire_boost == true:
+		spawn_rapid_fire_boost()
+	if raining_arrow_boost == true:
+		spawn_raining_arrows()
+	if barrier_health_boost == true:
+		spawn_barrier_health_boost()
+	if flame_thrower_boost == true:
+		spawn_flamethrower_boost()
 
 
 
@@ -178,20 +200,35 @@ func spawn_flamethrower_boost():
 # in a seperate function 
 #call on spawning boosts depending on the bool of the first function 
 
-func spawn_boosts():
+func set_boost():
 	var speed_boost_number = [4,20,32,45,15,30,49,25,5,7]
 	var rapid_fire_number =  [8,12,33,42,22,35,28,24,29,11]
 	var raining_arrows_number = [9,50,45]
 	var health_boost_number = [21,36,47,2,10,13,16]
-	var flamethrower_boost_number = [1,27,37]
+	var flamethrower_boost_number = [14,27,37]
+	speed_boost_number.sort()
+	rapid_fire_number.sort()
+	raining_arrows_number.sort()
+	health_boost_number.sort()
+	flamethrower_boost_number.sort()
 
-	if speed_boost_number.bsearch(spawn_number, true):
-		spawn_speed_boost()
-	if rapid_fire_number.bsearch(spawn_number, true):
-		spawn_rapid_fire_boost()
-	if raining_arrows_number.bsearch(spawn_number, true):
-		spawn_raining_arrows()
-	if health_boost_number.bsearch(spawn_number, true):
-		spawn_barrier_health_boost()
-	if flamethrower_boost_number.bsearch(spawn_number, true):
-		spawn_flamethrower_boost()
+	if speed_boost_number.has(spawn_number):
+		speed_boost = true
+	else:
+		speed_boost = false
+	if rapid_fire_number.has(spawn_number):
+		rapid_fire_boost = true
+	else: 
+		rapid_fire_boost = false
+	if raining_arrows_number.has(spawn_number):
+		raining_arrow_boost = true
+	else:
+		raining_arrow_boost = false
+	if health_boost_number.has(spawn_number):
+		barrier_health_boost = true
+	else:
+		barrier_health_boost = false
+	if flamethrower_boost_number.has(spawn_number):
+		flame_thrower_boost = true
+	else:
+		flame_thrower_boost = false

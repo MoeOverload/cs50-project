@@ -414,7 +414,7 @@ tile_map_data = PackedByteArray("AAAAAA0AAAAAAAQAAAABAA0AAAACAAQAAAACAA0AAAACAAQ
 tile_set = SubResource("TileSet_414j7")
 
 [node name="player" parent="." instance=ExtResource("3_m1dq5")]
-position = Vector2(64, 112)
+position = Vector2(89, 112)
 collision_layer = 8
 
 [node name="Control" type="Control" parent="."]
@@ -639,7 +639,6 @@ autostart = true
 [connection signal="pressed" from="Control/pauseMenu/VBoxContainer/Resume" to="Control/pauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="Control/pauseMenu/VBoxContainer/quit" to="Control/pauseMenu" method="_on_quit_pressed"]
 [connection signal="timeout" from="enemy spawner/Timer" to="enemy spawner" method="_on_timer_timeout"]
-[connection signal="area_entered" from="gameEnder/Area2D" to="gameEnder" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="gameEnder/Area2D" to="gameEnder" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="rainArrowCollision/Area2D" to="rainArrowCollision" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="arrowCollision/Area2D" to="arrowCollision" method="_on_area_2d_area_entered"]

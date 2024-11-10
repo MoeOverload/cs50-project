@@ -6,18 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bygfd5gwexb6y" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_2_3.png" id="3_3ljr4"]
 [ext_resource type="Texture2D" uid="uid://du8i3ce1owmbx" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_2_4.png" id="4_vfpkx"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_i13ca"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7o20m"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_ovbj8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ba3xv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ba3xv")
-}, {
 "duration": 1.0,
 "texture": ExtResource("2_ba3xv")
 }, {
@@ -26,7 +17,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"flame throw",
-"speed": 8.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -47,24 +38,36 @@ animations = [{
 "loop": false,
 "name": &"flame_done",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ovbj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ba3xv")
+}],
+"loop": false,
+"name": &"flame_throw_start",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvdar"]
-size = Vector2(29, 10)
+size = Vector2(50, 10)
 
-[node name="flameThrower" type="Area2D"]
+[node name="flameThrower" type="Area2D" groups=["warCrime"]]
+visible = false
 z_index = 2
 script = ExtResource("1_wqaqa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(16, 1.86265e-09)
+position = Vector2(23, 1.86264e-09)
 rotation = 0.00119029
-sprite_frames = SubResource("SpriteFrames_i13ca")
-animation = &"flame throw"
-autoplay = "flame throw"
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_7o20m")
+animation = &"flame_throw_start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(14.5, 0)
+position = Vector2(25, 0)
 shape = SubResource("RectangleShape2D_mvdar")
 
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
