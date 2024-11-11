@@ -1,8 +1,8 @@
 extends Area2D
 #boost move speed
-var speed = 100
+var speed = 75
 var rotation_speed = 3
-var boost_end_time = 1.0
+var boost_end_time = 3.0
 var boost_time = 0.0
 var player = null
 func _process(delta):

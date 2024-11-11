@@ -56,7 +56,8 @@ size = Vector2(50, 10)
 
 [node name="flameThrower" type="Area2D" groups=["warCrime"]]
 visible = false
-z_index = 2
+z_index = 7
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_wqaqa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

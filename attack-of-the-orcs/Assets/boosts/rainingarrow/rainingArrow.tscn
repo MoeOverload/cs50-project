@@ -9,6 +9,7 @@ height = 21.5277
 
 [node name="RainingArrow" type="Area2D" groups=["rainingarrow"]]
 z_index = 6
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_ilhp0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

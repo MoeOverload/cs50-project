@@ -38,7 +38,7 @@ var is_death = false
 var attack_time = 2.0
 var time_to_attack = 0.0
 var can_attack = false	
-var spawn_number = randi_range(0,50)
+var spawn_number = randi_range(0,80)
 	
 func _process(delta):
 	set_boost()
@@ -127,6 +127,7 @@ func death(delta):
 		spawn_boost()
 		Globalscript.score += 10
 		Globalscript.kill_counter += 1
+		Globalscript.current_enemy_number -=1
 		death_time = 0.0
 		self.queue_free()
 		
@@ -153,13 +154,13 @@ func attack(delta):
 func spawn_boost():
 	if speed_boost == true:
 		spawn_speed_boost()
-	if rapid_fire_boost == true:
+	elif rapid_fire_boost == true:
 		spawn_rapid_fire_boost()
-	if raining_arrow_boost == true:
+	elif raining_arrow_boost == true:
 		spawn_raining_arrows()
-	if barrier_health_boost == true:
+	elif barrier_health_boost == true:
 		spawn_barrier_health_boost()
-	if flame_thrower_boost == true:
+	elif flame_thrower_boost == true:
 		spawn_flamethrower_boost()
 
 

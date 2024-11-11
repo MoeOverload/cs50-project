@@ -19,6 +19,6 @@ func _on_timer_timeout():
 func spawn_arrow():
 	var new_arrow = rainingArrow_tscn.instantiate()
 	self.add_child(new_arrow)
-	var rand_x = randf_range(100,425)
+	var rand_x = randf_range(100,700)
 	new_arrow.position.x = rand_x
 	new_arrow.position.y = -5

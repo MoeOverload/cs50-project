@@ -12,14 +12,15 @@ var round_enemy_cap = 10
 #enemy variables
 var is_attacking = false
 var enemy_health = 50
-var enemy_speed = 60
+var enemy_speed = 40
 var arrow_damage = 25
 var current_enemy_number = 0
+var total_enemy_number = 0
 var kill_counter = 0
 var kill_store = 0
 var most_kills = 0
 #player variables
-var move_speed = 80
+var move_speed = 100
 var is_criming = false
 var crime_cooldown = false
 #boost variables

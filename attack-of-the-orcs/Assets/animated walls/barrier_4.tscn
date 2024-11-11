@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://rlkdwpj2o7f1" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_1.png" id="1_ath1l"]
 [ext_resource type="Texture2D" uid="uid://4aoh5yqssevj" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_4.png" id="2_ct56d"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q00u5"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_632wd"]
 atlas = ExtResource("1_ath1l")
 region = Rect2(0, 0, 16, 16)
@@ -57,13 +55,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q00u5"]
+size = Vector2(20, 16)
+
 [node name="barrier4" type="StaticBody2D"]
 z_index = 1
+scale = Vector2(2, 2)
 script = ExtResource("1_7la8e")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_q00u5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p3ulf")
 animation = &"fullHealth"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_q00u5")

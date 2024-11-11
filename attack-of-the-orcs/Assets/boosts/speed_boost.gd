@@ -1,9 +1,9 @@
 extends Area2D
 #boost move speed
-var speed = 100
+var speed = 75
 var rotation_speed = 3
 var player_body = null
-var boost_end_time = 2.0
+var boost_end_time = 4.0
 var boost_time = 0.0
 
 

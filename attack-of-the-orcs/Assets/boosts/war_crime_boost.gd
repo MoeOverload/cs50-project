@@ -1,7 +1,7 @@
 extends Area2D
-var speed = 100
+var speed = 75
 var rotation_speed = 3
-var boost_end_time = 3.0
+var boost_end_time = 6.0
 var boost_time = 0.0
 var player = null
 func _process(delta):
