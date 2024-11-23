@@ -18,12 +18,16 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_txtch"]
 font = ExtResource("2_ce6mh")
-font_size = 21
+font_size = 46
 font_color = Color(0.709804, 0.0705882, 0, 1)
 outline_size = 4
 outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e0qh"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
 border_width_left = 4
 border_width_top = 4
@@ -77,6 +81,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dqyo5")
@@ -100,10 +105,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -176.0
-offset_top = -172.0
-offset_right = 176.0
-offset_bottom = -124.0
+offset_left = -238.0
+offset_top = -179.0
+offset_right = 230.0
+offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nrb0o")
@@ -117,17 +122,17 @@ uppercase = true
 
 [node name="PanelContainer4" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -91.5
-offset_top = -29.5
-offset_right = 84.5
-offset_bottom = 95.5
+anchor_bottom = 1.0
+offset_left = -192.5
+offset_top = -360.0
+offset_right = 192.5
+offset_bottom = -132.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_6e0qh")
@@ -143,7 +148,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_ce6mh")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqaxl")
 text = "ENTER
 "
@@ -153,7 +158,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_ce6mh")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqaxl")
 text = "HIGH SCORES
 "
@@ -163,7 +168,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_ce6mh")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = SubResource("StyleBoxFlat_goi0j")
 text = "MAIN MENU"
 

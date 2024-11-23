@@ -1,7 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi5qosowuwlwm"]
+[gd_scene load_steps=18 format=3 uid="uid://bi5qosowuwlwm"]
 
 [ext_resource type="Script" path="res://ui scenes/loadingscreen/loading.gd" id="1_jf4tn"]
+[ext_resource type="Texture2D" uid="uid://cv7ibjg23mkqd" path="res://Assets/ui assert]]/space.png" id="3_keiw6"]
+[ext_resource type="Texture2D" uid="uid://hi5f4njkq37q" path="res://Assets/ui assert]]/keys.png" id="4_b4gkd"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="4_wa7u0"]
+[ext_resource type="Texture2D" uid="uid://ccb76xoq1mu86" path="res://Assets/boosts/speedboost.png" id="5_0dbde"]
+[ext_resource type="Texture2D" uid="uid://doi8ukoaooq8q" path="res://Assets/boosts/flamethrower _boost.png" id="6_vfmyx"]
+[ext_resource type="Texture2D" uid="uid://ct5mnb7bxi5k" path="res://Assets/boosts/rainingarrow_boost.png" id="7_ospl1"]
+[ext_resource type="Texture2D" uid="uid://cqhpv5d63pawm" path="res://Assets/boosts/barrierhealth_boost.png" id="8_y3sj5"]
+[ext_resource type="Texture2D" uid="uid://cf1dq73sc8mtb" path="res://Assets/boosts/rapidfire_boost.png" id="9_l2s44"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2f3q4"]
 bg_color = Color(0.207843, 0.00392157, 0.203922, 1)
@@ -37,11 +44,27 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+expand_margin_top = 1.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uyf2"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4011d"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_37k2h"]
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_3b45x"]
+color = Color(0.74978, 0.74978, 0.74978, 1)
+grow_begin = -1.0
+grow_end = -4.0
+thickness = 2
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nfko5"]
+color = Color(0.74902, 0.74902, 0.74902, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_labvf"]
+color = Color(0.737193, 0.737193, 0.737193, 1)
+thickness = 4
 
 [node name="loadingScreen1" type="Control"]
 layout_mode = 3
@@ -68,7 +91,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -18.0
+offset_top = -48.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ihmgc")
@@ -81,49 +104,157 @@ horizontal_alignment = 1
 
 [node name="PanelContainer4" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -64.0
-offset_right = 140.0
-offset_bottom = 64.0
+offset_left = -272.0
+offset_top = -172.0
+offset_right = 273.0
+offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1qcxp")
 
-[node name="Container" type="PanelContainer" parent="PanelContainer4"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer4"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2uyf2")
+size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer4/Container"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer4/Container/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer4/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 98
+theme_override_constants/separation = 200
+alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer4/Container/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer4/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_wa7u0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4011d")
 text = "shoot"
 
-[node name="Label2" type="Label" parent="PanelContainer4/Container/VBoxContainer/HBoxContainer"]
+[node name="Space" type="Sprite2D" parent="PanelContainer4/VBoxContainer/HBoxContainer/Label"]
+position = Vector2(-43, -1)
+scale = Vector2(3, 3)
+texture = ExtResource("3_keiw6")
+centered = false
+
+[node name="Label3" type="Label" parent="PanelContainer4/VBoxContainer/HBoxContainer/Label"]
 layout_mode = 2
+offset_left = 5.0
+offset_top = 119.0
+offset_right = 85.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_wa7u0")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxLine_3b45x")
+text = "space"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="PanelContainer4/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_wa7u0")
+theme_override_font_sizes/font_size = 50
 text = "move"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer4/Container/VBoxContainer"]
+[node name="Keys" type="Sprite2D" parent="PanelContainer4/VBoxContainer/HBoxContainer/Label2"]
+position = Vector2(46, 103)
+scale = Vector2(2.75, 2.65625)
+texture = ExtResource("4_b4gkd")
+
+[node name="Label" type="Label" parent="PanelContainer4/VBoxContainer/HBoxContainer/Label2"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 119.0
+offset_right = 104.0
+offset_bottom = 145.0
+theme_override_fonts/font = ExtResource("4_wa7u0")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxLine_nfko5")
+text = "W/S KEYS"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer4/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_wa7u0")
+theme_override_font_sizes/font_size = 38
+text = "BOOSTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer4/VBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label3" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+text = "Damage boost
+"
+
+[node name="Speedboost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/Label3"]
+position = Vector2(-100, 107)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0dbde")
+
+[node name="Label" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+text = "Flame thrower"
+
+[node name="FlamethrowerBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/Label"]
+position = Vector2(97, 107)
+scale = Vector2(2, 2)
+texture = ExtResource("6_vfmyx")
+
+[node name="Label5" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+text = "Raining Arrows
+"
+
+[node name="RainingarrowBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/Label5"]
+position = Vector2(175, 107)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ospl1")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer4/Container/VBoxContainer/HBoxContainer2"]
+[node name="Label4" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer"]
 layout_mode = 2
-texture = SubResource("ImageTexture_37k2h")
+text = "Barrier health"
 
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer4/Container/VBoxContainer/HBoxContainer2"]
+[node name="BarrierhealthBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer"]
+position = Vector2(53, 64)
+scale = Vector2(2, 2)
+texture = ExtResource("8_y3sj5")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
 layout_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer2"]
+layout_mode = 2
+text = "rapid fire
+"
+
+[node name="RapidfireBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer2/Label2"]
+position = Vector2(42, 64)
+scale = Vector2(2, 2)
+texture = ExtResource("9_l2s44")
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer4"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_labvf")
 
 [node name="loadTimer" type="Timer" parent="."]
 wait_time = 4.523

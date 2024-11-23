@@ -18,7 +18,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_o48qx"]
 font = ExtResource("2_1gdyy")
-font_size = 34
+font_size = 46
 font_color = Color(0.709804, 0.0705882, 0, 1)
 outline_size = 6
 outline_color = Color(0.223103, 0.223103, 0.223103, 1)
@@ -40,7 +40,7 @@ expand_margin_bottom = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_qxwn8"]
 font = ExtResource("2_1gdyy")
-font_size = 15
+font_size = 22
 font_color = Color(0.709804, 0.0705882, 0, 1)
 outline_size = 4
 outline_color = Color(0.223529, 0.223529, 0.223529, 1)
@@ -65,17 +65,16 @@ layout_mode = 2
 color = Color(0.207843, 0.00392157, 0.203922, 1)
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -177.5
-offset_top = -33.0
-offset_right = 177.5
-offset_bottom = 33.0
+offset_left = -234.0
+offset_top = 121.0
+offset_right = 234.0
+offset_bottom = 197.0
 grow_horizontal = 2
-grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qhmgf")
 
 [node name="Label" type="Label" parent="PanelContainer2"]
@@ -84,6 +83,7 @@ text = "ATTACK OF THE ORCS"
 label_settings = SubResource("LabelSettings_o48qx")
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
 anchors_preset = 8
@@ -91,10 +91,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -72.5
-offset_top = 49.5
-offset_right = 72.5
-offset_bottom = 73.5
+offset_left = -103.0
+offset_top = -22.5
+offset_right = 103.0
+offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0bbf3")

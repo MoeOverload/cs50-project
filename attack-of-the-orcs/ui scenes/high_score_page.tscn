@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bhryaeuedxb3a"]
+[gd_scene load_steps=14 format=3 uid="uid://bhryaeuedxb3a"]
 
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_bb3ok"]
 [ext_resource type="Script" path="res://ui scenes/scripts/high_score_page.gd" id="1_ljgxi"]
@@ -24,7 +24,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_031fb"]
 font = ExtResource("1_bb3ok")
-font_size = 21
+font_size = 46
 font_color = Color(0.709804, 0.0705882, 0, 1)
 outline_size = 4
 outline_color = Color(0.223529, 0.223529, 0.223529, 1)
@@ -43,8 +43,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frvu7"]
-content_margin_left = 10.0
-content_margin_right = 10.0
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
 border_width_top = 2
@@ -55,14 +57,12 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_left = 14.0
-expand_margin_top = 4.0
-expand_margin_right = 14.0
-expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1hh0"]
-content_margin_left = 10.0
-content_margin_right = 10.0
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
 border_width_top = 2
@@ -73,14 +73,12 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_left = 14.0
-expand_margin_top = 4.0
-expand_margin_right = 14.0
-expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_niok2"]
-content_margin_left = 10.0
-content_margin_right = 10.0
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
 border_width_top = 2
@@ -91,25 +89,12 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_left = 14.0
-expand_margin_top = 4.0
-expand_margin_right = 14.0
-expand_margin_bottom = 4.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ieu8s"]
-bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.509804, 0.0156863, 0.435294, 1)
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a20x3"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 15.0
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
 border_width_top = 2
@@ -146,10 +131,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = -148.0
-offset_right = 152.0
-offset_bottom = -116.0
+offset_left = -234.0
+offset_top = -179.0
+offset_right = 234.0
+offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xs5st")
@@ -168,10 +153,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
+offset_left = -160.0
 offset_top = -68.0
-offset_right = 100.0
-offset_bottom = 68.0
+offset_right = 172.0
+offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o8xb0")
@@ -180,7 +165,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_o8xb0")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 15
+theme_override_constants/separation = 31
 alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
@@ -189,7 +174,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_frvu7")
 
 [node name="HighScoreScreen" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bb3ok")
+theme_override_font_sizes/font_size = 32
 text = "HIGH SCORE"
+horizontal_alignment = 1
 script = ExtResource("3_23200")
 
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
@@ -199,6 +187,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_b1hh0")
 
 [node name="roundsCounterScreen" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bb3ok")
+theme_override_font_sizes/font_size = 32
 text = "HIGHEST ROUND
 "
 script = ExtResource("4_0erii")
@@ -209,29 +199,24 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_niok2")
 
 [node name="killCounterScreen" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3"]
 layout_mode = 2
-text = "kill counter
+theme_override_fonts/font = ExtResource("1_bb3ok")
+theme_override_font_sizes/font_size = 32
+text = "KILL COUNTER
 "
+horizontal_alignment = 1
 script = ExtResource("5_dutu4")
 
-[node name="PanelContainer2" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 200.0
-offset_top = 28.0
-offset_right = 256.0
-offset_bottom = 60.0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ieu8s")
-
-[node name="Button" type="Button" parent="PanelContainer2"]
+[node name="Button" type="Button" parent="."]
 layout_mode = 2
+offset_left = 128.0
+offset_top = 488.0
+offset_right = 180.0
+offset_bottom = 509.0
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("1_bb3ok")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 23
 theme_override_styles/normal = SubResource("StyleBoxFlat_a20x3")
 text = "Back"
 
-[connection signal="button_down" from="PanelContainer2/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

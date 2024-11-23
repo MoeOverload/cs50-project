@@ -18,17 +18,17 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_l35jo"]
 font = ExtResource("2_760aw")
-font_size = 21
+font_size = 46
 font_color = Color(0.709804, 0.0705882, 0, 1)
 outline_size = 4
 outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mabn7"]
 bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
 border_color = Color(0.50875, 0.0143648, 0.433436, 1)
 border_blend = true
 corner_radius_top_left = 10
@@ -37,7 +37,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gddr"]
-content_margin_top = 5.0
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
 bg_color = Color(0.415487, 0.326051, 0.281466, 1)
 border_width_left = 2
 border_width_top = 2
@@ -50,7 +53,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5q0v"]
-content_margin_top = 5.0
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
 border_width_top = 2
@@ -63,7 +69,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np436"]
-content_margin_top = 5.0
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
 border_width_top = 2
@@ -76,6 +85,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds2ta"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
 border_width_top = 2
@@ -86,7 +99,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_top = 2.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -115,17 +127,14 @@ color = Color(0.209082, 0.00488653, 0.202792, 1)
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -176.0
-offset_top = -24.0
-offset_right = 176.0
-offset_bottom = 24.0
+offset_left = -234.0
+offset_top = 121.0
+offset_right = 234.0
+offset_bottom = 197.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o65ol")
 
 [node name="Label" type="Label" parent="PanelContainer2"]
@@ -138,24 +147,24 @@ uppercase = true
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -94.0
-offset_top = 53.0
-offset_right = 98.0
-offset_bottom = 173.0
+anchor_bottom = 1.0
+offset_left = -190.0
+offset_top = -359.0
+offset_right = 194.0
+offset_bottom = -103.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mabn7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 2
+theme_override_constants/separation = 7
 alignment = 1
 
 [node name="play" type="Button" parent="PanelContainer3/VBoxContainer"]
@@ -163,7 +172,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = SubResource("StyleBoxFlat_2gddr")
 text = "PLAY"
 
@@ -171,7 +180,7 @@ text = "PLAY"
 layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = SubResource("StyleBoxFlat_p5q0v")
 text = "SETTINGS"
 
@@ -179,7 +188,7 @@ text = "SETTINGS"
 layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = SubResource("StyleBoxFlat_np436")
 text = "CREDITS"
 
@@ -187,7 +196,7 @@ text = "CREDITS"
 layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = SubResource("StyleBoxFlat_ds2ta")
 text = "QUIT"
 

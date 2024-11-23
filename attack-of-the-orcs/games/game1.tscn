@@ -779,7 +779,7 @@ script = ExtResource("36_twkag")
 [node name="Area2D" type="Area2D" parent="boostKiller"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boostKiller/Area2D"]
-position = Vector2(-4218, 239)
+position = Vector2(-2466, 346)
 rotation = 1.30213
 scale = Vector2(3, 3)
 shape = SubResource("WorldBoundaryShape2D_jbi8s")
