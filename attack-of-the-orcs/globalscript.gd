@@ -81,10 +81,10 @@ func save_game():
 
 
 
-func load_game():
-	var file = FileAccess.open("user://savegame.data", FileAccess.READ)
-	var saved_data = file.get_var()
-	new_high_score = saved_data["HighScore"]
-	highest_round  = saved_data["HighestRound"]
-	most_kills = saved_data["HighestKills"]
-	file.close()
+#func load_game():
+	#var file = FileAccess.open("user://savegame.data", FileAccess.READ)
+	#var saved_data = file.get_var()
+	#new_high_score = saved_data["HighScore"]
+	#highest_round  = saved_data["HighestRound"]
+	#most_kills = saved_data["HighestKills"]
+	#file.close()
