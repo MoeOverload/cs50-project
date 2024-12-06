@@ -43,7 +43,7 @@ func _process(delta):
 	if Globalscript.war_crimed == true:
 		war_crime(delta)
 	else:
-		%flameThrower.visible = false
+		
 		single_shot(delta)
 
 	move_and_slide()
@@ -78,11 +78,14 @@ func war_crime(_delta):
 	if Input.is_action_pressed("fire"):
 		Globalscript.is_criming = true
 		if Globalscript.is_criming == true:
-			%flameThrower.visible = true
+			$flameThrower.visible = true
+			$flameThrower/CollisionShape2D.visible = true
 			$Sprite2D/AnimationPlayer.play("war_crime")	
 	elif Input.is_action_just_released("fire"):	
 		Globalscript.is_criming = false
-		%flameThrower.visible = false
+		$flameThrower.visible = false
+		$flameThrower/CollisionShape2D.visible = false
+		
 	
 
 	
