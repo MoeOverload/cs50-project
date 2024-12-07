@@ -16,6 +16,7 @@ var fire_time = 0.0
 var time_to_fire = 0.2
 
 func _process(delta):
+	#move the player
 	if Input.is_action_pressed("up"):
 		position.y -= Globalscript.move_speed * delta
 		
@@ -26,24 +27,19 @@ func _process(delta):
 		$Sprite2D/AnimationPlayer.play("walk")
 	else:
 		$Sprite2D/AnimationPlayer.play("idle")
-
-	#move the player
+	#handle attacks
+	#handle damageboost
 	if Globalscript.speed_boosted == true:
 		boost_damager(delta)
-	else:
-		Globalscript.arrow_damage = 25
-	
-		#handle shoot input
-	if Globalscript.rapid_fire_boosted == true:
-		rapid_fire(delta)
-	else:
-		
 		single_shot(delta)
-	
-	if Globalscript.war_crimed == true:
+		#handle rapid fire input
+	elif Globalscript.rapid_fire_boosted == true:
+		rapid_fire(delta)
+		
+	elif Globalscript.war_crimed == true:
 		war_crime(delta)
 	else:
-		
+		Globalscript.arrow_damage = 25
 		single_shot(delta)
 
 	move_and_slide()

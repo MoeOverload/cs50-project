@@ -26,4 +26,3 @@ func _on_easybutton_pressed():
 	Globalscript.hard_mode = false
 	Globalscript.easy_mode = true
 	get_tree().change_scene_to_file("res://ui scenes/level_select.tscn")
-
