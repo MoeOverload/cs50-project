@@ -60,7 +60,7 @@ func set_difficulty():
 		enemy_health = 50
 		arrow_damage = 25 
 		spawn_number = randi_range(0,80)
-	elif !easy_mode and !med_mode and !hard_mode:
+	else:
 		enemy_speed = 40
 		enemy_health = 50
 		arrow_damage = 25 
