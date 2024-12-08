@@ -3,5 +3,5 @@ extends Control
 
 
 func _on_button_button_down():
-	get_tree().change_scene_to_file("res://ui scenes/level_select.tscn")
+	get_tree().change_scene_to_file("res://ui scenes/main_menu.tscn")
 	

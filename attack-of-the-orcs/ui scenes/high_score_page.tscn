@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhryaeuedxb3a"]
+[gd_scene load_steps=19 format=3 uid="uid://bhryaeuedxb3a"]
 
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_bb3ok"]
 [ext_resource type="Script" path="res://ui scenes/scripts/high_score_page.gd" id="1_ljgxi"]
@@ -58,6 +58,11 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="LabelSettings" id="LabelSettings_mcyhy"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1hh0"]
 content_margin_left = 50.0
 content_margin_top = 10.0
@@ -73,6 +78,11 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_ebykd"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_niok2"]
 content_margin_left = 50.0
@@ -90,6 +100,52 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="LabelSettings" id="LabelSettings_1xuqk"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ws3k"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0.286275, 0.215686, 0.184314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 9.0
+expand_margin_top = 7.0
+expand_margin_right = 9.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfia7"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0.188235, 0.137255, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a20x3"]
 content_margin_left = 25.0
 content_margin_top = 15.0
@@ -101,10 +157,14 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
 
 [node name="highScorePage" type="Control"]
 layout_mode = 3
@@ -177,6 +237,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bb3ok")
 theme_override_font_sizes/font_size = 32
 text = "HIGH SCORE"
+label_settings = SubResource("LabelSettings_mcyhy")
 horizontal_alignment = 1
 script = ExtResource("3_23200")
 
@@ -191,6 +252,7 @@ theme_override_fonts/font = ExtResource("1_bb3ok")
 theme_override_font_sizes/font_size = 32
 text = "HIGHEST ROUND
 "
+label_settings = SubResource("LabelSettings_ebykd")
 script = ExtResource("4_0erii")
 
 [node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
@@ -203,6 +265,7 @@ theme_override_fonts/font = ExtResource("1_bb3ok")
 theme_override_font_sizes/font_size = 32
 text = "KILL COUNTER
 "
+label_settings = SubResource("LabelSettings_1xuqk")
 horizontal_alignment = 1
 script = ExtResource("5_dutu4")
 
@@ -216,6 +279,8 @@ size_flags_vertical = 4
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("1_bb3ok")
 theme_override_font_sizes/font_size = 23
+theme_override_styles/hover = SubResource("StyleBoxFlat_3ws3k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gfia7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_a20x3")
 text = "Back"
 

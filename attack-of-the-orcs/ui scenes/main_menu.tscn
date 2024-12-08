@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmgnl53cff3v7"]
+[gd_scene load_steps=13 format=3 uid="uid://bmgnl53cff3v7"]
 
 [ext_resource type="Script" path="res://ui scenes/scripts/main_menu.gd" id="1_8nunr"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_760aw"]
@@ -36,6 +36,43 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abnc2"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.286275, 0.215686, 0.184314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vu0iw"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.188235, 0.137255, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gddr"]
 content_margin_left = 50.0
 content_margin_top = 10.0
@@ -51,6 +88,24 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw18e"]
+content_margin_left = 12.0
+content_margin_top = 3.0
+content_margin_right = 12.0
+content_margin_bottom = 3.0
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 4.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5q0v"]
 content_margin_left = 50.0
@@ -152,10 +207,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -190.0
-offset_top = -359.0
-offset_right = 194.0
-offset_bottom = -103.0
+offset_left = -213.0
+offset_top = -380.0
+offset_right = 209.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mabn7")
@@ -164,17 +219,29 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mabn7")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 7
+theme_override_constants/separation = 12
 alignment = 1
 
 [node name="play" type="Button" parent="PanelContainer3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_760aw")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/hover = SubResource("StyleBoxFlat_abnc2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vu0iw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2gddr")
+text = "PLAY"
+
+[node name="HighScores" type="Button" parent="PanelContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
 theme_override_font_sizes/font_size = 39
-theme_override_styles/normal = SubResource("StyleBoxFlat_2gddr")
-text = "PLAY"
+theme_override_styles/normal = SubResource("StyleBoxFlat_sw18e")
+text = "HIGH SCORES
+"
 
 [node name="settings" type="Button" parent="PanelContainer3/VBoxContainer"]
 layout_mode = 2
@@ -200,6 +267,7 @@ theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = SubResource("StyleBoxFlat_ds2ta")
 text = "QUIT"
 
-[connection signal="pressed" from="PanelContainer3/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="button_up" from="PanelContainer3/VBoxContainer/play" to="." method="_on_play_button_up"]
+[connection signal="pressed" from="PanelContainer3/VBoxContainer/HighScores" to="." method="_on_high_scores_pressed"]
 [connection signal="pressed" from="PanelContainer3/VBoxContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PanelContainer3/VBoxContainer/quit" to="." method="_on_quit_pressed"]
