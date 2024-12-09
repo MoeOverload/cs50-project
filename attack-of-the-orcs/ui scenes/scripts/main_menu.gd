@@ -11,14 +11,21 @@ func _on_play_button_up():
 
 
 #on button pressed end game and quit
-func _on_quit_pressed():
+func _on_quit_button_up() -> void:
 	get_tree().quit()
-
+	
 
 #on button pressed change scene to settings
-func _on_settings_pressed():
+func _on_settings_button_up() -> void:
 	get_tree().change_scene_to_file("res://ui scenes/settings_menu.tscn")
 
+	
 
 func _on_high_scores_pressed():
+	get_tree().change_scene_to_file("res://ui scenes/high_score_page.tscn")
+
+
+
+
+func _on_high_scores_button_up() -> void:
 	get_tree().change_scene_to_file("res://ui scenes/high_score_page.tscn")

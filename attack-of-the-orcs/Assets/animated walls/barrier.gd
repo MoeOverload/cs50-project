@@ -3,13 +3,14 @@ extends StaticBody2D
 #barrier variables
 var health = 100
 @onready var gameOne = $"."
-
+#reference to the enemy
 var enemy = null
 
 
 	
 
 func _process(_delta):
+	#if enemy is attacking
 	if Globalscript.is_attacking == true:
 		health = health - randi_range(0,5)
 	#handle animations based on health

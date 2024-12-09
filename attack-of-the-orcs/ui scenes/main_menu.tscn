@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmgnl53cff3v7"]
+[gd_scene load_steps=21 format=3 uid="uid://bmgnl53cff3v7"]
 
 [ext_resource type="Script" path="res://ui scenes/scripts/main_menu.gd" id="1_8nunr"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_760aw"]
@@ -89,11 +89,48 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw18e"]
-content_margin_left = 12.0
-content_margin_top = 3.0
-content_margin_right = 12.0
-content_margin_bottom = 3.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gei6a"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.286275, 0.215686, 0.184314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88f7u"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.188235, 0.137255, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2ba4"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
 border_width_top = 2
@@ -104,8 +141,43 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_top = 4.0
-expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8owc"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.286275, 0.215686, 0.184314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hq24"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.188235, 0.137255, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5q0v"]
 content_margin_left = 50.0
@@ -123,6 +195,43 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udbu1"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.286275, 0.215686, 0.184314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km7jq"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.188235, 0.137255, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np436"]
 content_margin_left = 50.0
 content_margin_top = 10.0
@@ -134,6 +243,43 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xujjg"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.286275, 0.215686, 0.184314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdvfb"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.188235, 0.137255, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -239,7 +385,9 @@ size_flags_vertical = 4
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
 theme_override_font_sizes/font_size = 39
-theme_override_styles/normal = SubResource("StyleBoxFlat_sw18e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gei6a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_88f7u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o2ba4")
 text = "HIGH SCORES
 "
 
@@ -248,6 +396,8 @@ layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
 theme_override_font_sizes/font_size = 39
+theme_override_styles/hover = SubResource("StyleBoxFlat_q8owc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7hq24")
 theme_override_styles/normal = SubResource("StyleBoxFlat_p5q0v")
 text = "SETTINGS"
 
@@ -256,6 +406,8 @@ layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
 theme_override_font_sizes/font_size = 39
+theme_override_styles/hover = SubResource("StyleBoxFlat_udbu1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_km7jq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_np436")
 text = "CREDITS"
 
@@ -264,10 +416,12 @@ layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_760aw")
 theme_override_font_sizes/font_size = 39
+theme_override_styles/hover = SubResource("StyleBoxFlat_xujjg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jdvfb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ds2ta")
 text = "QUIT"
 
 [connection signal="button_up" from="PanelContainer3/VBoxContainer/play" to="." method="_on_play_button_up"]
-[connection signal="pressed" from="PanelContainer3/VBoxContainer/HighScores" to="." method="_on_high_scores_pressed"]
-[connection signal="pressed" from="PanelContainer3/VBoxContainer/settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="PanelContainer3/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="button_up" from="PanelContainer3/VBoxContainer/HighScores" to="." method="_on_high_scores_button_up"]
+[connection signal="button_up" from="PanelContainer3/VBoxContainer/settings" to="." method="_on_settings_button_up"]
+[connection signal="button_up" from="PanelContainer3/VBoxContainer/quit" to="." method="_on_quit_button_up"]

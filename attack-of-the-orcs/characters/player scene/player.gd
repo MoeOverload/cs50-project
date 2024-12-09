@@ -46,9 +46,9 @@ func _process(delta):
 				
 
 func single_shot(_delta):
-	if Input.is_action_pressed("fire"):
+	if not Globalscript.war_crimed and Input.is_action_pressed("fire"):
 		$Sprite2D/AnimationPlayer.play("aiming")
-	if can_fire == true && Input.is_action_just_released("fire"):
+	if not Globalscript.war_crimed and can_fire == true && Input.is_action_just_released("fire"):
 		$Sprite2D/AnimationPlayer.play("fire")
 		var new_arrow = arrow_tcsn.instantiate()
 		add_sibling(new_arrow)
@@ -59,7 +59,7 @@ func _on_timer_timeout():
 
 func rapid_fire(delta):
 	
-	if Input.is_action_pressed("fire"):
+	if not Globalscript.war_crimed and Input.is_action_pressed("fire"):
 		fire_time += delta
 		if fire_time >= time_to_fire:
 			$Sprite2D/AnimationPlayer.play("fire")	
@@ -69,22 +69,26 @@ func rapid_fire(delta):
 			fire_time = 0.0
 			
 
-func war_crime(_delta):
+func war_crime(delta):
+	var fire_time = 0.1
+	var time_to_fire = 0.0
 	
+	
+		
 	if Input.is_action_pressed("fire"):
-		Globalscript.is_criming = true
-		if Globalscript.is_criming == true:
-			$flameThrower.visible = true
-			$flameThrower/CollisionShape2D.visible = true
-			$Sprite2D/AnimationPlayer.play("war_crime")	
-	elif Input.is_action_just_released("fire"):	
+		Globalscript.crime_start = true
+		time_to_fire += get_process_delta_time()
+		if time_to_fire >= fire_time:
+			Globalscript.crime_start = false
+			Globalscript.is_criming = true
+	elif Input.is_action_just_released("fire"):
+		time_to_fire = 0.0
 		Globalscript.is_criming = false
-		$flameThrower.visible = false
-		$flameThrower/CollisionShape2D.visible = false
+		
 		
 	
 
 	
 func boost_damager(_delta):
-	var boost_damage = 80
-	Globalscript.arrow_damage = boost_damage
+	
+	Globalscript.arrow_damage = Globalscript.enemy_health

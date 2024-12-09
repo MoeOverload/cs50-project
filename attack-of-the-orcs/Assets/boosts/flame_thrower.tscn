@@ -14,8 +14,17 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_ba3xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ba3xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ba3xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ba3xv")
 }],
-"loop": false,
+"loop": true,
 "name": &"flame throw",
 "speed": 5.0
 }, {
@@ -37,11 +46,20 @@ animations = [{
 }],
 "loop": false,
 "name": &"flame_done",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_3ljr4")
+}, {
+"duration": 1.0,
 "texture": ExtResource("1_ovbj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ovbj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ba3xv")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_ba3xv")
@@ -65,7 +83,7 @@ position = Vector2(23, 1.86264e-09)
 rotation = 0.00119029
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_7o20m")
-animation = &"flame_throw_start"
+animation = &"flame_done"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(25, 0)

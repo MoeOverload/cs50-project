@@ -23,6 +23,7 @@ var most_kills = 0
 var is_dead = false
 #player variables
 var move_speed = 100
+var crime_start = false
 var is_criming = false
 var crime_cooldown = false
 #boost variables
