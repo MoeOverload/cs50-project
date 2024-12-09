@@ -14,7 +14,7 @@ func _process(delta):
 		#increment timer
 		boost_time += delta
 	#on timer end
-	elif boost_time >= boost_end_time:
+	if boost_time >= boost_end_time:
 		Globalscript.health_boosted = false
 		boost_time = 0.0
 		self.queue_free()

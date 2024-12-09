@@ -16,26 +16,6 @@ animations = [{
 "texture": ExtResource("2_ba3xv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_ba3xv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ba3xv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ba3xv")
-}],
-"loop": true,
-"name": &"flame throw",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ba3xv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ba3xv")
-}, {
-"duration": 1.0,
 "texture": ExtResource("3_3ljr4")
 }, {
 "duration": 1.0,
@@ -64,7 +44,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_ba3xv")
 }],
-"loop": false,
+"loop": true,
 "name": &"flame_throw_start",
 "speed": 5.0
 }]

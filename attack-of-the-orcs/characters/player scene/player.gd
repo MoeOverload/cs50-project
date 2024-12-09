@@ -69,20 +69,13 @@ func rapid_fire(delta):
 			fire_time = 0.0
 			
 
-func war_crime(delta):
-	var fire_time = 0.1
-	var time_to_fire = 0.0
-	
+func war_crime(_delta):
 	
 		
 	if Input.is_action_pressed("fire"):
-		Globalscript.crime_start = true
-		time_to_fire += get_process_delta_time()
-		if time_to_fire >= fire_time:
-			Globalscript.crime_start = false
-			Globalscript.is_criming = true
-	elif Input.is_action_just_released("fire"):
-		time_to_fire = 0.0
+		
+		Globalscript.is_criming = true
+	if Input.is_action_just_released("fire"):
 		Globalscript.is_criming = false
 		
 		
