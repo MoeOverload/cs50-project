@@ -197,13 +197,16 @@ vertical_alignment = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Label3" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer3"]
 layout_mode = 2
 text = "Damage boost
 "
 
-[node name="Speedboost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/Label3"]
-position = Vector2(-100, 107)
+[node name="Speedboost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer3/Label3"]
+position = Vector2(56, 62)
 scale = Vector2(2, 2)
 texture = ExtResource("5_0dbde")
 
@@ -212,7 +215,7 @@ layout_mode = 2
 text = "Flame thrower"
 
 [node name="FlamethrowerBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/Label"]
-position = Vector2(97, 107)
+position = Vector2(56, 64)
 scale = Vector2(2, 2)
 texture = ExtResource("6_vfmyx")
 
@@ -222,7 +225,7 @@ text = "Raining Arrows
 "
 
 [node name="RainingarrowBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/Label5"]
-position = Vector2(175, 107)
+position = Vector2(60, 64)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ospl1")
 
