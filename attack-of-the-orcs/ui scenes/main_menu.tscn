@@ -424,4 +424,5 @@ text = "QUIT"
 [connection signal="button_up" from="PanelContainer3/VBoxContainer/play" to="." method="_on_play_button_up"]
 [connection signal="button_up" from="PanelContainer3/VBoxContainer/HighScores" to="." method="_on_high_scores_button_up"]
 [connection signal="button_up" from="PanelContainer3/VBoxContainer/settings" to="." method="_on_settings_button_up"]
+[connection signal="button_up" from="PanelContainer3/VBoxContainer/credits" to="." method="_on_credits_button_up"]
 [connection signal="button_up" from="PanelContainer3/VBoxContainer/quit" to="." method="_on_quit_button_up"]

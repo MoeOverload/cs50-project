@@ -210,21 +210,27 @@ position = Vector2(56, 62)
 scale = Vector2(2, 2)
 texture = ExtResource("5_0dbde")
 
-[node name="Label" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer4"]
 layout_mode = 2
 text = "Flame thrower"
 
-[node name="FlamethrowerBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/Label"]
+[node name="FlamethrowerBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer4/Label"]
 position = Vector2(56, 64)
 scale = Vector2(2, 2)
 texture = ExtResource("6_vfmyx")
 
-[node name="Label5" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
+[node name="PanelContainer5" type="PanelContainer" parent="PanelContainer4/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer5"]
 layout_mode = 2
 text = "Raining Arrows
 "
 
-[node name="RainingarrowBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/Label5"]
+[node name="RainingarrowBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer5/Label5"]
 position = Vector2(60, 64)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ospl1")
@@ -250,7 +256,7 @@ text = "rapid fire
 "
 
 [node name="RapidfireBoost" type="Sprite2D" parent="PanelContainer4/VBoxContainer2/HBoxContainer2/PanelContainer2/Label2"]
-position = Vector2(42, 64)
+position = Vector2(29, 65)
 scale = Vector2(2, 2)
 texture = ExtResource("9_l2s44")
 
