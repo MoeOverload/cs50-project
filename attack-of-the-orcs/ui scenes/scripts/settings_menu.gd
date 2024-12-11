@@ -12,8 +12,8 @@ func _on_difficulty_button_up() -> void:
 	
 
 
-#on sound buttun released change scene
+
 #########TODO###########
 #implement a slider for controlling sound aswell as a toggle button to mute or unmute
 func _on_sound_button_up() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://ui scenes/sounds_fx.tscn")
