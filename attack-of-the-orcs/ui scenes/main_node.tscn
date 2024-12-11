@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://5eg1etvh7ovr"]
+[gd_scene load_steps=8 format=3 uid="uid://5eg1etvh7ovr"]
 
 [ext_resource type="Script" path="res://ui scenes/scripts/main_node.gd" id="1_1jtoa"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_1gdyy"]
@@ -44,6 +44,8 @@ font_size = 22
 font_color = Color(0.709804, 0.0705882, 0, 1)
 outline_size = 4
 outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+
+[sub_resource type="AudioStream" id="AudioStream_vtjuu"]
 
 [node name="MainNode" type="Node"]
 script = ExtResource("1_1jtoa")
@@ -105,3 +107,9 @@ size_flags_horizontal = 4
 text = "[  PRESS ENTER  ]"
 label_settings = SubResource("LabelSettings_qxwn8")
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStream_vtjuu")
+autoplay = true
+bus = &"music"
+playback_type = 1
