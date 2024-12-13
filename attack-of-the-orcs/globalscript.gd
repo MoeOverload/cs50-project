@@ -37,6 +37,8 @@ var war_crimed = false
 var easy_mode = false
 var med_mode = false
 var hard_mode = false 
+#barrier variables
+var barrier_damage
 
 func _process(_delta):
 	
@@ -45,18 +47,21 @@ func _process(_delta):
 func set_difficulty():
 	if easy_mode == true:
 		print("easy")
+		barrier_damage = randi_range(2,8)
 		enemy_speed = 30
 		enemy_health = 40
 		arrow_damage = 30 
 		spawn_number = randi_range(0, 60)
 	elif hard_mode == true:
 		print("hard_mode")
+		barrier_damage = randi_range(6,12)
 		enemy_speed = 50
 		enemy_health = 60 
 		arrow_damage = 20
 		spawn_number = randi_range(0,100)	
 	elif med_mode == true:
 		print("med")
+		barrier_damage = randi_range(4,10)
 		enemy_speed = 40
 		enemy_health = 50
 		arrow_damage = 25 

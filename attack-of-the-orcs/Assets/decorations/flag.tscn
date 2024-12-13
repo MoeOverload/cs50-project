@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqhnggjw70py3"]
+
+[ext_resource type="Texture2D" uid="uid://bmf63r27bxgy4" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/flag/flag_3.png" id="1_ut6uh"]
+
+[node name="flag" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("1_ut6uh")

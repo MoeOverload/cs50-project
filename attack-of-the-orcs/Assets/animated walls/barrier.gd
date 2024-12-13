@@ -12,7 +12,7 @@ var enemy = null
 func _process(_delta):
 	#if enemy is attacking
 	if Globalscript.is_attacking == true:
-		health = health - randi_range(0,5)
+		health = health - Globalscript.barrier_damage
 	#handle animations based on health
 	if health > 50:
 		$AnimatedSprite2D.play("fullHealth")

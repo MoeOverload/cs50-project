@@ -159,6 +159,7 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="backbutton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 77.0
 offset_top = 476.0
 offset_right = 186.0
@@ -174,6 +175,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_m1ggs")
 text = "BACK"
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
+layout_mode = 0
 offset_left = 205.0
 offset_top = 212.0
 offset_right = 605.0

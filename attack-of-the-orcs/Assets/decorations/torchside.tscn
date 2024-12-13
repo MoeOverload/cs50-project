@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://i23w2flbrrih"]
+
+[ext_resource type="Script" path="res://Assets/decorations/torchside.gd" id="1_5cr6x"]
+[ext_resource type="Texture2D" uid="uid://rtdc6tbday6d" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_1.png" id="1_qp1jp"]
+[ext_resource type="Texture2D" uid="uid://8kdw2erm3upt" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_2.png" id="2_hgu33"]
+[ext_resource type="Texture2D" uid="uid://b4y55hlhvpypv" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_3.png" id="3_mutos"]
+[ext_resource type="Texture2D" uid="uid://d2sqvfrjsa4wq" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_4.png" id="4_8xypg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rr8n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qp1jp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hgu33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mutos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8xypg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="torchside" type="Node2D"]
+z_index = 1
+script = ExtResource("1_5cr6x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8rr8n")
+autoplay = "default"

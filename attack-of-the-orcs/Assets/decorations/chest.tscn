@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbefe3r72rmmi"]
+
+[ext_resource type="Script" path="res://Assets/decorations/chest.gd" id="1_v3p6w"]
+[ext_resource type="Texture2D" uid="uid://drjmho0lpjgrp" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_1.png" id="1_wcuw2"]
+[ext_resource type="Texture2D" uid="uid://byaw5mac8qou7" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_2.png" id="2_i5sn0"]
+[ext_resource type="Texture2D" uid="uid://72jbgbeg1m4" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_3.png" id="3_6pqbf"]
+[ext_resource type="Texture2D" uid="uid://dq1g3f2nxsfcl" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_4.png" id="4_erxlt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shykx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wcuw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i5sn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6pqbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_erxlt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="chest" type="Node2D"]
+z_index = 2
+script = ExtResource("1_v3p6w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_shykx")
+autoplay = "default"

@@ -86,7 +86,7 @@ script = ExtResource("1_qlq7h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yd68c")
-animation = &"fullHealth"
+animation = &"no_health"
 autoplay = "fullHealth"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
