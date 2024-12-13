@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://3lxt1eyew63w"]
+[gd_scene load_steps=9 format=3 uid="uid://3lxt1eyew63w"]
 
 [ext_resource type="Texture2D" uid="uid://d7hfr4q5ex5c" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_2_1.png" id="1_ovbj8"]
 [ext_resource type="Script" path="res://Assets/boosts/flame_thrower.gd" id="1_wqaqa"]
 [ext_resource type="Texture2D" uid="uid://btykh4sui0m26" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_2_2.png" id="2_ba3xv"]
 [ext_resource type="Texture2D" uid="uid://bygfd5gwexb6y" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_2_3.png" id="3_3ljr4"]
 [ext_resource type="Texture2D" uid="uid://du8i3ce1owmbx" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_2_4.png" id="4_vfpkx"]
+[ext_resource type="AudioStream" uid="uid://mlroqwbb73yl" path="res://Assets/sounds/player sounds/Retro Explosion Swoshes 04.wav" id="6_v726w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7o20m"]
 animations = [{
@@ -68,5 +69,8 @@ animation = &"flame_done"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(25, 0)
 shape = SubResource("RectangleShape2D_mvdar")
+
+[node name="flamesound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_v726w")
 
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

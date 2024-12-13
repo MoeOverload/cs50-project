@@ -17,14 +17,17 @@ var time_to_fire = 0.2
 
 func _process(delta):
 	#move the player
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed("up") :
 		position.y -= Globalscript.move_speed * delta
 		
+		
 		$Sprite2D/AnimationPlayer.play("walk")
+		$playerwalk.playing = true
 	elif Input.is_action_pressed("down"):
 		position.y += Globalscript.move_speed * delta
 		
 		$Sprite2D/AnimationPlayer.play("walk")
+		$playerwalk.playing = true
 	else:
 		$Sprite2D/AnimationPlayer.play("idle")
 	#handle attacks
@@ -50,6 +53,8 @@ func single_shot(_delta):
 		$Sprite2D/AnimationPlayer.play("aiming")
 	if not Globalscript.war_crimed and can_fire == true && Input.is_action_just_released("fire"):
 		$Sprite2D/AnimationPlayer.play("fire")
+		 
+		$arrowsound.playing = true 
 		var new_arrow = arrow_tcsn.instantiate()
 		add_sibling(new_arrow)
 		new_arrow.position = self.position 
@@ -62,7 +67,8 @@ func rapid_fire(delta):
 	if not Globalscript.war_crimed and Input.is_action_pressed("fire"):
 		fire_time += delta
 		if fire_time >= time_to_fire:
-			$Sprite2D/AnimationPlayer.play("fire")	
+			$Sprite2D/AnimationPlayer.play("fire")
+			$rapidfiresound.playing = true
 			var new_arrow = arrow_tcsn.instantiate()
 			add_sibling(new_arrow)
 			new_arrow.position = self.position
@@ -71,11 +77,10 @@ func rapid_fire(delta):
 
 func war_crime(_delta):
 	
-		
 	if Input.is_action_pressed("fire"):
-		
 		Globalscript.is_criming = true
-	if Input.is_action_just_released("fire"):
+		
+	elif Input.is_action_just_released("fire"):
 		Globalscript.is_criming = false
 		
 		
