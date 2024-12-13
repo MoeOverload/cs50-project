@@ -67,6 +67,7 @@ func set_difficulty():
 		arrow_damage = 25 
 		spawn_number = randi_range(0,80)
 	else:
+		barrier_damage = randi_range(4,10)
 		enemy_speed = 40
 		enemy_health = 50
 		arrow_damage = 25 

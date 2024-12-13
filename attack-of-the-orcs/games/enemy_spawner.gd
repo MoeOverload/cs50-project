@@ -7,7 +7,8 @@ func _process(_delta):
 	if Globalscript.round_change == true:
 		$Timer.paused = true
 	else:
-		$Timer.paused = false 
+		$Timer.paused = false
+	
 	
 #time between spawns
 func _on_timer_timeout():

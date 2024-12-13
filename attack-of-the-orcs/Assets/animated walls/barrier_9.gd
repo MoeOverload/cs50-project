@@ -16,7 +16,7 @@ func _process(_delta):
 		$AnimatedSprite2D.play("fullHealth")
 	if health  <= 50:
 		$AnimatedSprite2D.play("halfHealth")
-	if health <= 0:	
+	if health <= 0:
 		$AnimatedSprite2D.play("no_health")
 		self.collision_layer = 12
 	#handle health boost

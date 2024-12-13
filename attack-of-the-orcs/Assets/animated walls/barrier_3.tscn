@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://brh583jhcdfps"]
+[gd_scene load_steps=9 format=3 uid="uid://brh583jhcdfps"]
 
 [ext_resource type="Script" path="res://Assets/animated walls/barrier_3.gd" id="1_c6nv7"]
 [ext_resource type="Texture2D" uid="uid://rlkdwpj2o7f1" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_1.png" id="1_xbu42"]
 [ext_resource type="Texture2D" uid="uid://4aoh5yqssevj" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_4.png" id="2_pspjx"]
+[ext_resource type="Texture2D" uid="uid://r3oi34bpvwed" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_3.png" id="4_scguf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_632wd"]
 atlas = ExtResource("1_xbu42")
@@ -53,6 +54,23 @@ animations = [{
 "loop": true,
 "name": &"halfHealth",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_scguf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_scguf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_scguf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_scguf")
+}],
+"loop": true,
+"name": &"no_health",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrncx"]
@@ -65,7 +83,7 @@ script = ExtResource("1_c6nv7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2w1m0")
-animation = &"fullHealth"
+animation = &"no_health"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)

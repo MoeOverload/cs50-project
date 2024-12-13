@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cv0tcx621yex8"]
+[gd_scene load_steps=9 format=3 uid="uid://cv0tcx621yex8"]
 
 [ext_resource type="Script" path="res://Assets/animated walls/barrier_2.gd" id="1_ieda8"]
 [ext_resource type="Texture2D" uid="uid://rlkdwpj2o7f1" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_1.png" id="1_lmbn3"]
 [ext_resource type="Texture2D" uid="uid://4aoh5yqssevj" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_4.png" id="2_wxee3"]
+[ext_resource type="Texture2D" uid="uid://r3oi34bpvwed" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_3.png" id="4_axmkp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_632wd"]
 atlas = ExtResource("1_lmbn3")
@@ -53,6 +54,23 @@ animations = [{
 "loop": true,
 "name": &"halfHealth",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_axmkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_axmkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_axmkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_axmkp")
+}],
+"loop": true,
+"name": &"no_health",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afs2s"]
@@ -64,7 +82,7 @@ script = ExtResource("1_ieda8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_qcbge")
-animation = &"fullHealth"
+animation = &"no_health"
 autoplay = "fullHealth"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
