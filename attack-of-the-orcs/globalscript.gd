@@ -39,6 +39,7 @@ var med_mode = false
 var hard_mode = false 
 #barrier variables
 var barrier_damage
+var barrier_health = 100
 
 func _process(_delta):
 	

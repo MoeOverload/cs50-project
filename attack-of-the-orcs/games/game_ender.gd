@@ -11,4 +11,4 @@ func _on_area_2d_body_entered(body:Node2D):
 		enemy.queue_free()
 	else:
 		enemy=null
-		Globalscript.is_game_over = false
+		
