@@ -1,4 +1,5 @@
 extends Node
+@onready var gameOne = $"."
 #scores
 var score = 0
 var new_high_score = 0
@@ -28,6 +29,7 @@ var is_criming = false
 var crime_cooldown = false
 #boost variables
 var spawn_number 
+var double_points = false
 var speed_boosted = false 
 var rapid_fire_boosted = false
 var raining_arrows = false
@@ -39,7 +41,7 @@ var med_mode = false
 var hard_mode = false 
 #barrier variables
 var barrier_damage
-var barrier_health = 100
+var barrier_health = 1000
 
 func _process(_delta):
 	
@@ -48,27 +50,27 @@ func _process(_delta):
 func set_difficulty():
 	if easy_mode == true:
 		print("easy")
-		barrier_damage = randi_range(2,8)
+		barrier_damage = 4
 		enemy_speed = 30
 		enemy_health = 40
 		arrow_damage = 30 
 		spawn_number = randi_range(0, 60)
 	elif hard_mode == true:
 		print("hard_mode")
-		barrier_damage = randi_range(6,12)
+		barrier_damage = 8
 		enemy_speed = 50
 		enemy_health = 60 
 		arrow_damage = 20
 		spawn_number = randi_range(0,100)	
 	elif med_mode == true:
 		print("med")
-		barrier_damage = randi_range(4,10)
+		barrier_damage = 6
 		enemy_speed = 40
 		enemy_health = 50
 		arrow_damage = 25 
 		spawn_number = randi_range(0,80)
 	else:
-		barrier_damage = randi_range(4,10)
+		barrier_damage = 6
 		enemy_speed = 40
 		enemy_health = 50
 		arrow_damage = 25 
@@ -103,5 +105,6 @@ func Game_reset():
 	current_enemy_number = 0
 	total_enemy_number = 0
 	kill_counter = 0
-	barrier_health = 100
+	barrier_health = 1000
+	save_game()
 	is_game_over = false

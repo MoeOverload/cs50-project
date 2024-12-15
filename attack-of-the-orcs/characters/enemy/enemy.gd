@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 #boosts 
+var doubler_points = false
 var speed_boost = false
 var rapid_fire_boost = false
 var raining_arrow_boost = false
 var barrier_health_boost = false
 var flame_thrower_boost = false
 
+@export var double_pounts_tscn : PackedScene
 @export var speed_boost_tscn : PackedScene
 @export var rapid_fire_boost_tscn : PackedScene
 @export var raining_arrow_boost_tscn : PackedScene
@@ -37,7 +39,7 @@ var death_time = 0.0
 var time_to_queuefree = 1.0
 var is_death = false
 #attack variables
-var attack_time = 2.0
+var attack_time = 3.0
 var time_to_attack = 0.0
 var can_attack = false	
 
@@ -124,11 +126,16 @@ func death(delta):
 	$AnimatedSprite2D.play("death")
 	position = position
 	if death_time >= time_to_queuefree:
-		spawn_boost()
-		Globalscript.score += 10
-		Globalscript.kill_counter += 1
-		Globalscript.current_enemy_number -=1
-		death_time = 0.0
+		if Globalscript.double_points == true:
+			spawn_boost()
+			points_doubler()
+			death_time = 0.0
+		else:	
+			spawn_boost()
+			Globalscript.score += 10
+			Globalscript.kill_counter += 1
+			Globalscript.current_enemy_number -=1
+			death_time = 0.0
 		
 		self.queue_free()
 		
@@ -150,11 +157,21 @@ func attack(delta):
 		Globalscript.is_attacking = true  
 		$AnimatedSprite2D.play("attack")
 		time_to_attack = 0.0
+		
+		
+func points_doubler():
+	Globalscript.score += 10
+	Globalscript.kill_counter += 1
+	Globalscript.current_enemy_number -=1
 
 func spawn_boost():
 	set_boost()
+	
 	if speed_boost == true:
 		spawn_speed_boost()
+		Globalscript.is_dead = false
+	elif doubler_points == true:
+		spawn_double_points()
 		Globalscript.is_dead = false
 	elif rapid_fire_boost == true:
 		spawn_rapid_fire_boost()
@@ -197,7 +214,10 @@ func spawn_flamethrower_boost():
 	add_sibling(new_flamthrower_boost)
 	new_flamthrower_boost.position = self.position
 	
-
+func spawn_double_points():
+	var new_double_points_boost = double_pounts_tscn.instantiate()
+	add_sibling(new_double_points_boost)
+	new_double_points_boost.position = self.position
 
 ####TODO###
 
@@ -209,9 +229,10 @@ func spawn_flamethrower_boost():
 #call on spawning boosts depending on the bool of the first function 
 
 func set_boost():
+	var doubler_boost_number = [3,23,38,46,18,17,43,26,43,1]
 	var speed_boost_number = [4,20,32,45,15,30,49,25,5,7]
 	var rapid_fire_number =  [8,12,33,42,22,35,28,24,29,11]
-	var raining_arrows_number = [9,50,45]
+	var raining_arrows_number = [9,50,48]
 	var health_boost_number = [21,36,47,2,10,13,16]
 	var flamethrower_boost_number = [14,27,37]
 	
@@ -220,6 +241,11 @@ func set_boost():
 		speed_boost = true
 	else:
 		speed_boost = false
+		
+	if doubler_boost_number.has(Globalscript.spawn_number):
+		doubler_points = true
+	else:
+		doubler_points = false
 	
 	if rapid_fire_number.has(Globalscript.spawn_number):
 		rapid_fire_boost = true

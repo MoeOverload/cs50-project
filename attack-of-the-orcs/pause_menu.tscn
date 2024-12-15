@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhgc3ax6yt7ld"]
+
+[ext_resource type="Script" path="res://games/pause_menu.gd" id="1_hh0g1"]
+[ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_c5bkq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uuxj"]
+bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.509804, 0.0156863, 0.435294, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce6pu"]
+content_margin_left = 56.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7aos"]
+font = ExtResource("2_c5bkq")
+font_size = 39
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1waaq"]
+content_margin_bottom = 3.0
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huivu"]
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nacm2"]
+bg_color = Color(0.415686, 0.32549, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="pauseMenu" type="PanelContainer"]
+process_mode = 3
+visible = false
+z_index = 12
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -78.5
+offset_right = 112.0
+offset_bottom = 78.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7uuxj")
+script = ExtResource("1_hh0g1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ce6pu")
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_u7aos")
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_c5bkq")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_1waaq")
+text = "RESUME"
+
+[node name="settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_c5bkq")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_huivu")
+text = "SETTINGS"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_c5bkq")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_nacm2")
+text = "QUIT"
+
+[connection signal="button_up" from="VBoxContainer/Resume" to="." method="_on_resume_button_up"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

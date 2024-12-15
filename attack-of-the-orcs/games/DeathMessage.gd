@@ -1,39 +1,17 @@
 extends PanelContainer
 @onready var gameOne = $"."
-
-func _process(_delta):
+func _physics_process(_delta):
 	if Globalscript.is_game_over == true:
 		self.visible = true
-		if Input.is_action_just_pressed("quitToMenu"):
-			if Globalscript.score > Globalscript.new_high_score:
-				Globalscript.new_high_score = Globalscript.score
-			if Globalscript.rounds_counter > Globalscript.highest_round:
-				Globalscript.highest_round = Globalscript.rounds_counter
-			if Globalscript.kill_store > Globalscript.most_kills:
-				Globalscript.most_kills = Globalscript.kill_store
-			Globalscript.score = 0
-			Globalscript.rounds_counter = 1
-			Globalscript.kill_counter = 0 
-			Globalscript.save_game()
-			self.visible = false
-			gameOne.queue_free()
-			get_tree().change_scene_to_file("res://ui scenes/main_menu.tscn")
+	
 			
-		elif Input.is_action_just_pressed("enter"):
-			if Globalscript.score > Globalscript.new_high_score:
-				Globalscript.new_high_score = Globalscript.score
-			if Globalscript.rounds_counter > Globalscript.highest_round:
-				Globalscript.highest_round = Globalscript.rounds_counter
-			if Globalscript.kill_store > Globalscript.most_kills:
-				Globalscript.most_kills = Globalscript.kill_store
-			
-			Globalscript.score = 0
-			Globalscript.rounds_counter = 1
-			Globalscript.kill_counter = 0
-			Globalscript.save_game()
-			self.visible = false
-			Globalscript.Game_reset()
-			Globalscript.is_game_over = false
-			get_tree().change_scene_to_file("res://ui scenes/loadingscreen/loading.tscn")
-			
-			
+func _on_menu_option_button_up() -> void:
+	if Globalscript.score > Globalscript.new_high_score:
+		Globalscript.new_high_score = Globalscript.score
+	if Globalscript.rounds_counter > Globalscript.highest_round:
+		Globalscript.highest_round = Globalscript.rounds_counter
+	if Globalscript.kill_store > Globalscript.most_kills:
+		Globalscript.most_kills = Globalscript.kill_store
+	Globalscript.Game_reset()
+	gameOne.queue_free()
+	get_tree().change_scene_to_file("res://ui scenes/main_menu.tscn")

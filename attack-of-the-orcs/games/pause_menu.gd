@@ -6,13 +6,9 @@ extends PanelContainer
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		
+		
 		self.visible = true
-	
-
-
-func _on_resume_pressed():
-	self.visible = false
-
+		gameOne.get_tree().paused = true
 
 func _on_quit_pressed():
 	if Globalscript.score > Globalscript.new_high_score:
@@ -24,7 +20,16 @@ func _on_quit_pressed():
 	Globalscript.score = 0
 	Globalscript.rounds_counter = 1
 	Globalscript.kill_counter = 0 
+	Globalscript.total_enemy_number = 0
+	gameOne.get_tree().paused = false
 	Globalscript.save_game()
 	gameOne.queue_free()
 	get_tree().change_scene_to_file("res://ui scenes/main_menu.tscn")
 	
+	
+	
+
+
+func _on_resume_button_up():
+	gameOne.get_tree().paused = false
+	self.visible = false

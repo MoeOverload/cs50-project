@@ -12,11 +12,11 @@ extends StaticBody2D
 func _process(_delta):
 	#if enemy is attacking
 	if Globalscript.is_attacking == true:
-		Globalscript.barrier_health = Globalscript.barrier_health - Globalscript.barrier_damage
+		Globalscript.barrier_health -= Globalscript.barrier_damage
 	#handle animations based on health
-	if Globalscript.barrier_health > 50:
+	if Globalscript.barrier_health > 500:
 		$AnimatedSprite2D.play("fullHealth")
-	if Globalscript.barrier_health <= 50:
+	if Globalscript.barrier_health <= 500:
 		$AnimatedSprite2D.play("halfHealth")
 	if Globalscript.barrier_health <= 0:	
 		$AnimatedSprite2D.play("no_health")

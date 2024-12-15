@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://bjkvfxk306qn8"]
+[gd_scene load_steps=60 format=4 uid="uid://bjkvfxk306qn8"]
 
 [ext_resource type="Script" path="res://games/Scripts/game_1.gd" id="1_5wiol"]
 [ext_resource type="Texture2D" uid="uid://b1gc8aolmmaif" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_2x1s8"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bu01kscbhj723" path="res://Assets/animated walls/barrier_8.tscn" id="9_we8pw"]
 [ext_resource type="PackedScene" uid="uid://bghd1aqwmrkhh" path="res://Assets/animated walls/barrier_9.tscn" id="10_hecti"]
 [ext_resource type="PackedScene" uid="uid://dh63v0q2hlwar" path="res://Assets/animated walls/barrier_10.tscn" id="11_ttaqb"]
-[ext_resource type="Script" path="res://games/pause_menu.gd" id="18_jfktt"]
+[ext_resource type="PackedScene" uid="uid://dhgc3ax6yt7ld" path="res://pause_menu.tscn" id="18_jvgtx"]
 [ext_resource type="Script" path="res://games/health_container.gd" id="19_ae30i"]
 [ext_resource type="Texture2D" uid="uid://cqhpv5d63pawm" path="res://Assets/boosts/barrierhealth_boost.png" id="19_ntula"]
 [ext_resource type="Texture2D" uid="uid://ccb76xoq1mu86" path="res://Assets/boosts/speedboost.png" id="20_if4c5"]
@@ -294,79 +294,10 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 4
 shadow_offset = Vector2(2, 2)
 
-[sub_resource type="LabelSettings" id="LabelSettings_8welo"]
-font = ExtResource("4_7pasw")
-font_size = 19
-font_color = Color(0.709804, 0.0705882, 0, 1)
-outline_size = 4
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_vch5s"]
 font = ExtResource("4_7pasw")
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uuxj"]
-bg_color = Color(0.278431, 0.278431, 0.278431, 0.74902)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.525101, 0.525101, 0.525101, 1)
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce6pu"]
-content_margin_left = 56.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_u7aos"]
-font = ExtResource("4_7pasw")
-font_size = 39
-outline_size = 4
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1waaq"]
-content_margin_bottom = 3.0
-bg_color = Color(0.415686, 0.32549, 0.282353, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huivu"]
-bg_color = Color(0.415686, 0.32549, 0.282353, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nacm2"]
-bg_color = Color(0.415686, 0.32549, 0.282353, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sk1j"]
 bg_color = Color(0, 0, 0, 0.282353)
@@ -582,13 +513,10 @@ horizontal_alignment = 1
 uppercase = true
 script = ExtResource("6_5lbu4")
 
-[node name="menuOption" type="Label" parent="Control/deathMessageContainer/VBoxContainer"]
+[node name="menuOption" type="Button" parent="Control/deathMessageContainer/VBoxContainer"]
 layout_mode = 2
-text = "Press Q to QUIT to menu
-
-press ENTER to try again"
-label_settings = SubResource("LabelSettings_8welo")
-horizontal_alignment = 1
+text = "QUIT 
+"
 
 [node name="roundsContainer" type="PanelContainer" parent="Control"]
 layout_mode = 1
@@ -613,60 +541,19 @@ horizontal_alignment = 1
 uppercase = true
 script = ExtResource("8_sijl6")
 
-[node name="pauseMenu" type="PanelContainer" parent="Control"]
-visible = false
-z_index = 12
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -112.0
-offset_top = -78.5
-offset_right = 112.0
-offset_bottom = 78.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_7uuxj")
-script = ExtResource("18_jfktt")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/pauseMenu"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Label" type="Label" parent="Control/pauseMenu/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ce6pu")
-text = "PAUSED"
-label_settings = SubResource("LabelSettings_u7aos")
-horizontal_alignment = 1
-
-[node name="Resume" type="Button" parent="Control/pauseMenu/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("4_7pasw")
-theme_override_font_sizes/font_size = 21
-theme_override_styles/normal = SubResource("StyleBoxFlat_1waaq")
-text = "RESUME"
-
-[node name="settings" type="Button" parent="Control/pauseMenu/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("4_7pasw")
-theme_override_font_sizes/font_size = 21
-theme_override_styles/normal = SubResource("StyleBoxFlat_huivu")
-text = "SETTINGS"
-
-[node name="quit" type="Button" parent="Control/pauseMenu/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("4_7pasw")
-theme_override_font_sizes/font_size = 21
-theme_override_styles/normal = SubResource("StyleBoxFlat_nacm2")
-text = "QUIT"
+[node name="pauseMenu" parent="Control" instance=ExtResource("18_jvgtx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 94.0
+offset_top = 88.0
+offset_right = 318.0
+offset_bottom = 245.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 z_index = 3
@@ -883,9 +770,7 @@ position = Vector2(51, 282.5)
 [node name="chest4" parent="." instance=ExtResource("40_0kx0v")]
 position = Vector2(23.5, 65)
 
-[connection signal="gui_input" from="Control/deathMessageContainer/VBoxContainer/menuOption" to="Control/deathMessageContainer" method="_on_menu_option_gui_input"]
-[connection signal="pressed" from="Control/pauseMenu/VBoxContainer/Resume" to="Control/pauseMenu" method="_on_resume_pressed"]
-[connection signal="pressed" from="Control/pauseMenu/VBoxContainer/quit" to="Control/pauseMenu" method="_on_quit_pressed"]
+[connection signal="button_up" from="Control/deathMessageContainer/VBoxContainer/menuOption" to="Control/deathMessageContainer" method="_on_menu_option_button_up"]
 [connection signal="body_entered" from="gameEnder/Area2D" to="gameEnder" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="rainArrowCollision/Area2D" to="rainArrowCollision" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="arrowCollision/Area2D" to="arrowCollision" method="_on_area_2d_area_entered"]
