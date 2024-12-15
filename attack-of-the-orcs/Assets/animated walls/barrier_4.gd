@@ -22,6 +22,6 @@ func _process(_delta):
 		self.collision_layer = 12
 	#handle health boost
 	if Globalscript.health_boosted == true:
-		Globalscript.barrier_health= 100
+		Globalscript.barrier_health= 1000
 		self.collision_layer = 1
 		

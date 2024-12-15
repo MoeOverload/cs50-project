@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx5jr4qq53uvn"]
+[gd_scene load_steps=4 format=3 uid="uid://cx5jr4qq53uvn"]
 
 [ext_resource type="Script" path="res://Assets/boosts/double_points.gd" id="1_3tuub"]
+[ext_resource type="Texture2D" uid="uid://doi8ukoaooq8q" path="res://Assets/boosts/flamethrower _boost.png" id="2_efjv7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bje01"]
 
@@ -8,6 +9,7 @@
 script = ExtResource("1_3tuub")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_efjv7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bje01")

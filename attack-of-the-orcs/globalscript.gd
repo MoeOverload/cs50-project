@@ -107,4 +107,6 @@ func Game_reset():
 	kill_counter = 0
 	barrier_health = 1000
 	save_game()
-	is_game_over = false
+	if is_game_over == true:
+		
+		is_game_over = false

@@ -282,3 +282,4 @@ text = "FX
 "
 
 [connection signal="button_up" from="backbutton" to="." method="_on_backbutton_button_up"]
+[connection signal="toggled" from="PanelContainer3/VBoxContainer/PanelContainer2/VSeparator/CheckButton" to="." method="_on_check_button_toggled"]
