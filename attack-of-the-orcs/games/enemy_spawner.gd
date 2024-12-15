@@ -4,10 +4,11 @@ extends Node2D
 
 
 func _process(_delta):
+	
 	if Globalscript.round_change == true:
-		$Timer.paused = true
+		$spawntimer.paused = true
 	else:
-		$Timer.paused = false
+		$spawntimer.paused = false
 	
 	
 #time between spawns

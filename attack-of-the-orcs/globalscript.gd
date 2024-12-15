@@ -4,7 +4,7 @@ var score = 0
 var new_high_score = 0
 #is game over?
 var is_game_over = false
-var game_is_over = false
+
 #round counters
 var round_change = false
 var rounds_counter = 1
@@ -44,7 +44,7 @@ var barrier_health = 100
 func _process(_delta):
 	
 	set_difficulty()
-
+	
 func set_difficulty():
 	if easy_mode == true:
 		print("easy")
@@ -96,3 +96,12 @@ func load_game():
 	highest_round  = saved_data["HighestRound"]
 	most_kills = saved_data["HighestKills"]
 	file.close()
+
+
+func Game_reset():
+	rounds_counter = 1
+	current_enemy_number = 0
+	total_enemy_number = 0
+	kill_counter = 0
+	barrier_health = 100
+	is_game_over = false

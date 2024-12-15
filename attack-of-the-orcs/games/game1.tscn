@@ -1,16 +1,14 @@
-[gd_scene load_steps=68 format=4 uid="uid://bjkvfxk306qn8"]
+[gd_scene load_steps=67 format=4 uid="uid://bjkvfxk306qn8"]
 
 [ext_resource type="Script" path="res://games/Scripts/game_1.gd" id="1_5wiol"]
 [ext_resource type="Texture2D" uid="uid://b1gc8aolmmaif" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_2x1s8"]
 [ext_resource type="PackedScene" uid="uid://cex4hloftd0o0" path="res://Assets/animated walls/barrier.tscn" id="2_vl5yg"]
 [ext_resource type="PackedScene" uid="uid://cv0tcx621yex8" path="res://Assets/animated walls/barrier_2.tscn" id="3_ecsqm"]
 [ext_resource type="PackedScene" uid="uid://hm4cs4xqhyko" path="res://characters/player scene/character_body_2d.tscn" id="3_m1dq5"]
-[ext_resource type="PackedScene" uid="uid://cdg8ns4kfulqu" path="res://characters/enemy/enemy.tscn" id="4_5plsm"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="4_7pasw"]
 [ext_resource type="PackedScene" uid="uid://brh583jhcdfps" path="res://Assets/animated walls/barrier_3.tscn" id="4_keh8d"]
 [ext_resource type="PackedScene" uid="uid://htmjy716nj17" path="res://Assets/animated walls/barrier_4.tscn" id="5_hs2px"]
 [ext_resource type="Script" path="res://games/scorelabel.gd" id="6_5lbu4"]
-[ext_resource type="Script" path="res://games/enemy_spawner.gd" id="6_n0tkm"]
 [ext_resource type="PackedScene" uid="uid://dqqyvbjmxt72v" path="res://Assets/animated walls/barrier_5.tscn" id="6_nrkiw"]
 [ext_resource type="Script" path="res://games/DeathMessage.gd" id="7_3tlaw"]
 [ext_resource type="PackedScene" uid="uid://b6errx5m648cc" path="res://Assets/animated walls/barrier_6.tscn" id="7_q65ve"]
@@ -35,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://be0iym4a7nxq0" path="res://Assets/boosts/rainingarrow/rainingArrow.tscn" id="24_ohtup"]
 [ext_resource type="Script" path="res://games/raining_arrow_container.gd" id="25_lm15l"]
 [ext_resource type="Script" path="res://games/warcrime_container.gd" id="27_diwue"]
+[ext_resource type="PackedScene" uid="uid://cxyf4fw5p73rr" path="res://games/enemy_spawner.tscn" id="29_eqr8v"]
 [ext_resource type="Script" path="res://games/boost_killer.gd" id="36_twkag"]
 [ext_resource type="PackedScene" uid="uid://cqhnggjw70py3" path="res://Assets/decorations/flag.tscn" id="37_b8hru"]
 [ext_resource type="PackedScene" uid="uid://cn386euhx4dk6" path="res://Assets/decorations/torch.tscn" id="38_jcxg8"]
@@ -768,14 +767,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="enemy spawner" type="Node2D" parent="."]
-z_index = 3
-script = ExtResource("6_n0tkm")
-enemy_tscn = ExtResource("4_5plsm")
-
-[node name="Timer" type="Timer" parent="enemy spawner"]
-wait_time = 1.2
-autostart = true
+[node name="enemy spawner" parent="." instance=ExtResource("29_eqr8v")]
 
 [node name="gameEnder" type="Node" parent="."]
 script = ExtResource("9_nxyk7")
@@ -894,7 +886,6 @@ position = Vector2(23.5, 65)
 [connection signal="gui_input" from="Control/deathMessageContainer/VBoxContainer/menuOption" to="Control/deathMessageContainer" method="_on_menu_option_gui_input"]
 [connection signal="pressed" from="Control/pauseMenu/VBoxContainer/Resume" to="Control/pauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="Control/pauseMenu/VBoxContainer/quit" to="Control/pauseMenu" method="_on_quit_pressed"]
-[connection signal="timeout" from="enemy spawner/Timer" to="enemy spawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="gameEnder/Area2D" to="gameEnder" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="rainArrowCollision/Area2D" to="rainArrowCollision" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="arrowCollision/Area2D" to="arrowCollision" method="_on_area_2d_area_entered"]
