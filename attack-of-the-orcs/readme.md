@@ -39,7 +39,17 @@
 		> what is OOP? and how is it used in game dev
 
 ---
+## How to deploy
 
+-you can download the Godot Engine:
+
+-[windows](https://godotengine.org/download/windows/)
+
+-[Linux](https://godotengine.org/download/linux/)
+
+-[Mac](https://godotengine.org/download/macos/)
+ 
+-!!!insert link here !!! (itch.io)
 
 
 
