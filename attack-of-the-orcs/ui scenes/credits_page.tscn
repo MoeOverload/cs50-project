@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://du28fvgnwx6mm"]
+[gd_scene load_steps=10 format=3 uid="uid://du28fvgnwx6mm"]
 
 [ext_resource type="Script" path="res://ui scenes/credits_page.gd" id="1_5qtju"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_x6p7y"]
@@ -39,6 +39,9 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_fkm25"]
+line_spacing = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfkos"]
 content_margin_left = 25.0
@@ -129,9 +132,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -234.0
-offset_top = 121.0
+offset_top = 62.0
 offset_right = 234.0
-offset_bottom = 197.0
+offset_bottom = 138.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5ye7s")
 
@@ -144,48 +147,35 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -280.0
-offset_top = -96.0
-offset_right = 275.0
-offset_bottom = 231.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 123.0
+offset_top = 141.0
+offset_right = 677.0
+offset_bottom = 534.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lr21d")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer3"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer3"]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer3/VBoxContainer"]
+[node name="RichTextLabel" type="Label" parent="PanelContainer3/PanelContainer"]
 layout_mode = 2
-
-[node name="RichTextLabel" type="Label" parent="PanelContainer3/VBoxContainer/PanelContainer"]
-layout_mode = 2
-text = "two seperate art assets were used int the making of this game. 
-***Pixel Poem Description***
-***Tiny RPG description***"
-
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer3/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer3/VBoxContainer/PanelContainer2"]
-layout_mode = 2
-text = "all sounds camefrom a free asset pack 
-***description***"
-
-[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer3/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer3/VBoxContainer/PanelContainer3"]
-layout_mode = 2
-text = "developer:
-my name is morgan and i am an aspiring indie developer!
-This is my first finished game "
+text = "First  i would like to shout out the FREE art and sound packs
+ I used as i am not an artis or musician. 
+The two art asset packs i used were pixel poem:
+https://pixel-poem.itch.io/dungeon-assetpuck
+and the sond is Tiny rpg:
+https://zerie.itch.io/tiny-rpg-character-asset-pack
+i used a free sound pack found here:
+https://kronbits.itch.io/freesfx
+and a font style found here:
+https://vrtxrry.itch.io/dungeonfont
+My name is Morgan or MoeOverload, i am the solo dev of this mini game project. i hope you enjoyed the game it was a major step in learning for myself!
+my Github:
+my personal website ;)  :"
+label_settings = SubResource("LabelSettings_fkm25")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

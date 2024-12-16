@@ -102,11 +102,14 @@ func load_game():
 
 func Game_reset():
 	rounds_counter = 1
+	score = 0
+	
 	current_enemy_number = 0
 	total_enemy_number = 0
 	kill_counter = 0
 	barrier_health = 1000
 	save_game()
-	if is_game_over == true:
-		
-		is_game_over = false
+	gameOne.get_tree().paused = false
+	is_game_over = false
+	
+	
