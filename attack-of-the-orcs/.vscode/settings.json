@@ -1,3 +1,11 @@
 {
-	"godotTools.editorPath.godot4": "/snap/gd-godot-engine-snapcraft/current/godot-engine/godot-engine"
+	"godotTools.editorPath.godot4": "/snap/gd-godot-engine-snapcraft/current/godot-engine/godot-engine",
+	"spellright.addToSystemDictionary": true,
+	"spellright.documentTypes": [
+		
+		"markdown",
+		"latex",
+		"plaintext"
+	],
+	"spellright.notificationClass": "hint"
 }
