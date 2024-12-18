@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://bjkvfxk306qn8"]
+[gd_scene load_steps=61 format=4 uid="uid://bjkvfxk306qn8"]
 
 [ext_resource type="Script" path="res://games/Scripts/game_1.gd" id="1_5wiol"]
 [ext_resource type="Texture2D" uid="uid://b1gc8aolmmaif" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_2x1s8"]
@@ -23,17 +23,19 @@
 [ext_resource type="Texture2D" uid="uid://cqhpv5d63pawm" path="res://Assets/boosts/barrierhealth_boost.png" id="19_ntula"]
 [ext_resource type="Texture2D" uid="uid://ccb76xoq1mu86" path="res://Assets/boosts/speedboost.png" id="20_if4c5"]
 [ext_resource type="Script" path="res://games/damage_container.gd" id="21_e6l5p"]
-[ext_resource type="Texture2D" uid="uid://cf1dq73sc8mtb" path="res://Assets/boosts/rapidfire_boost.png" id="21_kke55"]
 [ext_resource type="Script" path="res://Assets/boosts/rainingarrow/rain_arrow_collision.gd" id="22_ivhlc"]
-[ext_resource type="Texture2D" uid="uid://ct5mnb7bxi5k" path="res://Assets/boosts/rainingarrow_boost.png" id="22_s56dh"]
 [ext_resource type="Script" path="res://games/arrow_collision.gd" id="22_w1636"]
 [ext_resource type="Script" path="res://games/rapidfire_container.gd" id="23_0naeu"]
 [ext_resource type="Script" path="res://games/raining_arrow_spawner.gd" id="23_hhng7"]
 [ext_resource type="Texture2D" uid="uid://doi8ukoaooq8q" path="res://Assets/boosts/flamethrower _boost.png" id="23_wvvfx"]
 [ext_resource type="PackedScene" uid="uid://be0iym4a7nxq0" path="res://Assets/boosts/rainingarrow/rainingArrow.tscn" id="24_ohtup"]
 [ext_resource type="Script" path="res://games/raining_arrow_container.gd" id="25_lm15l"]
+[ext_resource type="Texture2D" uid="uid://cbvxb6yfdsgyg" path="res://Assets/boosts/raining arrows.png" id="26_ljlpx"]
 [ext_resource type="Script" path="res://games/warcrime_container.gd" id="27_diwue"]
+[ext_resource type="Script" path="res://games/double_points.gd" id="29_8n4ji"]
 [ext_resource type="PackedScene" uid="uid://cxyf4fw5p73rr" path="res://games/enemy_spawner.tscn" id="29_eqr8v"]
+[ext_resource type="Texture2D" uid="uid://d2potohdibpxd" path="res://Assets/boosts/double-ponts.png" id="29_xtvrc"]
+[ext_resource type="Texture2D" uid="uid://cepiqwdtu2f6t" path="res://Assets/boosts/rapid fire.png" id="29_yvrun"]
 [ext_resource type="Script" path="res://games/boost_killer.gd" id="36_twkag"]
 [ext_resource type="PackedScene" uid="uid://cqhnggjw70py3" path="res://Assets/decorations/flag.tscn" id="37_b8hru"]
 [ext_resource type="PackedScene" uid="uid://cn386euhx4dk6" path="res://Assets/decorations/torch.tscn" id="38_jcxg8"]
@@ -302,15 +304,6 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sk1j"]
 bg_color = Color(0, 0, 0, 0.282353)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r2lh"]
-bg_color = Color(0.233925, 0.233925, 0.233925, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxqe1"]
 bg_color = Color(0.235294, 0.235294, 0.235294, 1)
 border_width_left = 1
@@ -556,17 +549,17 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
-z_index = 3
+z_index = 14
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -130.5
-offset_top = -39.5
-offset_right = 128.5
-offset_bottom = 7.5
+offset_left = -156.0
+offset_top = -39.0
+offset_right = 155.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
@@ -581,16 +574,13 @@ alignment = 1
 [node name="healthContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_4r2lh")
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxqe1")
 script = ExtResource("19_ae30i")
 
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/healthContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 texture = ExtResource("19_ntula")
+stretch_mode = 3
 
 [node name="damageContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
@@ -601,6 +591,7 @@ script = ExtResource("21_e6l5p")
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/damageContainer"]
 layout_mode = 2
 texture = ExtResource("20_if4c5")
+stretch_mode = 3
 
 [node name="rapidfireContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
@@ -610,7 +601,7 @@ script = ExtResource("23_0naeu")
 
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/rapidfireContainer"]
 layout_mode = 2
-texture = ExtResource("21_kke55")
+texture = ExtResource("29_yvrun")
 
 [node name="raining arrowContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
@@ -620,7 +611,8 @@ script = ExtResource("25_lm15l")
 
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/raining arrowContainer"]
 layout_mode = 2
-texture = ExtResource("22_s56dh")
+texture = ExtResource("26_ljlpx")
+stretch_mode = 3
 
 [node name="warcrimeContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
@@ -631,6 +623,18 @@ script = ExtResource("27_diwue")
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/warcrimeContainer"]
 layout_mode = 2
 texture = ExtResource("23_wvvfx")
+stretch_mode = 3
+
+[node name="doublePoints" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxqe1")
+script = ExtResource("29_8n4ji")
+
+[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/doublePoints"]
+layout_mode = 2
+texture = ExtResource("29_xtvrc")
+stretch_mode = 3
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 z_index = 1

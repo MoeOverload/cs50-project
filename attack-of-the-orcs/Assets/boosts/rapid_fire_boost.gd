@@ -23,5 +23,3 @@ func _on_area_entered(area):
 		self.visible = false
 		
 	player = null
-
-

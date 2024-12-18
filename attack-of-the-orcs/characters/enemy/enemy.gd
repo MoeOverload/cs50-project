@@ -160,7 +160,7 @@ func attack(delta):
 		
 		
 func points_doubler():
-	Globalscript.score += 10
+	Globalscript.score += 20
 	Globalscript.kill_counter += 1
 	Globalscript.current_enemy_number -=1
 

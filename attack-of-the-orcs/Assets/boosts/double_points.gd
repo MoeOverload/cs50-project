@@ -3,7 +3,7 @@ extends Area2D
 var speed = 75
 var rotation_speed = 3
 var player_body = null
-var boost_end_time = 5.0
+var boost_end_time = 8.0
 var boost_time = 0.0
 
 
@@ -20,8 +20,10 @@ func _process(delta):
 
 		
 func _on_area_entered(area):
+	
 	if area.is_in_group("Player"):
 		player_body = area
 		Globalscript.double_points = true
 		self.visible = false
+	
 	player_body = null
