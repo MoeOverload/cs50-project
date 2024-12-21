@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://5xvju1ek2kk0"]
 
 [ext_resource type="Script" path="res://Assets/boosts/speed_boost.gd" id="1_ccgp0"]
-[ext_resource type="Texture2D" uid="uid://ccb76xoq1mu86" path="res://Assets/boosts/speedboost.png" id="1_kk6fu"]
+[ext_resource type="Texture2D" uid="uid://bqsu65sr1uhoe" path="res://ui scenes/loadingscreen/damage boost.png" id="2_6tq40"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ehhs"]
 radius = 16.0
@@ -13,7 +13,7 @@ script = ExtResource("1_ccgp0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.855556, 0.855556)
-texture = ExtResource("1_kk6fu")
+texture = ExtResource("2_6tq40")
 
 [node name="playerdetection" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1ehhs")

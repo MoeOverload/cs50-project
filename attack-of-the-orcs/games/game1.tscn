@@ -21,8 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://dhgc3ax6yt7ld" path="res://pause_menu.tscn" id="18_jvgtx"]
 [ext_resource type="Script" path="res://games/health_container.gd" id="19_ae30i"]
 [ext_resource type="Texture2D" uid="uid://cqhpv5d63pawm" path="res://Assets/boosts/barrierhealth_boost.png" id="19_ntula"]
-[ext_resource type="Texture2D" uid="uid://ccb76xoq1mu86" path="res://Assets/boosts/speedboost.png" id="20_if4c5"]
 [ext_resource type="Script" path="res://games/damage_container.gd" id="21_e6l5p"]
+[ext_resource type="Texture2D" uid="uid://bqsu65sr1uhoe" path="res://ui scenes/loadingscreen/damage boost.png" id="22_e5rnm"]
 [ext_resource type="Script" path="res://Assets/boosts/rainingarrow/rain_arrow_collision.gd" id="22_ivhlc"]
 [ext_resource type="Script" path="res://games/arrow_collision.gd" id="22_w1636"]
 [ext_resource type="Script" path="res://games/rapidfire_container.gd" id="23_0naeu"]
@@ -556,9 +556,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -156.0
-offset_top = -39.0
-offset_right = 155.0
+offset_left = -159.0
+offset_top = -58.0
+offset_right = 158.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -567,7 +567,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5sk1j")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
@@ -585,13 +584,15 @@ stretch_mode = 3
 [node name="damageContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_kxqe1")
 script = ExtResource("21_e6l5p")
 
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/damageContainer"]
 layout_mode = 2
-texture = ExtResource("20_if4c5")
-stretch_mode = 3
+size_flags_horizontal = 4
+texture = ExtResource("22_e5rnm")
 
 [node name="rapidfireContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
@@ -602,7 +603,6 @@ script = ExtResource("23_0naeu")
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/rapidfireContainer"]
 layout_mode = 2
 texture = ExtResource("29_yvrun")
-expand_mode = 3
 
 [node name="raining arrowContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
@@ -612,9 +612,9 @@ script = ExtResource("25_lm15l")
 
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/raining arrowContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("26_ljlpx")
-expand_mode = 3
-stretch_mode = 4
 
 [node name="warcrimeContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
@@ -636,7 +636,7 @@ script = ExtResource("29_8n4ji")
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/doublePoints"]
 layout_mode = 2
 texture = ExtResource("29_xtvrc")
-expand_mode = 3
+stretch_mode = 3
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 z_index = 1
