@@ -602,6 +602,7 @@ script = ExtResource("23_0naeu")
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/rapidfireContainer"]
 layout_mode = 2
 texture = ExtResource("29_yvrun")
+expand_mode = 3
 
 [node name="raining arrowContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
@@ -612,7 +613,8 @@ script = ExtResource("25_lm15l")
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/raining arrowContainer"]
 layout_mode = 2
 texture = ExtResource("26_ljlpx")
-stretch_mode = 3
+expand_mode = 3
+stretch_mode = 4
 
 [node name="warcrimeContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
 visible = false
@@ -634,7 +636,7 @@ script = ExtResource("29_8n4ji")
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/doublePoints"]
 layout_mode = 2
 texture = ExtResource("29_xtvrc")
-stretch_mode = 3
+expand_mode = 3
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 z_index = 1
