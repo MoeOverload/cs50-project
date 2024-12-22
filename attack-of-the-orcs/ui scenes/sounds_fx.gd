@@ -1,5 +1,5 @@
 extends Control
-@onready var bus_layout = $/default_bus_layout.tres
+
 
 
 func _on_backbutton_button_up() -> void:
