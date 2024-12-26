@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxvfyvwjkb8rr"]
+[gd_scene load_steps=14 format=3 uid="uid://bxvfyvwjkb8rr"]
 
 [ext_resource type="Script" path="res://ui scenes/loadingscreen/loading_screen_2.gd" id="1_fl4r2"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_7yl4l"]
@@ -43,6 +43,26 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 expand_margin_top = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gelbn"]
+bg_color = Color(0.0784314, 0.00392157, 0.145098, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.172549, 0.027451, 0.380392, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_4vwn8"]
+font = ExtResource("2_7yl4l")
+font_size = 46
+font_color = Color(0.709804, 0.0705882, 0, 1)
+outline_size = 4
+outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 
 [node name="loadingScreen2" type="Control"]
 layout_mode = 3
@@ -94,15 +114,6 @@ offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1qcxp")
-
-[node name="Label" type="Label" parent="PanelContainer4"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_7yl4l")
-theme_override_font_sizes/font_size = 38
-text = "BOOSTS"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="PanelContainer5" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -198,5 +209,25 @@ text = "rapid fire
 position = Vector2(39, 63)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("7_hdoy8")
+
+[node name="PanelContainer7" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -269.0
+offset_top = 42.0
+offset_right = 275.0
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gelbn")
+
+[node name="Label" type="Label" parent="PanelContainer7"]
+layout_mode = 2
+text = "BOOST'S"
+label_settings = SubResource("LabelSettings_4vwn8")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [connection signal="timeout" from="loadTimer" to="." method="_on_load_timer_timeout"]

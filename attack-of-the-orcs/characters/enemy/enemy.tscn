@@ -235,7 +235,7 @@ flip_h = true
 collision_layer = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
-position = Vector2(-1, -1)
+position = Vector2(-1.11111, 1.11111)
 shape = SubResource("CircleShape2D_5nr7e")
 
 [connection signal="area_entered" from="detectionArea" to="." method="_on_detection_area_area_entered"]

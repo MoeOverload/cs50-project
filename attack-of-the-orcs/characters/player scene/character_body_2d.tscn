@@ -203,7 +203,6 @@ position = Vector2(15, -2)
 stream = ExtResource("5_l1hf0")
 attenuation = 3.36358
 panning_strength = 1.8
-bus = &"arrows"
 playback_type = 1
 
 [node name="rapidfiresound" type="AudioStreamPlayer" parent="."]
