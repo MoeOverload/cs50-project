@@ -116,7 +116,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_top = 1.0
 
 [node name="sounds_fx" type="Control"]
 layout_mode = 3
@@ -186,6 +185,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_oboxj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer3"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer3/VBoxContainer"]
@@ -194,49 +194,20 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_dvtdt")
 
-[node name="CheckButton" type="CheckButton" parent="PanelContainer3/VBoxContainer/PanelContainer2"]
+[node name="CheckButton" type="CheckBox" parent="PanelContainer3/VBoxContainer/PanelContainer2"]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
 action_mode = 0
-
-[node name="VSeparator" type="VSeparator" parent="PanelContainer3/VBoxContainer/PanelContainer2"]
-layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="Label" type="Label" parent="PanelContainer3/VBoxContainer/PanelContainer2/VSeparator"]
-layout_mode = 2
-offset_left = -42.0
-offset_top = 9.0
-offset_right = 45.0
-offset_bottom = 32.0
-text = "Master Mix"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "MASTER"
 
 [node name="PanelContainer3" type="PanelContainer" parent="PanelContainer3/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_dvtdt")
 
-[node name="musicmute" type="CheckButton" parent="PanelContainer3/VBoxContainer/PanelContainer3"]
+[node name="musicmute" type="CheckBox" parent="PanelContainer3/VBoxContainer/PanelContainer3"]
 layout_mode = 2
 action_mode = 0
-
-[node name="VSeparator" type="VSeparator" parent="PanelContainer3/VBoxContainer/PanelContainer3"]
-layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="Label" type="Label" parent="PanelContainer3/VBoxContainer/PanelContainer3/VSeparator"]
-layout_mode = 2
-offset_left = -12.0
-offset_top = 8.0
-offset_right = 34.0
-offset_bottom = 31.0
-text = "music"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "MUSIC"
 
 [node name="PanelContainer4" type="PanelContainer" parent="PanelContainer3/VBoxContainer"]
 layout_mode = 2
@@ -244,21 +215,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_dvtdt")
 
-[node name="soundfxMute" type="CheckButton" parent="PanelContainer3/VBoxContainer/PanelContainer4"]
+[node name="soundfxMute" type="CheckBox" parent="PanelContainer3/VBoxContainer/PanelContainer4"]
 layout_mode = 2
 action_mode = 0
-
-[node name="VSeparator" type="VSeparator" parent="PanelContainer3/VBoxContainer/PanelContainer4"]
-layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="Label" type="Label" parent="PanelContainer3/VBoxContainer/PanelContainer4/VSeparator"]
-layout_mode = 2
-offset_top = 11.0
-offset_right = 44.0
-offset_bottom = 34.0
-text = "FX
-"
+text = "SOUNDS"
 
 [connection signal="button_up" from="backbutton" to="." method="_on_backbutton_button_up"]
 [connection signal="toggled" from="PanelContainer3/VBoxContainer/PanelContainer2/CheckButton" to="." method="_on_check_button_toggled"]

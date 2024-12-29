@@ -4,7 +4,7 @@ extends PanelContainer
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Globalscript.double_points == true:
 		self.visible = true
 	else:

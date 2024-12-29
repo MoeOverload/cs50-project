@@ -72,5 +72,6 @@ shape = SubResource("RectangleShape2D_mvdar")
 
 [node name="flamesound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_v726w")
+bus = &"fx"
 
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

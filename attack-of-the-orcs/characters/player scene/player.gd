@@ -22,12 +22,12 @@ func _process(delta):
 		
 		
 		$Sprite2D/AnimationPlayer.play("walk")
-		$playerwalk.playing = true
+		
 	elif Input.is_action_pressed("down"):
 		position.y += Globalscript.move_speed * delta
 		
 		$Sprite2D/AnimationPlayer.play("walk")
-		$playerwalk.playing = true
+		
 	else:
 		$Sprite2D/AnimationPlayer.play("idle")
 	#handle attacks
