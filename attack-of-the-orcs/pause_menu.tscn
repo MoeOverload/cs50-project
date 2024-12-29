@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhgc3ax6yt7ld"]
+[gd_scene load_steps=8 format=3 uid="uid://dhgc3ax6yt7ld"]
 
 [ext_resource type="Script" path="res://games/pause_menu.gd" id="1_hh0g1"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_c5bkq"]
@@ -27,19 +27,6 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1waaq"]
 content_margin_bottom = 3.0
-bg_color = Color(0.415686, 0.32549, 0.282353, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huivu"]
 bg_color = Color(0.415686, 0.32549, 0.282353, 1)
 border_width_left = 2
 border_width_top = 2
@@ -103,14 +90,6 @@ theme_override_fonts/font = ExtResource("2_c5bkq")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_1waaq")
 text = "RESUME"
-
-[node name="settings" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_c5bkq")
-theme_override_font_sizes/font_size = 21
-theme_override_styles/normal = SubResource("StyleBoxFlat_huivu")
-text = "SETTINGS"
 
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
