@@ -343,9 +343,9 @@ corner_radius_bottom_left = 10
 [sub_resource type="LabelSettings" id="LabelSettings_weqcc"]
 font = ExtResource("4_7pasw")
 font_size = 22
-font_color = Color(0.709804, 0.0705882, 0, 1)
+font_color = Color(0.905117, 0.102661, 0, 1)
 outline_size = 6
-outline_color = Color(0.223103, 0.223103, 0.223103, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_4qo2x"]
 a = Vector2(-226.779, 22.1022)

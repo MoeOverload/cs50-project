@@ -179,17 +179,17 @@ autowrap_mode = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 26.0
+offset_left = 12.0
 offset_top = 500.0
-offset_right = 113.0
-offset_bottom = 553.0
+offset_right = 116.0
+offset_bottom = 559.0
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_x6p7y")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 28
 theme_override_styles/hover = SubResource("StyleBoxFlat_dfkos")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_x667y")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qdikp")
-text = "back
+text = "Back
 "
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

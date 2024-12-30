@@ -65,6 +65,7 @@ func _on_detection_area_area_entered(area:Area2D):
 	
 	#if enemy is shot handle death and hurt
 	if area.is_in_group("arrow"):
+		$hurt_sound.playing = true
 		normal_arrow = area	
 		can_attack = false
 		is_hurt = true
@@ -72,7 +73,10 @@ func _on_detection_area_area_entered(area:Area2D):
 		
 		#define death
 		if health <= 0:
-			is_death = true 
+			$hurt_sound.playing = false
+			
+			is_death = true
+			$death_sound.playing = true 
 	else:
 		normal_arrow = null
 		
@@ -122,8 +126,8 @@ func knockback(delta):
 func death(delta):
 	
 	death_time += delta
-	
 	$AnimatedSprite2D.play("death")
+	
 	position = position
 	if death_time >= time_to_queuefree:
 		if Globalscript.double_points == true:
@@ -156,6 +160,7 @@ func attack(delta):
 	if time_to_attack >= attack_time:
 		Globalscript.is_attacking = true  
 		$AnimatedSprite2D.play("attack")
+		$hit_sound.playing = true
 		time_to_attack = 0.0
 		
 		
