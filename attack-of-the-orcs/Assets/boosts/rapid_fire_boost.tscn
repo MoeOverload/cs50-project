@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwq5cxyytaciy"]
+[gd_scene load_steps=6 format=3 uid="uid://bwq5cxyytaciy"]
 
 [ext_resource type="Script" path="res://Assets/boosts/rapid_fire_boost.gd" id="1_uqvua"]
 [ext_resource type="Texture2D" uid="uid://cepiqwdtu2f6t" path="res://Assets/boosts/rapid fire.png" id="2_ijkuf"]
+[ext_resource type="AudioStream" uid="uid://qtcpmd8xuurh" path="res://Assets/sounds/boost sounds/Retro Charge StereoUP 12.wav" id="3_hd72v"]
+[ext_resource type="AudioStream" uid="uid://fh6mcvfvrib2" path="res://Assets/sounds/boost sounds/Retro PickUp Coin 07.wav" id="4_ja2k4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtkbr"]
 radius = 16.0
@@ -15,5 +17,15 @@ texture = ExtResource("2_ijkuf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mtkbr")
+
+[node name="spawn_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hd72v")
+bus = &"fx"
+playback_type = 1
+
+[node name="pickup_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ja2k4")
+bus = &"fx"
+playback_type = 1
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

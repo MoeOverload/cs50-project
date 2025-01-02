@@ -5,7 +5,10 @@ var rotation_speed = 3
 var boost_end_time = 3.0
 var boost_time = 0.0
 var player = null
+func _ready() -> void:
+		$boostSpawnSound.playing = true 
 func _process(delta):
+	
 	#boost movement/ rotation
 	position.x -= speed * delta
 	rotation += rotation_speed * delta
@@ -22,6 +25,7 @@ func _process(delta):
 func _on_area_entered(area:Area2D):
 	if area.is_in_group("Player"):
 		player = area
+		$bostPickupSound.playing = true
 		Globalscript.health_boosted = true
 		self.visible = false
 	player = null

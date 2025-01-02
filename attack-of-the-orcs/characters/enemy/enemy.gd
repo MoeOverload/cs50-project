@@ -193,37 +193,38 @@ func spawn_boost():
 
 ###SPAWN FUNCTIONS####
 func spawn_speed_boost():
+	
 	var new_speed_boost = speed_boost_tscn.instantiate()
 	add_sibling(new_speed_boost)
 	new_speed_boost.position = self.position
-	
+	$boostpawnSound.playing = true	
 
 func spawn_rapid_fire_boost():
 	var new_rapid_fire_boost = rapid_fire_boost_tscn.instantiate()
 	add_sibling(new_rapid_fire_boost)
 	new_rapid_fire_boost.position = self.position
-	
+	$boostpawnSound.playing = true
 func spawn_raining_arrows():
 	var new_raining_arrow_boost = raining_arrow_boost_tscn.instantiate()
 	add_sibling(new_raining_arrow_boost)
 	new_raining_arrow_boost.position = self.position
-	
+	$boostpawnSound.playing = true
 
 func spawn_barrier_health_boost():
 	var new_barrier_health_boost = barrier_health_boost_tscn.instantiate()
 	add_sibling(new_barrier_health_boost)
 	new_barrier_health_boost.position = self.position
-	
+	$boostpawnSound.playing = true
 func spawn_flamethrower_boost():
 	var new_flamthrower_boost = flamerthrower_boost_tscn.instantiate()
 	add_sibling(new_flamthrower_boost)
 	new_flamthrower_boost.position = self.position
-	
+	$boostpawnSound.playing = true
 func spawn_double_points():
 	var new_double_points_boost = double_pounts_tscn.instantiate()
 	add_sibling(new_double_points_boost)
 	new_double_points_boost.position = self.position
-
+	$boostpawnSound.playing = true
 ####TODO###
 
 #if the spawn number belongs to an array of a boost then
