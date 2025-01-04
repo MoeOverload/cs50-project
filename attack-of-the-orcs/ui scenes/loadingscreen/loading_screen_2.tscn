@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxvfyvwjkb8rr"]
+[gd_scene load_steps=20 format=3 uid="uid://bxvfyvwjkb8rr"]
 
 [ext_resource type="Script" path="res://ui scenes/loadingscreen/loading_screen_2.gd" id="1_fl4r2"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_7yl4l"]
-[ext_resource type="Texture2D" uid="uid://ccb76xoq1mu86" path="res://Assets/boosts/speedboost.png" id="3_dmtph"]
+[ext_resource type="Texture2D" uid="uid://bqsu65sr1uhoe" path="res://ui scenes/loadingscreen/damage boost.png" id="3_w18kv"]
 [ext_resource type="Texture2D" uid="uid://doi8ukoaooq8q" path="res://Assets/boosts/flamethrower _boost.png" id="4_hdobe"]
 [ext_resource type="Texture2D" uid="uid://cbvxb6yfdsgyg" path="res://Assets/boosts/raining arrows.png" id="5_xbgc1"]
 [ext_resource type="Texture2D" uid="uid://cqhpv5d63pawm" path="res://Assets/boosts/barrierhealth_boost.png" id="6_y5wsc"]
@@ -26,7 +26,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_x1dsn"]
 font = ExtResource("2_7yl4l")
-font_size = 13
+font_size = 18
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
@@ -43,6 +43,30 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 expand_margin_top = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rsvc2"]
+font = ExtResource("2_7yl4l")
+font_size = 27
+
+[sub_resource type="LabelSettings" id="LabelSettings_xq3rb"]
+font = ExtResource("2_7yl4l")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_pagop"]
+font = ExtResource("2_7yl4l")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_wwvuc"]
+font = ExtResource("2_7yl4l")
+font_size = 19
+
+[sub_resource type="LabelSettings" id="LabelSettings_of2sk"]
+font = ExtResource("2_7yl4l")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_07huc"]
+font = ExtResource("2_7yl4l")
+font_size = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gelbn"]
 bg_color = Color(0.0784314, 0.00392157, 0.145098, 1)
@@ -130,6 +154,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="PanelContainer5"]
 layout_mode = 2
 text = "Collect boosts from fallen enemys to help boost your abilities for a short duration "
+label_settings = SubResource("LabelSettings_rsvc2")
 horizontal_alignment = 1
 autowrap_mode = 1
 
@@ -155,11 +180,12 @@ layout_mode = 2
 layout_mode = 2
 text = "Damage boost
 "
+label_settings = SubResource("LabelSettings_xq3rb")
 
 [node name="Speedboost" type="Sprite2D" parent="PanelContainer2/HBoxContainer2/PanelContainer3/Label3"]
-position = Vector2(56, 62)
-scale = Vector2(2, 2)
-texture = ExtResource("3_dmtph")
+position = Vector2(53, 83)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_w18kv")
 
 [node name="PanelContainer4" type="PanelContainer" parent="PanelContainer2/HBoxContainer2"]
 layout_mode = 2
@@ -167,9 +193,10 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer2/HBoxContainer2/PanelContainer4"]
 layout_mode = 2
 text = "Flame thrower"
+label_settings = SubResource("LabelSettings_pagop")
 
 [node name="FlamethrowerBoost" type="Sprite2D" parent="PanelContainer2/HBoxContainer2/PanelContainer4/Label"]
-position = Vector2(56, 64)
+position = Vector2(53, 80)
 scale = Vector2(2, 2)
 texture = ExtResource("4_hdobe")
 
@@ -180,9 +207,10 @@ layout_mode = 2
 layout_mode = 2
 text = "Raining Arrows
 "
+label_settings = SubResource("LabelSettings_wwvuc")
 
 [node name="RainingarrowBoost" type="Sprite2D" parent="PanelContainer2/HBoxContainer2/PanelContainer5/Label5"]
-position = Vector2(58.5, 65.5)
+position = Vector2(58.5, 75.5)
 texture = ExtResource("5_xbgc1")
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer2/HBoxContainer2"]
@@ -191,9 +219,10 @@ layout_mode = 2
 [node name="Label4" type="Label" parent="PanelContainer2/HBoxContainer2/PanelContainer"]
 layout_mode = 2
 text = "Barrier health"
+label_settings = SubResource("LabelSettings_of2sk")
 
 [node name="BarrierhealthBoost" type="Sprite2D" parent="PanelContainer2/HBoxContainer2/PanelContainer"]
-position = Vector2(53, 64)
+position = Vector2(53, 88)
 scale = Vector2(2, 2)
 texture = ExtResource("6_y5wsc")
 
@@ -204,9 +233,10 @@ layout_mode = 2
 layout_mode = 2
 text = "rapid fire
 "
+label_settings = SubResource("LabelSettings_07huc")
 
 [node name="RapidfireBoost" type="Sprite2D" parent="PanelContainer2/HBoxContainer2/PanelContainer2/Label2"]
-position = Vector2(39, 63)
+position = Vector2(39, 71)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("7_hdoy8")
 
