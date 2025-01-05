@@ -65,7 +65,9 @@
 ---
 ### Wheres the game?!?
 
--!!!insert link here !!! (itch.io)
+you can download the game exe file from...
+
+[itch.io](https://moeoverload.itch.io/attack-of-the-orcs)
 
 
 ## About The game
@@ -107,14 +109,10 @@
 	My name is morgan or Moe and im just a normal guy, single dad construction worker, the only reason i stumbled into programming and game dev was because of piratesoftware on youtube. taking CS50 was one of the biggest challenges ive ever put myself through.
 	I hope to one day make a full fledged indy game and publish it to steam.
 
-[Website]()
+[Youtube](https://www.youtube.com/@MoeOverload1)
 
-[Youtube]()
+[Github](https://github.com/MoeOverload)
 
-[Github]()
+[Twitch](https://www.twitch.tv/moeoverload1)
 
-[Twitch]()
-
-[X]()
-
-[Email]()
+[X](https://x.com/MoeOverload01)
