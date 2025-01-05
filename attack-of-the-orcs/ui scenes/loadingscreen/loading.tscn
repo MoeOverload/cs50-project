@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bi5qosowuwlwm"]
+[gd_scene load_steps=14 format=3 uid="uid://bi5qosowuwlwm"]
 
 [ext_resource type="Script" path="res://ui scenes/loadingscreen/loading.gd" id="1_jf4tn"]
 [ext_resource type="Texture2D" uid="uid://cv7ibjg23mkqd" path="res://Assets/ui assert]]/space.png" id="3_keiw6"]
 [ext_resource type="Texture2D" uid="uid://hi5f4njkq37q" path="res://Assets/ui assert]]/keys.png" id="4_b4gkd"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="4_wa7u0"]
-[ext_resource type="PackedScene" uid="uid://d1475gcsfrra3" path="res://menu_music.tscn" id="5_huha5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2f3q4"]
 bg_color = Color(0.207843, 0.00392157, 0.203922, 1)
@@ -214,7 +213,5 @@ label_settings = SubResource("LabelSettings_mr845")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-
-[node name="menu_music" parent="." instance=ExtResource("5_huha5")]
 
 [connection signal="timeout" from="loadTimer" to="." method="_on_load_timer_timeout"]
