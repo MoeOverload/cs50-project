@@ -1,7 +1,8 @@
 extends Node2D
 
 var speed = 300
-
+func _ready():
+	$arrow_fall.playing = true
 func _process(delta):
 	#moving  the arrow
 	
@@ -13,4 +14,5 @@ func _process(delta):
 func _on_area_2d_body_entered(body:Node2D):
 	
 	if body.is_in_group("enemy"):
+		
 		self.queue_free()

@@ -1,6 +1,7 @@
 extends Node2D
 
-	
+func _ready():
+	$game_music.playing = true
 	
 func _process(_delta):
 	

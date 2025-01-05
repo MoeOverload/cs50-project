@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cdg8ns4kfulqu"]
+[gd_scene load_steps=42 format=3 uid="uid://cdg8ns4kfulqu"]
 
 [ext_resource type="Script" path="res://characters/enemy/enemy.gd" id="1_fkf48"]
 [ext_resource type="Texture2D" uid="uid://colsq5wqi20q1" path="res://Assets/TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc with shadows/Orc-Attack02.png" id="1_wg6xv"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://c17dc4r1gwjec" path="res://Assets/sounds/enemy sounds/Retro Roar LoFi 01.wav" id="13_6ra2o"]
 [ext_resource type="AudioStream" uid="uid://dudi3xmckrmxo" path="res://Assets/sounds/enemy sounds/Retro Impact Punch Hurt 01.wav" id="14_2oigd"]
 [ext_resource type="AudioStream" uid="uid://qtcpmd8xuurh" path="res://Assets/sounds/boost sounds/Retro Charge StereoUP 12.wav" id="15_4v1ok"]
+[ext_resource type="AudioStream" uid="uid://e0s31s6im8tj" path="res://Assets/sounds/boost sounds/Retro Impact Metal 05.wav" id="16_36r2d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2mr2y"]
 radius = 6.0
@@ -262,6 +263,11 @@ playback_type = 1
 stream = ExtResource("15_4v1ok")
 max_polyphony = 5
 bus = &"fx"
+
+[node name="arrow_impact" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_36r2d")
+bus = &"fx"
+playback_type = 1
 
 [connection signal="area_entered" from="detectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://bmgnl53cff3v7"]
+[gd_scene load_steps=23 format=3 uid="uid://bmgnl53cff3v7"]
 
 [ext_resource type="Script" path="res://ui scenes/scripts/main_menu.gd" id="1_8nunr"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_760aw"]
+[ext_resource type="AudioStream" uid="uid://ck2yogpo7ws0v" path="res://Assets/sounds/ui_sounds/Retro Event UI 01.wav" id="3_ckvga"]
+[ext_resource type="AudioStream" uid="uid://sacqtxorimbd" path="res://Assets/sounds/ui_sounds/Retro Event UI 13.wav" id="4_a1ikh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o65ol"]
 bg_color = Color(0.079686, 0.00351193, 0.144187, 1)
@@ -420,6 +422,16 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xujjg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jdvfb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ds2ta")
 text = "QUIT"
+
+[node name="enter_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ckvga")
+bus = &"fx"
+playback_type = 1
+
+[node name="back_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_a1ikh")
+bus = &"fx"
+playback_type = 1
 
 [connection signal="button_up" from="PanelContainer3/VBoxContainer/play" to="." method="_on_play_button_up"]
 [connection signal="button_up" from="PanelContainer3/VBoxContainer/HighScores" to="." method="_on_high_scores_button_up"]

@@ -1,11 +1,14 @@
 extends PanelContainer
 @onready var gameOne = $"."
+
 func _physics_process(_delta):
 	if Globalscript.is_game_over == true:
+		
 		self.visible = true
 	
 			
 func _on_menu_option_button_up() -> void:
+	$back_sound.playing = true
 	if Globalscript.score > Globalscript.new_high_score:
 		Globalscript.new_high_score = Globalscript.score
 	if Globalscript.rounds_counter > Globalscript.highest_round:

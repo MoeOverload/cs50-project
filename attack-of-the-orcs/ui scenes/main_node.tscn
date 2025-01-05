@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://ui scenes/scripts/main_node.gd" id="1_1jtoa"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_1gdyy"]
+[ext_resource type="PackedScene" uid="uid://d1475gcsfrra3" path="res://menu_music.tscn" id="3_a6uud"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhmgf"]
 bg_color = Color(0.0784314, 0.00392157, 0.145098, 1)
@@ -43,8 +44,6 @@ font = ExtResource("2_1gdyy")
 font_size = 28
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="AudioStream" id="AudioStream_vtjuu"]
 
 [node name="MainNode" type="Node"]
 script = ExtResource("1_1jtoa")
@@ -108,8 +107,4 @@ text = "[  PRESS ENTER  ]"
 label_settings = SubResource("LabelSettings_qxwn8")
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStream_vtjuu")
-autoplay = true
-bus = &"music"
-playback_type = 1
+[node name="menu_music" parent="." instance=ExtResource("3_a6uud")]

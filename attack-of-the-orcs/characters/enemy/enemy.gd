@@ -86,6 +86,7 @@ func _on_detection_area_area_entered(area:Area2D):
 		raining_arrow = area
 		can_attack = false
 		is_hurt = true
+		$arrow_impact.playing = true
 		health -= 80	
 		if health <= 0:
 			is_death = true 

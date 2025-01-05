@@ -1,5 +1,5 @@
 extends Node
-
+	
 #first node (TITLE SCREEN) 
 func _process(_delta):	
 	#if the user presses enter switch scene to main menu

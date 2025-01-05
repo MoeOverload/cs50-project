@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://be0iym4a7nxq0"]
+[gd_scene load_steps=5 format=3 uid="uid://be0iym4a7nxq0"]
 
 [ext_resource type="Script" path="res://Assets/boosts/rainingarrow/raining_arrow.gd" id="1_ilhp0"]
 [ext_resource type="Texture2D" uid="uid://dk7vccve0knnq" path="res://Assets/TINY_RPG/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Arrow(Projectile)/Arrow01(32x32).png" id="2_svka2"]
+[ext_resource type="AudioStream" uid="uid://dc8dlqe4lurkd" path="res://Assets/sounds/boost sounds/Retro Swooosh 07.wav" id="4_uepej"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sy48h"]
 radius = 4.46689
@@ -19,3 +20,8 @@ shape = SubResource("CapsuleShape2D_sy48h")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.21067
 texture = ExtResource("2_svka2")
+
+[node name="arrow_fall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uepej")
+bus = &"fx"
+playback_type = 1

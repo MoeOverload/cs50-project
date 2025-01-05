@@ -1,7 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bishueqfjryam"]
+[gd_scene load_steps=20 format=3 uid="uid://bishueqfjryam"]
 
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_6tmnr"]
 [ext_resource type="Script" path="res://ui scenes/difficulty_menu.gd" id="1_w44tv"]
+[ext_resource type="AudioStream" uid="uid://ck2yogpo7ws0v" path="res://Assets/sounds/ui_sounds/Retro Event UI 01.wav" id="3_ijoop"]
+[ext_resource type="AudioStream" uid="uid://sacqtxorimbd" path="res://Assets/sounds/ui_sounds/Retro Event UI 13.wav" id="4_h6dik"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhmfw"]
 bg_color = Color(0.0784314, 0.00392157, 0.145098, 1)
@@ -351,6 +353,16 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qh03c")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ea7q5")
 toggle_mode = true
 text = "HARD"
+
+[node name="enter_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ijoop")
+bus = &"fx"
+playback_type = 1
+
+[node name="back_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h6dik")
+bus = &"fx"
+playback_type = 1
 
 [connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Control/PanelContainer/VBoxContainer/easybutton" to="." method="_on_easybutton_pressed"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://bhryaeuedxb3a"]
+[gd_scene load_steps=20 format=3 uid="uid://bhryaeuedxb3a"]
 
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="1_bb3ok"]
 [ext_resource type="Script" path="res://ui scenes/scripts/high_score_page.gd" id="1_ljgxi"]
 [ext_resource type="Script" path="res://ui scenes/scripts/highScoreLabel.gd" id="3_23200"]
 [ext_resource type="Script" path="res://ui scenes/scripts/label.gd" id="4_0erii"]
 [ext_resource type="Script" path="res://ui scenes/scripts/kill_counter_screen.gd" id="5_dutu4"]
+[ext_resource type="AudioStream" uid="uid://sacqtxorimbd" path="res://Assets/sounds/ui_sounds/Retro Event UI 13.wav" id="6_n6j6v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cmio"]
 bg_color = Color(0.207843, 0.00392157, 0.203922, 1)
@@ -283,5 +284,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3ws3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gfia7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_a20x3")
 text = "Back"
+
+[node name="back_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_n6j6v")
+bus = &"fx"
+playback_type = 1
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

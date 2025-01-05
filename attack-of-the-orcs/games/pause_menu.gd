@@ -11,7 +11,7 @@ func _process(_delta):
 		gameOne.get_tree().paused = true
 
 func _on_quit_pressed():
-	
+	$enter_sound.playing = true
 	if Globalscript.score > Globalscript.new_high_score:
 		Globalscript.new_high_score = Globalscript.score
 	if Globalscript.rounds_counter > Globalscript.highest_round:
@@ -28,5 +28,6 @@ func _on_quit_pressed():
 
 
 func _on_resume_button_up():
+	$enter_sound.playing = true
 	gameOne.get_tree().paused = false
 	self.visible = false

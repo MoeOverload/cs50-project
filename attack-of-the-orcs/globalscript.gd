@@ -1,5 +1,6 @@
 extends Node
 @onready var gameOne = $"."
+
 #scores
 var score = 0
 var new_high_score = 0

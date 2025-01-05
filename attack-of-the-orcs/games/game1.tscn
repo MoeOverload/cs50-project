@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://bjkvfxk306qn8"]
+[gd_scene load_steps=61 format=4 uid="uid://bjkvfxk306qn8"]
 
 [ext_resource type="Script" path="res://games/Scripts/game_1.gd" id="1_5wiol"]
 [ext_resource type="Texture2D" uid="uid://b1gc8aolmmaif" path="res://Assets/PIXEL_PEOM DTII/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_2x1s8"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://cn386euhx4dk6" path="res://Assets/decorations/torch.tscn" id="38_jcxg8"]
 [ext_resource type="PackedScene" uid="uid://i23w2flbrrih" path="res://Assets/decorations/torchside.tscn" id="39_tqu01"]
 [ext_resource type="PackedScene" uid="uid://bbefe3r72rmmi" path="res://Assets/decorations/chest.tscn" id="40_0kx0v"]
+[ext_resource type="AudioStream" uid="uid://bp3aoqkmeuy6l" path="res://Assets/sounds/music_choices/Sketchbook 2024-04-24_02.ogg" id="42_egum0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4w2w"]
 texture = ExtResource("2_2x1s8")
@@ -728,6 +729,13 @@ position = Vector2(51, 282.5)
 
 [node name="chest4" parent="." instance=ExtResource("40_0kx0v")]
 position = Vector2(23.5, 65)
+
+[node name="game_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("42_egum0")
+pitch_scale = 0.91
+bus = &"gamemusic"
+playback_type = 1
+parameters/looping = true
 
 [connection signal="body_entered" from="gameEnder/Area2D" to="gameEnder" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="rainArrowCollision/Area2D" to="rainArrowCollision" method="_on_area_2d_area_entered"]

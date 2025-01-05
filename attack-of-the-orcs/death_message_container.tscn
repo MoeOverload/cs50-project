@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdvqrqjc3aepb"]
+[gd_scene load_steps=12 format=3 uid="uid://bdvqrqjc3aepb"]
 
 [ext_resource type="Script" path="res://games/DeathMessage.gd" id="1_fhigg"]
 [ext_resource type="FontFile" uid="uid://de74dgvi227lf" path="res://Assets/DungeonFont.ttf" id="2_ob4f8"]
 [ext_resource type="Script" path="res://games/scorelabel.gd" id="3_ucb5y"]
+[ext_resource type="AudioStream" uid="uid://sacqtxorimbd" path="res://Assets/sounds/ui_sounds/Retro Event UI 13.wav" id="4_hlrut"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nn0ch"]
 bg_color = Color(0.133333, 0.00784314, 0.223529, 1)
@@ -149,5 +150,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_20rp0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vfjpi")
 text = "QUIT 
 "
+
+[node name="back_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hlrut")
+bus = &"fx"
+playback_type = 1
 
 [connection signal="button_up" from="VBoxContainer/menuOption" to="." method="_on_menu_option_button_up"]

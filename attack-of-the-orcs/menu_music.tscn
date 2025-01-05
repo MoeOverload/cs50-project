@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1475gcsfrra3"]
+
+[ext_resource type="AudioStream" uid="uid://bywo63rgux5hr" path="res://Assets/sounds/music_choices/Sketchbook 2024-11-13.ogg" id="1_tbra2"]
+[ext_resource type="Script" path="res://menu_music.gd" id="2_bsmxq"]
+
+[node name="menu_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_tbra2")
+bus = &"music"
+parameters/looping = true
+script = ExtResource("2_bsmxq")
