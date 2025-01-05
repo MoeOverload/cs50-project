@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://uhl4ekoe0lba"]
 
 [ext_resource type="Script" path="res://Assets/boosts/barrier_health_boost.gd" id="1_5oafa"]
-[ext_resource type="Texture2D" uid="uid://cqhpv5d63pawm" path="res://Assets/boosts/barrierhealth_boost.png" id="1_y8f37"]
+[ext_resource type="Texture2D" uid="uid://bydna2s3evd4k" path="res://Assets/boosts/new heart.png" id="2_fijg1"]
 [ext_resource type="AudioStream" uid="uid://qtcpmd8xuurh" path="res://Assets/sounds/boost sounds/Retro Charge StereoUP 12.wav" id="3_hxisp"]
 [ext_resource type="AudioStream" uid="uid://fh6mcvfvrib2" path="res://Assets/sounds/boost sounds/Retro PickUp Coin 07.wav" id="5_xqarq"]
 
@@ -12,8 +12,7 @@ radius = 8.0
 script = ExtResource("1_5oafa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.791667, 0.791667)
-texture = ExtResource("1_y8f37")
+texture = ExtResource("2_fijg1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pjlhp")

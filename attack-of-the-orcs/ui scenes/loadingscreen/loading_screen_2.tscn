@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqsu65sr1uhoe" path="res://ui scenes/loadingscreen/damage boost.png" id="3_w18kv"]
 [ext_resource type="Texture2D" uid="uid://doi8ukoaooq8q" path="res://Assets/boosts/flamethrower _boost.png" id="4_hdobe"]
 [ext_resource type="Texture2D" uid="uid://cbvxb6yfdsgyg" path="res://Assets/boosts/raining arrows.png" id="5_xbgc1"]
-[ext_resource type="Texture2D" uid="uid://cqhpv5d63pawm" path="res://Assets/boosts/barrierhealth_boost.png" id="6_y5wsc"]
+[ext_resource type="Texture2D" uid="uid://bydna2s3evd4k" path="res://Assets/boosts/new heart.png" id="6_f8kru"]
 [ext_resource type="Texture2D" uid="uid://cepiqwdtu2f6t" path="res://Assets/boosts/rapid fire.png" id="7_hdoy8"]
 [ext_resource type="PackedScene" uid="uid://d1475gcsfrra3" path="res://menu_music.tscn" id="8_wxbb2"]
 
@@ -224,8 +224,8 @@ label_settings = SubResource("LabelSettings_of2sk")
 
 [node name="BarrierhealthBoost" type="Sprite2D" parent="PanelContainer2/HBoxContainer2/PanelContainer"]
 position = Vector2(53, 88)
-scale = Vector2(2, 2)
-texture = ExtResource("6_y5wsc")
+scale = Vector2(3, 3)
+texture = ExtResource("6_f8kru")
 
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer2/HBoxContainer2"]
 layout_mode = 2

@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bdvqrqjc3aepb" path="res://death_message_container.tscn" id="16_ksmf7"]
 [ext_resource type="PackedScene" uid="uid://dhgc3ax6yt7ld" path="res://pause_menu.tscn" id="18_jvgtx"]
 [ext_resource type="Script" path="res://games/health_container.gd" id="19_ae30i"]
-[ext_resource type="Texture2D" uid="uid://cqhpv5d63pawm" path="res://Assets/boosts/barrierhealth_boost.png" id="19_ntula"]
+[ext_resource type="Texture2D" uid="uid://bydna2s3evd4k" path="res://Assets/boosts/new heart.png" id="20_bnaca"]
 [ext_resource type="Script" path="res://games/damage_container.gd" id="21_e6l5p"]
 [ext_resource type="Texture2D" uid="uid://bqsu65sr1uhoe" path="res://ui scenes/loadingscreen/damage boost.png" id="22_e5rnm"]
 [ext_resource type="Script" path="res://Assets/boosts/rainingarrow/rain_arrow_collision.gd" id="22_ivhlc"]
@@ -532,7 +532,9 @@ script = ExtResource("19_ae30i")
 
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/healthContainer"]
 layout_mode = 2
-texture = ExtResource("19_ntula")
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("20_bnaca")
+expand_mode = 3
 stretch_mode = 3
 
 [node name="damageContainer" type="PanelContainer" parent="Control/PanelContainer/HBoxContainer"]
